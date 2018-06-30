@@ -2,13 +2,13 @@
 include ("../request/"."connection.php");
 
 extract($_SESSION);
-$resultapp=mysqli_query($conn,"SELECT * FROM judge WHERE judge_id='$username'");
+$resultapp=mysqli_query($conn,"SELECT * FROM judge WHERE judge_id='$username' AND flageval2='N'");
 $rowapp = $resultapp->fetch_assoc();
 
-?>
-
-<?php
     $app_id=$rowapp['app_id'];
+
+    $_SESSION['app_id']=$app_id;
+
     $resultsum=mysqli_query($conn,"SELECT * FROM student WHERE app_id='$app_id'");
     $row = $resultsum->fetch_assoc();
 ?>
@@ -245,10 +245,11 @@ $rowapp = $resultapp->fetch_assoc();
     $.ajax({
            type: "POST",
            url: url,
-           data: $("#"+formid).serialize()+"&flag"+formid+"=Y", // serializes the form's elements.
+           data: $("#"+formid).serialize(), // serializes the form's elements.
            success: function(response)
            {
 			   alert(response.toString()); //show response from the php script
+               $("#topheader .navbar-nav a")[1].click();
                //alert("Details saved");
            },
 		   error: function(data,response){  
