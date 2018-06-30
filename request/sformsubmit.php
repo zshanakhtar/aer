@@ -1,0 +1,35 @@
+<?php
+include "../request/".'connection.php'; //connect the connection page
+  
+
+session_start();
+
+if ($_SERVER['REQUEST_METHOD']=='POST'){
+	
+extract($_POST);
+extract($_SESSION);	
+
+
+
+$resultsum=mysqli_query($conn,"SELECT * FROM student WHERE app_id='$username' and flagsec1='Y' and flagsec2='Y' and flagsec4='Y' and flagsec5='Y' and flagsec6='Y' ");
+   if($row = $resultsum->fetch_assoc())
+   { 
+	$query ="UPDATE student set app_status='Submitted' WHERE app_id='$username'";
+	mysqli_query($conn, $query);
+	echo "Congratulations, Application Submitted";
+   }
+   else
+   {
+	   echo "Either data not saved or form not filled completely, please check preview";
+   }
+
+
+mysqli_close($conn); // Closing Connection with Server
+}
+else{
+	header("Location:../dashboard.php");;
+}
+
+
+
+?>
