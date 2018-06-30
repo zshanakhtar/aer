@@ -24,7 +24,7 @@
   <script src="js/adashboard.js"></script>
 </head>
 <?php
-include $_SERVER['DOCUMENT_ROOT']."/aer1/request/"."connection.php";
+include "request/"."connection.php";
 
 extract($_SESSION);
 $app_id=trim($username);
