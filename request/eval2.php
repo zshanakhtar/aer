@@ -10,7 +10,7 @@ extract($_SESSION);
 // echo $username;
 
 $resultsum=mysqli_query($conn,"SELECT * FROM judge WHERE judge_id='$username' AND app_id='$app_id'");
-if($row = $resultsum->fetch_assoc())
+if($row = $resultsum->fetch_assoc() && $usertype=='j')
 	{
 	$query ="UPDATE judge set abstract_score='$abstract_score',Q1_score='$Q1_score', Q2_score ='$Q2_score', Q3_score ='$Q3_score', Q4_score ='$Q4_score', Q5_score ='$Q5_score', flageval2='Y' WHERE app_id='$app_id'";//, flageval2='$flageval2'
 	mysqli_query($conn, $query);
