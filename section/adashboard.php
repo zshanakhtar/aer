@@ -21,7 +21,13 @@
 <!-- universal js -->
 <script src="js/universal.js"></script>
 <!-- adashboard js -->
-  <script src="js/adashboard.js"></script>
+<script src="js/adashboard.js"></script>
+
+<!-- datatable css -->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/jszip-2.5.0/dt-1.10.16/b-1.5.1/b-flash-1.5.1/b-html5-1.5.1/datatables.min.css"/>
+<!-- datatable js -->
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs/jszip-2.5.0/dt-1.10.16/b-1.5.1/b-flash-1.5.1/b-html5-1.5.1/datatables.min.js"></script>
+  
 </head>
 <?php
 include "request/"."connection.php";
@@ -50,10 +56,6 @@ $resultteam=mysqli_query($conn,$query);
 <div id="myDiv1"></div>
 <br>
 <div class="review col-xs-12 col-sm-10 col-sm-offset-1">
-
-
-<?php include 'section/a_summary.php'; ?>
-
 
 </div>
 <?php include 'section/footer.php'; ?>
