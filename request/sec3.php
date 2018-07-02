@@ -14,7 +14,7 @@ extract($_SESSION);
 
 if($member_action=="save")
 {
-	$query ="insert into teammember(app_id,mem_id,member_name,member_email,gender,father_name,stream,year,team_mobile,roll) values ('$username','$mem_id','$member_name','$member_email','$gender','$father_name','$member_stream','$year','$team_mobile','Team Member')";
+	$query ="INSERT into teammember(app_id,mem_id,member_name,member_email,gender,father_name,stream,year,team_mobile,roll) values ('$username','$mem_id','$member_name','$member_email','$gender','$father_name','$member_stream','$year','$team_mobile','Team Member')";
 	mysqli_query($conn, $query);
 	echo "Member Details Saved";
 }

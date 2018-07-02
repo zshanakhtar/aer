@@ -18,15 +18,40 @@
 	  	</div>
 	  </div>
     <div class="row form-group">
-	  	<label for="" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">No of Selected Applications</label>
+	  	<label for="activeanchors" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">No of Selected Applications</label>
 	  	<div class="col-sm-10">
-	  		<input id="activeanchors" name="" type="text" class="form-control" required />
+	  		<input id="activeanchors" name="" type="text" class="form-control" disabled />
 	  	</div>
 	  </div>
     <div class="row form-group">
-	  	<label for="" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">Selected Applications</label>
+	  	<label for="appid_arr" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">Selected Applications</label>
 	  	<div class="col-sm-10">
-	  		<input id="appid_arr" name="" type="text" class="form-control" required />
+	  		<input id="appid_arr" name="" type="text" class="form-control" required disabled />
+	  	</div>
+	  </div>
+    <div class="row form-group hidden">
+	  	<label for="app_id" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">Current Application</label>
+	  	<div class="col-sm-10">
+	  		<input id="app_id" name="app_id" type="text" class="form-control" />
+	  	</div>
+	  </div>
+    <div class="row form-group">
+	  	<label for="" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">Save Progress</label>
+	  	<div class="col-sm-10">
+        <div class="progress">
+          <div class="progress-bar progress-bar-success" id="appid_sent" role="progressbar" style="width:34%;">
+            Sent Successfully: 0/0
+          </div>
+          <div class="progress-bar progress-bar-warning" id="appid_exists" role="progressbar" style="width:33%;">
+            Already Exists: 0/0
+          </div>
+          <div class="progress-bar progress-bar-danger" id="appid_error" role="progressbar" style="width:33%;">
+            Network Error: 0/0
+          </div>
+          <div class="progress-bar progress-bar-danger" id="appid_error" role="progressbar" style="width:100%;">
+            Select a judge and applications to send
+          </div>
+        </div>
 	  	</div>
 	  </div>
     <div class="row form-group">
@@ -252,7 +277,9 @@
         }
       });
       $("#activeanchors").val(activeanchors);
+      $("#activeanchors").trigger('change');
       $("#appid_arr").val(appid_arr);
+      $("#appid_arr").trigger('change');
     }
     function resetfilters()
     {
@@ -262,4 +289,72 @@
       $('.filter').removeClass("filter-active");
       $('.filter-control').addClass("btn-default");
     }
+
+function sendtojudge(){
+  for(var i=0;i<appid_arr.length;i++)
+  {
+    $('#app_id').val(appid_arr[i]);
+    $('#jallocate1').trigger('submit');
+  }
+}
+
+$("#jallocate1").validator();
+
+$("#jallocate1").on('submit',function(e) {
+	var formid=$(this).attr('id');//get this form's id
+    e.preventDefault(); // avoid to execute the actual submit of the form.
+	setTimeout(function(e){ //wait 50ms to allow validator to execute
+    var url = "request/"+formid+".php"; // the script where you handle the form input.
+	// var data1=$("#"+formid).serialize()+"&flag"+formid+"=Y";
+  // alert($("#"+formid).find('.has-error').length);//No of errors in the form
+  var savesuccess=0;
+  $("#appid_sent").css('width','0%');
+  $("#appid_sent").html('Sent: '+(savesuccess)+'/'+(appid_arr.length));
+  var savewarn=0;
+  $("#appid_exists").css('width','0%');
+  $("#appid_exists").html('Already Exist: '+(savewarn)+'/'+(appid_arr.length));
+  var saveerror=0;
+  $("#appid_error").css('width','0%');
+  $("#appid_error").html('Network Error: '+(saveerror)+'/'+(appid_arr.length));
+  for(var i=0;i<appid_arr.length;i++)
+  {
+    $('#app_id').val(appid_arr[i]);
+    $('#app_id').trigger('change');
+    if($("#"+formid).find('.has-error').length==0) 
+    {
+      $.ajax({
+             type: "POST",
+             url: url,
+             data: $("#"+formid).serialize(), // serializes the form's elements.
+             success: function(response)
+             {
+                // alert(response.toString()); //show response from the php script
+                if(response.toString()=='1') //show response from the php script
+                {
+                  savesuccess+=1;
+                  $("#appid_sent").css('width',(savesuccess/appid_arr.length*100)+'%');
+                  $("#appid_sent").html('Sent: '+(savesuccess)+'/'+(appid_arr.length));
+                }
+                else if(response.toString()=='2') //show response from the php script
+                {
+                  savewarn+=1;
+                  $("#appid_exists").css('width',(savewarn/appid_arr.length*100)+'%');
+                  $("#appid_exists").html('Already Exist: '+(savewarn)+'/'+(appid_arr.length));
+                }
+                // alert("Details saved");
+             },
+            error: function(data,response){  
+              saveerror+=1;
+              $("#appid_error").css('width',(saveerror/appid_arr.length*100)+'%');
+              $("#appid_error").html('Network Error: '+(saveerror)+'/'+(appid_arr.length));
+              // alert("Network error");
+              //handle error
+            }
+           });
+  
+    }
+  }
+	}, 50);
+});
+
   </script>
