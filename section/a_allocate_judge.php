@@ -39,7 +39,7 @@
 	  	<label for="" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">Save Progress</label>
 	  	<div class="col-sm-10">
         <div class="progress">
-          <div class="progress-bar progress-bar-success" id="appid_sent" role="progressbar" style="width:34%;">
+          <div class="progress-bar progress-bar-info" id="appid_sent" role="progressbar" style="width:34%;">
             Sent Successfully: 0/0
           </div>
           <div class="progress-bar progress-bar-warning" id="appid_exists" role="progressbar" style="width:33%;">
@@ -100,7 +100,7 @@
         <thead>
           <tr>
             <td>
-              <input type="checkbox" />
+              S.No
             </td>
             <td>
               Application ID
@@ -124,7 +124,7 @@
             $app_id=$rowteam['app_id'];
             ?>
           <tr data-appid="<?php echo addslashes($app_id);?>">
-            <td><label><input type="checkbox" value="">  <?php echo $count++; ?></label></td>
+            <td><label class="btn"><?php echo $count++; ?></label></td>
             <td>
               <span class="btn btn-default filter-anchor">
                 <?php echo htmlspecialchars($app_id);?>
@@ -289,14 +289,6 @@
       $('.filter').removeClass("filter-active");
       $('.filter-control').addClass("btn-default");
     }
-
-function sendtojudge(){
-  for(var i=0;i<appid_arr.length;i++)
-  {
-    $('#app_id').val(appid_arr[i]);
-    $('#jallocate1').trigger('submit');
-  }
-}
 
 $("#jallocate1").validator();
 

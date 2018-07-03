@@ -22,7 +22,7 @@ $resultsum=mysqli_query($conn,"SELECT * FROM student WHERE app_id='$username' AN
 	   $resultsum=mysqli_query($conn,"SELECT * FROM student WHERE app_id='$username'");
    if($row = $resultsum->fetch_assoc())
    { 
-	$query ="UPDATE student set mentor_name='$mentor_name', stream ='$stream',qualification='$qualification',mentor_desi='$mentor_desi',mentor_email='$mentor_email', mentor_mobile='$mentor_mobile', mentor_address='$mentor_address', mentor_pin='$mentor_pin',flagsec4='$flagsec4'   
+	$query ="UPDATE student set mentor_name='$mentor_name', stream ='$stream',qualification='$qualification',mentor_desi='$mentor_desi',mentor_email='$mentor_email', mentor_mobile='$mentor_mobile', mentor_address='$mentor_address', mentor_pin='$mentor_pin',mentor_aadhar='$mentor_aadhar',flagsec4='Y'   
 		WHERE app_id='$username'";
 		 mysqli_query($conn, $query);
 	     echo "Mentor Details Saved";

@@ -35,7 +35,7 @@ $resultteam=mysqli_query($conn,$query);
 		<div class="row form-group">
 			<label for="problem" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">Problem Category</label>
 			<div class="col-sm-10">
-				<select required class="form-control qswitch" id="problem" name="problem">
+				<select required class="form-control qswitch" id="problem" name="problem" data-show="0" >
 					<option value="">--Select--</option>
 					<option value="1">Water & Irrigation</option>
 					<option value="2">Sanitation & Solid Liquid Waste Management</option>
@@ -44,12 +44,12 @@ $resultteam=mysqli_query($conn,$query);
 					<option value="5">Agriculture & Food</option>
 					<option value="6">Education, Skill Initiative & Startups</option>
 					<option value="7">Rural Craft & Livelihood</option>
-					<option value="N" >Others</option>
+					<option value="0" >Others</option>
 				</select>
 			</div>
 		</div>
 		<div class="row form-group problem_det hidden">
-			<label for="problem_det" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">Eco Details</label>
+			<label for="problem_det" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">Please Specify</label>
 			<div class="col-sm-10">
 				<textarea class="form-control" rows="5" id="problem_det" name="problem_det" required><?php echo htmlspecialchars($app_id2['problem_det']);?></textarea>
 			</div>
@@ -69,8 +69,8 @@ $resultteam=mysqli_query($conn,$query);
 			<div class="col-sm-10">
 				<select required class="form-control" id="g_oriented" name="g_oriented">
 					<option value="">--Select--</option>
-					<option value="Y">Yes</option>
-					<option value="N">No</option>
+					<option value="Yes">Yes</option>
+					<option value="No">No</option>
 				</select>
 			</div>
 		</div>
@@ -79,8 +79,8 @@ $resultteam=mysqli_query($conn,$query);
 			<div class="col-sm-10">
 				<select required class="form-control" id="i_entry" name="i_entry">
 					<option value="">--Select--</option>
-					<option value="Y">Yes</option>
-					<option value="N">No</option>
+					<option value="Yes">Yes</option>
+					<option value="No">No</option>
 				</select>
 			</div>
 		</div>
@@ -89,8 +89,8 @@ $resultteam=mysqli_query($conn,$query);
 			<div class="col-sm-10">
 				<select required class="form-control" id="multi_dis" name="multi_dis">
 					<option value="">--Select--</option>
-					<option value="Y">Yes</option>
-					<option value="N">No</option>
+					<option value="Yes">Yes</option>
+					<option value="No">No</option>
 				</select>
 			</div>
 		</div>
@@ -239,6 +239,12 @@ $resultteam=mysqli_query($conn,$query);
 			</div>
 		</div>
 		<div class="row form-group">
+			<label for="mentor_aadhar" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">Aadhar Number</label>
+			<div class="col-sm-10">
+				<input id="mentor_aadhar" name="mentor_aadhar" type="text" pattern='[0-9]{12}' class="form-control" required />
+			</div>
+		</div>
+		<div class="row form-group">
 				<input id="flagsec4" type="text" value="N" class="form-control hidden" />
 		</div>
 		<div class="row form-group">
@@ -254,62 +260,7 @@ $resultteam=mysqli_query($conn,$query);
 	</div>
 </div>
 </form>
-<form role="form"  action="javascript:void(0)" onsubmit="return false;" class="ajaxsubmitform" id="sec5" >
-	<div class="panel panel-info">
-		<div class="panel-heading" data-toggle="collapse" data-target="#five" style="font-size:150%;"><b>Mentor Details</b><span class="btn btn-info pull-right glyphicon glyphicon-chevron-up"></span></div>
-		<div  class="panel-body collapse in one" id="five">
-			<div class="row form-group">
-				<label for="similar_area" class="col-sm-6 col-sm-offset-1 control-label" style="color:#337ab7; font-size:14px">Number of UG/Diploma projects guided on similar area during the last three years</label>
-				<div class="col-sm-1 col-sm-offset-2">
-					<input required name="similar_area" type="number" class="form-control" id="similar_area"  value="">
-				</div>
-			</div>
-			<div class="row form-group">
-				<label for="society_problem" class="col-sm-6 col-sm-offset-1 control-label" style="color:#337ab7; font-size:14px">Number of UG/ Diploma projects guided to solve problem of society during the last three years</label>
-				<div class="col-sm-1 col-sm-offset-2">
-					<input required name="society_problem" type="number" class="form-control" id="society_problem" value="">
-				</div>
-			</div>
-			<div class="row form-group">
-				<label for="publications" class="col-sm-6 col-sm-offset-1 control-label" style="color:#337ab7; font-size:14px">Number of research publications during last three years</label>
-				<div class="col-sm-1 col-sm-offset-2">
-					<input required name="publications" type="number" class="form-control" id="publications"  value="">
-				</div>
-			</div>
-			<div class="row form-group">
-				<label for="student_feedback" class="col-sm-6 col-sm-offset-1 control-label" style="color:#337ab7; font-size:14px">Student Feedback Index</label>
-				<div class="col-sm-1 col-sm-offset-2">
-					<input required name="student_feedback" type="number" class="form-control" id="student_feedback"  value="">
-				</div>
-			</div>
-			<div class="row form-group">
-				<label for="achievement" class="col-sm-6 col-sm-offset-1 control-label" style="color:#337ab7; font-size:14px">Number of achievement/award by students guided by the Teacher</label>
-				<div class="col-sm-1 col-sm-offset-2">
-					<input required name="achievement" type="number" class="form-control" id="achievement"  value="">
-				</div>
-			</div>
-			<div class="row form-group">
-				<label for="patents" class="col-sm-6 col-sm-offset-1 control-label" style="color:#337ab7; font-size:14px">Number of Awards/Patents (if any)</label>
-				<div class="col-sm-1 col-sm-offset-2">
-					<input required name="patents" type="number" class="form-control" id="patents"  value="">
-				</div>
-			</div>
-			
-			<div class="row form-group">
-				<input id="flagsec5" type="text" value="N" class="form-control hidden" />
-			</div>
-			<div class="row form-group">
-			<div class="col-sm-offset-5 col-sm-2">
-			     <button type="submit" class="btn btn-warning col-sm-6 col-sm-offset-3">
-					<span class="glyphicon glyphicon-floppy-disk"></span>
-										
-										<span>Save</span>
-				 </button>
-			</div>
-		</div>
-		</div>
-	</div>
-</form>
+
 <?php
 $resultsum=mysqli_query($conn,"SELECT * FROM student WHERE app_id='$username'");
 $row = $resultsum->fetch_assoc();
@@ -344,12 +295,8 @@ $("#mentor_email").val("<?php echo addslashes($row['mentor_email']);?>");
 $("#mentor_mobile").val("<?php echo addslashes($row['mentor_mobile']);?>");
 $("#mentor_address").val("<?php echo addslashes($row['mentor_address']);?>");
 $("#mentor_pin").val("<?php echo addslashes($row['mentor_pin']);?>");
-$("#similar_area").val("<?php echo addslashes($row['similar_area']);?>");
-$("#society_problem").val("<?php echo addslashes($row['society_problem']);?>");
-$("#publications").val("<?php echo addslashes($row['publications']);?>");
-$("#student_feedback").val("<?php echo addslashes($row['student_feedback']);?>");
-$("#achievement").val("<?php echo addslashes($row['achievement']);?>");
-$("#patents").val("<?php echo addslashes($row['patents']);?>");
+$("#mentor_aadhar").val("<?php echo addslashes($row['mentor_aadhar']);?>");
+
 
 
 	$("#flagsec1").val("<?php echo addslashes($row['flagsec1']);?>");
@@ -396,14 +343,16 @@ $(".qswitch").on('change',function(){
 });
 function qtoggle(elem){
 	var qswitchid=$(elem).attr("id");
-			if($(elem).val()=="N")//check if value of switch is No
+	var str=$(elem).data('show');
+	// alert($(elem).val()+'='+str);
+			if($(elem).val()!="" && $(elem).val()==str)//check if value of switch is No
 			{
 				$("."+qswitchid+"_det").removeClass("hidden");
 				$("#"+qswitchid+"_det").removeAttr("disabled");
 			}
-			else //check if value of switch is No
+			else
 			{
-				$("#"+qswitchid+"_det").val("Please type your text here");
+				$("#"+qswitchid+"_det").val("Please specify your problem");
 				$("#"+qswitchid+"_det").attr("disabled","disabled");
 				$("."+qswitchid+"_det").addClass("hidden");
 			}

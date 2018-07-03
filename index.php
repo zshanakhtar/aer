@@ -139,6 +139,7 @@ Civil/ Electrical/ Mechanical/ Electronics/Computer Engineering/Bio Technology a
 
 </div>
 <?php include 'section/footer.php'; ?>
+
 </body>
 </html>
 
