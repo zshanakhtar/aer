@@ -2,7 +2,7 @@
 <div class="panel panel-info">
 	<div class="panel-heading" data-toggle="collapse" data-target="#six" style="font-size:150%;"><b>About Your Project</b><span class="btn btn-info pull-right glyphicon glyphicon-chevron-up"></span></div>
 	<div  class="panel-body collapse in one" id="six">
-		<div class="row form-group">
+		<!-- <div class="row form-group">
 			<label for="eco" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">Eco?</label>
 			<div class="col-sm-10">
 				<select required class="form-control qswitch" onchange="" id="eco" name="eco">
@@ -15,9 +15,9 @@
 		<div class="row form-group eco_det hidden">
 			<label for="eco_det" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">Eco Details</label>
 			<div class="col-sm-10">
-				<textarea class="form-control" rows="5" id="eco_det" name="eco_det"><?php echo htmlspecialchars($row['eco_det']);?></textarea>
+				<textarea class="form-control" rows="5" id="eco_det" name="eco_det"><?php //echo htmlspecialchars($row['eco_det']);?></textarea>
 			</div>
-		</div>
+		</div> -->
 		<div class="row form-group">
 			<label for="abstract" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">Abstract</label>
 			<div class="col-sm-10">

@@ -132,14 +132,6 @@ State
 
 <tr>
 <td colspan="6">
-State
-</td>
-<td id="inst_state" colspan="2">5
-</td>
-</tr>
-
-<tr>
-<td colspan="6">
 Name of Principal
 </td>
 <td id="inst_principal" colspan="2">5
@@ -271,85 +263,13 @@ Pincode
 </tr>
 
 <tr>
-<th colspan="8">
-Mentor Details
-</th>
-</tr>
-
-<tr>
-<th colspan="2">
-Sr.No.
-</th>
-<th colspan="4">
-Activity
-</th>
-<th colspan="2">
-Number
-</th>
-</tr>
-
-<tr>
-<td colspan="2">
-1
+<td colspan="6">
+Mentor Aadhar
 </td>
-<td colspan="4">
-Number of UG/Diploma projects guided on similar area during the last three years
-</td>
-<td colspan="2" id="similar_area">5
+<td id="mentor_aadhar" colspan="2">5
 </td>
 </tr>
 
-<tr>
-<td colspan="2">
-2
-</td>
-<td colspan="4">
-Number of UG/ Diploma projects guided to solve problem of society during the last three years
-</td>
-<td colspan="2" id="society_problem">5
-</td>
-</tr>
-
-<tr>
-<td colspan="2">
-3
-</td>
-<td colspan="4">
-Number of research publications during last three years
-</td>
-<td colspan="2" id="publications">5
-</td>
-</tr>
-<tr>
-<td colspan="2">
-4
-</td>
-<td colspan="4">
-Student Feedback Index
-</td>
-<td colspan="2" id="student_feedback">5
-</td>
-</tr>
-<tr>
-<td colspan="2">
-5
-</td>
-<td colspan="4">
-Number of achievement/award by students guided by the Teacher
-</td>
-<td colspan="2" id="achievement">5
-</td>
-</tr>
-<tr>
-<td colspan="2">
-6
-</td>
-<td colspan="4">
-Number of Awards/Patents (if any)
-</td>
-<td colspan="2" id="patents">5
-</td>
-</tr>
 
 <tr>
 <th colspan="8">
@@ -451,12 +371,8 @@ $("#mentor_email").html("<?php echo htmlspecialchars($row['mentor_email']);?>");
 $("#mentor_mobile").html("<?php echo htmlspecialchars($row['mentor_mobile']);?>");
 $("#mentor_address").html("<?php echo htmlspecialchars($row['mentor_address']);?>");
 $("#mentor_pin").html("<?php echo htmlspecialchars($row['mentor_pin']);?>");
-$("#similar_area").html("<?php echo htmlspecialchars($row['similar_area']);?>");
-$("#society_problem").html("<?php echo htmlspecialchars($row['society_problem']);?>");
-$("#publications").html("<?php echo htmlspecialchars($row['publications']);?>");
-$("#student_feedback").html("<?php echo htmlspecialchars($row['student_feedback']);?>");
-$("#achievement").html("<?php echo htmlspecialchars($row['achievement']);?>");
-$("#patents").html("<?php echo htmlspecialchars($row['patents']);?>");
+$("#mentor_aadhar").html("<?php echo htmlspecialchars($row['mentor_aadhar']);?>");
+
 $("#abstract").html("<?php echo mysqli_real_escape_string($conn,$row['abstract']);?>");
 $("#Q1").html("<?php echo mysqli_real_escape_string($conn,$row['Q1']);?>");
 $("#Q2").html("<?php echo mysqli_real_escape_string($conn,$row['Q2']);?>");
