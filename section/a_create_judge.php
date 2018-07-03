@@ -7,9 +7,15 @@
   </div>
   <div class="form-group col-sm-12">
     <label for="name" class="col-sm-2 control-label" style="color:#000099; font-size:14px">Name</label>
-	<div class="col-sm-10">
-                  <input id="name" name="name" type="text" class="form-control" placeholder="Name of Judge" required>
-                </div>
+	    <div class="col-sm-10">
+        <input id="name" name="name" type="text" class="form-control" placeholder="Name of Judge" required>
+      </div>
+  </div>
+  <div class="form-group col-sm-12">
+    <label for="judge_id" class="col-sm-2 control-label" style="color:#000099; font-size:14px">Username</label>
+	    <div class="col-sm-10">
+        <input id="judge_id" name="judge_id" type="text" class="form-control" placeholder="Judge ID" required>
+      </div>
   </div>
   
   <div class="form-group col-sm-12">
