@@ -1,4 +1,4 @@
-<form role="form" action="javascript:void(0)" onsubmit="return false;" class="form-horizontal ajaxsubmitform" id="sec6" >
+
 <div class="panel panel-info">
 	<div class="panel-heading" data-toggle="collapse" data-target="#six" style="font-size:150%;"><b>About Your Project</b><span class="btn btn-info pull-right glyphicon glyphicon-chevron-up"></span></div>
 	<div  class="panel-body collapse in one" id="six">
@@ -18,6 +18,7 @@
 				<textarea class="form-control" rows="5" id="eco_det" name="eco_det"><?php //echo htmlspecialchars($row['eco_det']);?></textarea>
 			</div>
 		</div> -->
+		<form role="form" action="javascript:void(0)" onsubmit="return false;" class="form-horizontal ajaxsubmitform" id="sec6" >
 		<div class="row form-group">
 			<label for="abstract" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">Abstract</label>
 			<div class="col-sm-10">
@@ -54,7 +55,12 @@
 				<textarea class="form-control" rows="5" id="Q5" name="Q5" required><?php echo htmlspecialchars($row['Q5']);?></textarea>
 			</div>
 		</div>
-		
+		<div class="row form-group">
+			<label for="Q5" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">Social impact</label>
+			<div class="col-sm-10">
+				<textarea class="form-control" rows="5" id="Q5" name="Q5" required><?php echo htmlspecialchars($row['Q5']);?></textarea>
+			</div>
+		</div>
 		<div class="row form-group">
 				<input id="flagsec6" type="text" value="N" class="form-control hidden" />
 		</div>
@@ -67,9 +73,19 @@
 				 </button>
 			</div>
 		</div>
+		</form>
+		<form method="post" action="request/file_upload.php" enctype="multipart/form-data">
+		<div class="row form-group">
+			<label for="Filename" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">File Upload</label>
+			<div class="col-sm-10">
+			<input type="file" name="Filename" required> 
+			<input TYPE="submit" name="upload" value="Upload"/>
+			</div>
+		</div>	
+		</form>
 	</div>
 </div>
-</form>
+
 <script>
 	
 </script>
