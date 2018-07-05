@@ -18,10 +18,10 @@ $FILLregist="INSERT INTO regist (username,password,usertype) values ('$r_usernam
 if($usertype=='a')//If an admin is trying to create  new user
 {
     if ($conn->query($FILLregist) === TRUE) {//execute the query with any roll
-	    echo "User Created Successfully";
+        echo "User Created Successfully";
     }
     else{
-        echo ("User Creation Failed");
+        echo "User Creation Failed";
     }
 }
 }
