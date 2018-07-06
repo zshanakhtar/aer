@@ -193,7 +193,7 @@ Member Details
 
 
 <tr>
-<th colspan="3">
+<th colspan="8">
 Mentor Details
 </th>
 </tr>
@@ -277,17 +277,10 @@ About Your Project
 </th>
 </tr>
 
-<tr>
-<td colspan="2">
-Abstract
-</td>
-<td id="abstract" colspan="6">5
-</td>
-</tr>
 
 <tr>
 <td colspan="2">
-Innovation
+1.	Explain about the Problem/Development Challenge/Market Need/Opportunity Identified and how big is the problem. (maximum 50-100 words)
 </td>
 <td id="Q1" colspan="6">5
 </td>
@@ -295,7 +288,7 @@ Innovation
 
 <tr>
 <td colspan="2">
-Implement-ability
+2.	Explain about Innovation of Solution that you are proposing to address the Problem/Development Challenge/Market Need/Opportunity Identified (maximum 50-100 words)
 </td>
 <td id="Q2" colspan="6">5
 </td>
@@ -303,7 +296,7 @@ Implement-ability
 
 <tr>
 <td colspan="2">
-Cost benefit
+3.	Explain the Technology and Intellectual property right component involved in your proposed innovative solutions (maximum 50-100 words)
 </td>
 <td id="Q3" colspan="6">5
 </td>
@@ -311,7 +304,7 @@ Cost benefit
 
 <tr>
 <td colspan="2">
-Eco friendly
+4.	Explain about size of market or target beneficiary group and level of acceptance/adoption of your innovation (maximum 50-100 words)
 </td>
 <td id="Q4" colspan="6">5
 </td>
@@ -319,11 +312,55 @@ Eco friendly
 
 <tr>
 <td colspan="2">
-Social impact
+5.	Quantify kind of immediate benefit (Output), long term benefit (Outcome and impact it will create once will be adopted by them (maximum 50-100 words)
 </td>
 <td id="Q5" colspan="6">5
 </td>
 </tr>
+
+<tr>
+<td colspan="2">
+6.	Highlight the delivery model on how you will implement or take the innovation to market or target beneficiary for quick adoption. (maximum 50-100 words)
+</td>
+<td id="Q6" colspan="6">5
+</td>
+</tr>
+
+<tr>
+<td colspan="2">
+7.	Do you have developed prototype already? (Yes/ No)
+</td>
+<td id="Q7" colspan="6">5
+</td>
+</tr>
+
+<tr>
+<td colspan="2">
+8.	Does your innovation have Intellectual Property rights? (Yes/No)
+</td>
+<td id="Q8" colspan="6">5
+</td>
+</tr>
+
+
+<tr>
+<td colspan="2">
+9.	Do you have field tested the applicability of innovation/prototype? (Yes/No)
+</td>
+<td id="Q9" colspan="6">5
+</td>
+</tr>
+
+
+<tr>
+<td colspan="2">
+10.	Do you feel that, your innovation have potential to take in form of business/start-up? (Yes/No)
+</td>
+<td id="Q10" colspan="6">5
+</td>
+</tr>
+
+
 
 <tr>
 <td colspan="3">
@@ -373,12 +410,17 @@ $("#mentor_address").html("<?php echo htmlspecialchars($row['mentor_address']);?
 $("#mentor_pin").html("<?php echo htmlspecialchars($row['mentor_pin']);?>");
 $("#mentor_aadhar").html("<?php echo htmlspecialchars($row['mentor_aadhar']);?>");
 
-$("#abstract").html("<?php echo mysqli_real_escape_string($conn,$row['abstract']);?>");
+//$("#abstract").html("<?php //echo mysqli_real_escape_string($conn,$row['abstract']);?>");
 $("#Q1").html("<?php echo mysqli_real_escape_string($conn,$row['Q1']);?>");
 $("#Q2").html("<?php echo mysqli_real_escape_string($conn,$row['Q2']);?>");
 $("#Q3").html("<?php echo mysqli_real_escape_string($conn,$row['Q3']);?>");
 $("#Q4").html("<?php echo mysqli_real_escape_string($conn,$row['Q4']);?>");
 $("#Q5").html("<?php echo mysqli_real_escape_string($conn,$row['Q5']);?>");
+$("#Q6").html("<?php echo mysqli_real_escape_string($conn,$row['Q6']);?>");
+$("#Q7").html("<?php echo mysqli_real_escape_string($conn,$row['Q7']);?>");
+$("#Q8").html("<?php echo mysqli_real_escape_string($conn,$row['Q8']);?>");
+$("#Q9").html("<?php echo mysqli_real_escape_string($conn,$row['Q9']);?>");
+$("#Q10").html("<?php echo mysqli_real_escape_string($conn,$row['Q10']);?>");
 
 
 

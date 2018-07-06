@@ -56,6 +56,46 @@
 			</div>
 		</div>
 		<div class="row form-group">
+			<label for="Q7" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">7.	Do you have developed prototype already? (Yes/ No)</label>
+			<div class="col-sm-10">
+				<select required class="form-control" onchange="" id="Q7" name="Q7">
+					<option value="">--Select--</option>
+					<option value="Yes">Yes</option>
+					<option value="No">No</option>
+				</select>
+			</div>
+		</div>
+		<div class="row form-group">
+			<label for="Q8" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">8.	Does your innovation have Intellectual Property rights? (Yes/No)</label>
+			<div class="col-sm-10">
+				<select required class="form-control" onchange="" id="Q8" name="Q8">
+					<option value="">--Select--</option>
+					<option value="Yes">Yes</option>
+					<option value="No">No</option>
+				</select>
+			</div>
+		</div>
+		<div class="row form-group">
+			<label for="Q9" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">9.	Do you have field tested the applicability of innovation/prototype? (Yes/No)</label>
+			<div class="col-sm-10">
+				<select required class="form-control" onchange="" id="Q9" name="Q9">
+					<option value="">--Select--</option>
+					<option value="Yes">Yes</option>
+					<option value="No">No</option>
+				</select>
+			</div>
+		</div>
+		<div class="row form-group">
+			<label for="Q10" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">10.	Do you feel that, your innovation have potential to take in form of business/start-up? (Yes/No)</label>
+			<div class="col-sm-10">
+				<select required class="form-control" onchange="" id="Q10" name="Q10">
+					<option value="">--Select--</option>
+					<option value="Yes">Yes</option>
+					<option value="No">No</option>
+				</select>
+			</div>
+		</div>
+		<div class="row form-group">
 				<input id="flagsec6" type="text" value="N" class="form-control hidden" />
 		</div>
 		<div class="row form-group">
@@ -68,7 +108,7 @@
 			</div>
 		</div>
 		</form>
-		<form method="post" action="request/file_upload.php" enctype="multipart/form-data">
+		<!-- <form method="post" action="request/file_upload.php" enctype="multipart/form-data">
 		<div class="row form-group">
 			<label for="Filename" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">File Upload</label>
 			<div class="col-sm-10">
@@ -76,7 +116,7 @@
 			<input TYPE="submit" name="upload" value="Upload"/>
 			</div>
 		</div>	
-		</form>
+		</form> -->
 	</div>
 </div>
 
