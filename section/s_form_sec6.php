@@ -20,45 +20,39 @@
 		</div> -->
 		<form role="form" action="javascript:void(0)" onsubmit="return false;" class="form-horizontal ajaxsubmitform" id="sec6" >
 		<div class="row form-group">
-			<label for="abstract" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">Abstract</label>
-			<div class="col-sm-10">
-				<textarea class="form-control" rows="5" id="abstract" name="abstract" required><?php echo htmlspecialchars($row['abstract']);?></textarea>
-			</div>
-		</div>
-		<div class="row form-group">
-			<label for="Q1" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">Innovation</label>
+			<label for="Q1" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">1.	Explain about the Problem/Development Challenge/Market Need/Opportunity Identified and how big is the problem. (maximum 50-100 words)</label>
 			<div class="col-sm-10">
 				<textarea class="form-control" rows="5" id="Q1" name="Q1" required><?php echo htmlspecialchars($row['Q1']);?></textarea>
 			</div>
 		</div>
 		<div class="row form-group">
-			<label for="Q2" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">Implement-ability</label>
+			<label for="Q2" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">2.	Explain about Innovation of Solution that you are proposing to address the Problem/Development Challenge/Market Need/Opportunity Identified (maximum 50-100 words)</label>
 			<div class="col-sm-10">
 				<textarea class="form-control" rows="5" id="Q2" name="Q2" required><?php echo htmlspecialchars($row['Q2']);?></textarea>
 			</div>
 		</div>
 		<div class="row form-group">
-			<label for="Q3" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">Cost benefit</label>
+			<label for="Q3" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">3.	Explain the Technology and Intellectual property right component involved in your proposed innovative solutions (maximum 50-100 words)</label>
 			<div class="col-sm-10">
 				<textarea class="form-control" rows="5" id="Q3" name="Q3" required><?php echo htmlspecialchars($row['Q3']);?></textarea>
 			</div>
 		</div>
 		<div class="row form-group">
-			<label for="Q4" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">Eco friendly</label>
+			<label for="Q4" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">4.	Explain about size of market or target beneficiary group and level of acceptance/adoption of your innovation (maximum 50-100 words)</label>
 			<div class="col-sm-10">
 				<textarea class="form-control" rows="5" id="Q4" name="Q4" required><?php echo htmlspecialchars($row['Q4']);?></textarea>
 			</div>
 		</div>
 		<div class="row form-group">
-			<label for="Q5" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">Social impact</label>
+			<label for="Q5" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">5.	Quantify kind of immediate benefit (Output), long term benefit (Outcome and impact it will create once will be adopted by them (maximum 50-100 words)</label>
 			<div class="col-sm-10">
 				<textarea class="form-control" rows="5" id="Q5" name="Q5" required><?php echo htmlspecialchars($row['Q5']);?></textarea>
 			</div>
 		</div>
 		<div class="row form-group">
-			<label for="Q5" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">Social impact</label>
+			<label for="Q6" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">6.	Highlight the delivery model on how you will implement or take the innovation to market or target beneficiary for quick adoption. (maximum 50-100 words)</label>
 			<div class="col-sm-10">
-				<textarea class="form-control" rows="5" id="Q5" name="Q5" required><?php echo htmlspecialchars($row['Q5']);?></textarea>
+				<textarea class="form-control" rows="5" id="Q6" name="Q6" required><?php echo htmlspecialchars($row['Q6']);?></textarea>
 			</div>
 		</div>
 		<div class="row form-group">
