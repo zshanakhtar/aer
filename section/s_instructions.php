@@ -1,4 +1,4 @@
-Here the students get any instructions you wish to provide
+<h3 style="text-align:center">Here the students get any instructions you wish to provide
 <br>
 <br>
 <br>
@@ -9,3 +9,4 @@ Here the students get any instructions you wish to provide
 3-Use the 'Preview' pane to verify saved information and submit application
 <br>
 4-Only submitted applications will proceed to the next stage
+</h3>
