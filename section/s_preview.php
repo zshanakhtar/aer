@@ -383,7 +383,6 @@ $("#Q5").html("<?php echo mysqli_real_escape_string($conn,$row['Q5']);?>");
 
 
 function submitform(){
-	alert("Function correct");
 	$.ajax({
            type: "POST",
            url: "request/sformsubmit.php",
