@@ -1,4 +1,4 @@
-<form role="form" action="javascript:void(0)" onsubmit="return false;" class="form-horizontal ajaxsubmitform" id="jallocate1" >
+<form role="form" action="javascript:void(0)" onsubmit="return false;" class="form-horizontal" id="jallocate1" >
 <div class="panel panel-info">
 	<div class="panel-heading" data-toggle="collapse" data-target="#one" style="font-size:150%;"><b>General Information</b><span class="btn btn-info pull-right glyphicon glyphicon-chevron-up"></span></div>
 	<div  class="panel-body collapse in one" id="one">
@@ -11,7 +11,7 @@
             $resultjudges=mysqli_query($conn,"SELECT username FROM regist WHERE usertype='j'");
             while($rowjudges = $resultjudges->fetch_assoc())
             {
-              ?>
+          ?>
 	  			<option value="<?php echo addslashes($rowjudges['username']);?>"><?php echo htmlspecialchars($rowjudges['username']);?></option>
             <?php } ?>
 	  		</select>
@@ -96,6 +96,7 @@
     success: function(response){ 
         $('.subreview').html(response);
         $("#problem_table").DataTable();
+        resetfilters();
         //handle returned arrayList
     },
     error: function(e){  
@@ -105,6 +106,138 @@
     });
   });
 
+
+
+
+var appid_arr=[];
   
 
-  </script>
+    function addappid(appid)
+    {
+      if(!hasappid(appid))
+        appid_arr.push(appid);
+    }
+    function hasappid(appid)
+    {
+      for(var i=0;i<appid_arr.length;i++)
+      {
+        if(appid_arr[i]==appid)
+        {
+         return true;
+        }
+      }
+      return false;
+    }
+    function removeappid(appid)
+    {
+      for(var i=0;i<appid_arr.length;i++)
+      {
+        if(appid_arr[i]==appid)
+        {
+         appid_arr.splice(i,1);
+        }
+      }
+    }
+    function refreshfilteranchors()
+    {
+      var anchorname;
+      var activeanchors=0;
+      // alert(appid_arr);
+      $('.filter-anchor').each(function(){
+        anchorname=$(this).html().trim();
+        // alert(anchorname);
+        if(hasappid(anchorname))
+        {
+          // alert("TRUE");
+          activeanchors++;
+          $(this).addClass('btn-danger');
+          $(this).removeClass('btn-default');
+        }
+        else
+        {
+          // alert("FALSE");
+          $(this).removeClass('btn-danger');
+          $(this).addClass('btn-default');
+        }
+      });
+      $("#activeanchors").val(activeanchors);
+      $("#activeanchors").trigger('change');
+      $("#appid_arr").val(appid_arr);
+      $("#appid_arr").trigger('change');
+    }
+    function resetfilters()
+    {
+      appid_arr=[];
+      refreshfilteranchors();
+      $('.filter-control').removeClass("btn-danger");
+      $('.filter').removeClass("filter-active");
+      $('.filter-control').addClass("btn-default");
+    }
+
+$("#jallocate1").validator();
+
+$("#jallocate1").on('submit',function(e) {
+  // alert('Form submitted');
+	var formid=$(this).attr('id');//get this form's id
+    e.preventDefault(); // avoid to execute the actual submit of the form.
+	setTimeout(function(e){ //wait 50ms to allow validator to execute
+    var url = "request/"+formid+".php"; // the script where you handle the form input.
+	// var data1=$("#"+formid).serialize()+"&flag"+formid+"=Y";
+  // alert($("#"+formid).find('.has-error').length);//No of errors in the form
+  var savesuccess=0;
+  $("#appid_sent").css('width','0%');
+  $("#appid_sent").html('Sent: '+(savesuccess)+'/'+(appid_arr.length));
+  var savewarn=0;
+  $("#appid_exists").css('width','0%');
+  $("#appid_exists").html('Already Exist: '+(savewarn)+'/'+(appid_arr.length));
+  var saveerror=0;
+  $("#appid_error").css('width','0%');
+  $("#appid_error").html('Network Error: '+(saveerror)+'/'+(appid_arr.length));
+  for(var i=0;i<appid_arr.length;i++)
+  {
+    $('#app_id').val(appid_arr[i]);
+    $('#app_id').trigger('change');
+    if($("#"+formid).find('.has-error').length==0) 
+    {
+      $.ajax({
+             type: "POST",
+             url: url,
+             data: $("#"+formid).serialize(), // serializes the form's elements.
+             success: function(response)
+             {
+                // alert(response.toString()); //show response from the php script
+                if(response.toString()=='1') //show response from the php script
+                {
+                  savesuccess+=1;
+                  $("#appid_sent").css('width',(savesuccess/appid_arr.length*100)+'%');
+                  $("#appid_sent").html('Sent: '+(savesuccess)+'/'+(appid_arr.length));
+                }
+                else if(response.toString()=='2') //show response from the php script
+                {
+                  savewarn+=1;
+                  $("#appid_exists").css('width',(savewarn/appid_arr.length*100)+'%');
+                  $("#appid_exists").html('Already Exist: '+(savewarn)+'/'+(appid_arr.length));
+                }
+                else if(response.toString()=='4') //show response from the php script
+                {
+                  savewarn+=1;
+                  $("#appid_error").css('width',(savewarn/appid_arr.length*100)+'%');
+                  $("#appid_error").html('Application already has two judges: '+(savewarn)+'/'+(appid_arr.length));
+                }
+                // alert("Details saved");
+             },
+            error: function(data,response){  
+              saveerror+=1;
+              $("#appid_error").css('width',(saveerror/appid_arr.length*100)+'%');
+              $("#appid_error").html('Network Error: '+(saveerror)+'/'+(appid_arr.length));
+              // alert("Network error");
+              //handle error
+            }
+           });
+  
+    }
+  }
+	}, 50);
+});
+
+</script>
