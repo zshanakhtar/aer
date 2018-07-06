@@ -1,41 +1,42 @@
-<ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#problem1">Problem 1</a></li>
-    <li><a data-toggle="tab" href="#problem2">Problem 2</a></li>
-    <li><a data-toggle="tab" href="#problem3">Problem 3</a></li>
-    <li><a data-toggle="tab" href="#problem4">Problem 4</a></li>
-    <li><a data-toggle="tab" href="#problem5">Problem 5</a></li>
-    <li><a data-toggle="tab" href="#problem6">Problem 6</a></li>
-    <li><a data-toggle="tab" href="#problem7">Problem 7</a></li>
-    
+<ul class="nav nav-tabs" id="problem_tabs">
+      <li class="active"><a data-toggle="tab" data-i="0">Problem 0&nbsp;<span class="btn btn-xs btn-danger" id="pr0_count"></span></a></li>
+      <li><a data-toggle="tab" data-i="1">Problem 1&nbsp;<span class="btn btn-xs btn-danger" id="pr1_count"></span></a></li>
+      <li><a data-toggle="tab" data-i="2">Problem 2&nbsp;<span class="btn btn-xs btn-danger" id="pr2_count"></span></a></li>
+      <li><a data-toggle="tab" data-i="3">Problem 3&nbsp;<span class="btn btn-xs btn-danger" id="pr3_count"></span></a></li>
+      <li><a data-toggle="tab" data-i="4">Problem 4&nbsp;<span class="btn btn-xs btn-danger" id="pr4_count"></span></a></li>
+      <li><a data-toggle="tab" data-i="5">Problem 5&nbsp;<span class="btn btn-xs btn-danger" id="pr5_count"></span></a></li>
+      <li><a data-toggle="tab" data-i="6">Problem 6&nbsp;<span class="btn btn-xs btn-danger" id="pr6_count"></span></a></li>
+      <li><a data-toggle="tab" data-i="7">Problem 7&nbsp;<span class="btn btn-xs btn-danger" id="pr7_count"></span></a></li>
   </ul>
+  <div class="tab-content subreview">
 
-  <div class="tab-content">
-    <div id="problem1" class="tab-pane fade in active">
-      <h3>Problem 1</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-	<div id="problem2" class="tab-pane fade">
-      <h3>Problem 2</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-	<div id="problem3" class="tab-pane fade">
-      <h3>Problem 3</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-	<div id="problem4" class="tab-pane fade">
-      <h3>Problem 4</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-	<div id="problem5" class="tab-pane fade">
-      <h3>Problem 5</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-	<div id="problem6" class="tab-pane fade">
-      <h3>Problem 6</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-	<div id="problem7" class="tab-pane fade">
-      <h3>Problem 7</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
   </div>
+
+
+
+
+  <script>
+  $(document).ready(function(){
+    $($("#problem_tabs li a")[0]).click();
+  });
+  $("#problem_tabs li a").on('click',function(){
+    var i=$(this).data("i");
+    $.ajax({
+    url: "request/getsubmodule.php",
+    type: "POST",
+    data: "module=view_app"+"&submodule=problem"+"&i="+i,
+    success: function(response){ 
+        $('.subreview').html(response);
+        $("#problem_table").DataTable();
+        //handle returned arrayList
+    },
+    error: function(e){  
+        alert("error");
+        //handle error
+    } 
+    });
+  });
+
+  
+
+  </script>
