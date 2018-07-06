@@ -1,8 +1,4 @@
 
-$(document).ready(function(){
-
-});
-
 var savesuccess=0;;
 
 function submitmem(elem,str){

@@ -12,12 +12,9 @@
 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
   <ul class="nav navbar-nav">
-<li class="active"><a href="#page1" data-module="summary">Summary</a></li>
-<li><a href="#page2" data-module="view_app">View Applications</a></li>
-<li><a href="#page3" data-module="create_judge">Create Judges</a></li>
-<li><a href="#page4" data-module="allocate_judge">Allocate Judges</a></li>
-<li><a href="#page5" data-module="under">Under Cons</a></li>
-<li><a href="#page6" data-module="under">Under Cons</a></li>
+<li class="active"><a href="javascript:void(0)" data-module="summary">Summary</a></li>
+<li><a href="javascript:void(0)" data-module="evaluate">Evaluate</a></li>
+<li><a href="javascript:void(0)" data-module="preview">Evaluated Peview</a></li>
   </ul>
 </div>
 </div>
@@ -123,11 +120,9 @@ color: #fff;
           color: #333;
     }
 }
-  
-  </style>
+</style>
 
-
-  <script> 
+<script> 
 
 $( '#topheader .navbar-nav a' ).on( 'click', function () {
 $( '#topheader .navbar-nav' ).find( 'li.active' ).removeClass( 'active' );
@@ -149,6 +144,4 @@ $.ajax({
 
 
 });
-  
-  
-  </script>
+</script>
