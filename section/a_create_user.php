@@ -1,6 +1,6 @@
 <form role="form" action="javascript:void(0)" onsubmit="return false;" class="ajaxsubmitform" id="ucreate" >
 <div class="panel panel-info">
-	<div class="panel-heading" data-toggle="collapse" data-target="#one" style="font-size:150%;"><b>User Creation</b><span class="btn btn-info pull-right glyphicon glyphicon-chevron-up"></span></div>
+	<div class="panel-heading" data-toggle="collapse" data-target="#one" style="font-size:150%;"><b>User Information</b><span class="btn btn-info pull-right glyphicon glyphicon-chevron-up"></span></div>
 	<div  class="panel-body collapse in one" id="one">
         <div class="form-group col-sm-12">
           <label for="roll" class="col-sm-2 control-label" style="color:#000099; font-size:14px">Role</label>
