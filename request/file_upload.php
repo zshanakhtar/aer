@@ -2,7 +2,7 @@
 	include 'connection.php'; 
 	session_start();
     extract($_SESSION);
-echo $username;
+	echo $username;
 	$fileExistsFlag = 0; 
 	$fileName = $username.'.pdf';
 	
@@ -11,7 +11,7 @@ echo $username;
 	*/
 	
 		$target = "section/";		
-		$fileTarget = $target.$fileName;	
+		$fileTarget = $target.$fileName;
 		$tempFileName = $_FILES["Filename"]["tmp_name"];
 		//$fileDescription = $_POST['Description'];	
 		$result = move_uploaded_file($tempFileName,$fileTarget);
