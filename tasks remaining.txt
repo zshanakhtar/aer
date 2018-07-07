@@ -1,0 +1,8 @@
+1- provide all state names
+2- duplicate upload box to create two fields
+3- update filepath for uploads in DB
+4- provide institute pid verification
+5- provide team leader aadhar in application preview
+6- restrict updation of team leader to only valid fields
+7- provide ciies on the basis of states
+8- restrict registration for already registered email addresses, mobile numbers
