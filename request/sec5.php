@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
         if($row = $resultsum->fetch_assoc())
         {	
             $fileName = $username.'.pdf';
-            $target = "section/";
+            $target = "../Documents/";
             $fileTarget = $target.$fileName;
             $tempFileName = $_FILES["myPDF"]["tmp_name"];
             $result = move_uploaded_file($tempFileName,$fileTarget);
