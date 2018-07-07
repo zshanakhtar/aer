@@ -79,6 +79,12 @@
                 </div>
   </div>
   <div class="form-group col-sm-12">
+    <label for="spoc_aadhar" class="col-sm-2 control-label" style="color:#000099; font-size:14px">Aadhar Number</label>
+	<div class="col-sm-10">
+                  <input id="spoc_aadhar" name="spoc_aadhar" type="text" class="form-control" placeholder="Enter Aadhar Number" required>
+                </div>
+  </div>
+  <div class="form-group col-sm-12">
     <label for="spoc_email" class="col-sm-2 control-label" style="color:#000099; font-size:14px">Email</label>
 	<div class="col-sm-10">
     <input type="email" class="form-control" id="spoc_email" name="spoc_email" placeholder="Email" data-error="Email Is Invalid" onkeyup="checkemail();" required>

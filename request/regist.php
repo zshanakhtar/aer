@@ -27,7 +27,7 @@ $FILLregist="INSERT INTO regist (username,password,usertype) values ('$app_id','
 
 $conn->query($FILLregist);
 
-$FILL="INSERT INTO student (spoc_name,spoc_email,spoc_mobile,app_id,flagsec1,flagsec2,flagsec3,flagsec4,flagsec5,flagsec6) values ('$spoc_name','$spoc_email','$spoc_mobile','$app_id','N','N','N','N','N','N')";
+$FILL="INSERT INTO student (spoc_name,spoc_email,spoc_mobile,app_id,spoc_aadhar,flagsec1,flagsec2,flagsec3,flagsec4,flagsec5,flagsec6) values ('$spoc_name','$spoc_email','$spoc_mobile','$app_id','$spoc_aadhar','N','N','N','N','N','N')";
 
 if ($conn->query($FILL) === TRUE) {
 	

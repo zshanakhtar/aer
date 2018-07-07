@@ -296,6 +296,10 @@ $("#mentor_mobile").val("<?php echo addslashes($row['mentor_mobile']);?>");
 $("#mentor_address").val("<?php echo addslashes($row['mentor_address']);?>");
 $("#mentor_pin").val("<?php echo addslashes($row['mentor_pin']);?>");
 $("#mentor_aadhar").val("<?php echo addslashes($row['mentor_aadhar']);?>");
+$("#Q7").val("<?php echo addslashes($row['Q7']);?>");
+$("#Q8").val("<?php echo addslashes($row['Q8']);?>");
+$("#Q9").val("<?php echo addslashes($row['Q9']);?>");
+$("#Q10").val("<?php echo addslashes($row['Q10']);?>");
 
 
 

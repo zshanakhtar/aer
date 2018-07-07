@@ -56,6 +56,46 @@
 			</div>
 		</div>
 		<div class="row form-group">
+			<label for="Q7" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">7.	Do you have developed prototype already? (Yes/ No)</label>
+			<div class="col-sm-10">
+				<select required class="form-control" onchange="" id="Q7" name="Q7">
+					<option value="">--Select--</option>
+					<option value="Yes">Yes</option>
+					<option value="No">No</option>
+				</select>
+			</div>
+		</div>
+		<div class="row form-group">
+			<label for="Q8" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">8.	Does your innovation have Intellectual Property rights? (Yes/No)</label>
+			<div class="col-sm-10">
+				<select required class="form-control" onchange="" id="Q8" name="Q8">
+					<option value="">--Select--</option>
+					<option value="Yes">Yes</option>
+					<option value="No">No</option>
+				</select>
+			</div>
+		</div>
+		<div class="row form-group">
+			<label for="Q9" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">9.	Do you have field tested the applicability of innovation/prototype? (Yes/No)</label>
+			<div class="col-sm-10">
+				<select required class="form-control" onchange="" id="Q9" name="Q9">
+					<option value="">--Select--</option>
+					<option value="Yes">Yes</option>
+					<option value="No">No</option>
+				</select>
+			</div>
+		</div>
+		<div class="row form-group">
+			<label for="Q10" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">10.	Do you feel that, your innovation have potential to take in form of business/start-up? (Yes/No)</label>
+			<div class="col-sm-10">
+				<select required class="form-control" onchange="" id="Q10" name="Q10">
+					<option value="">--Select--</option>
+					<option value="Yes">Yes</option>
+					<option value="No">No</option>
+				</select>
+			</div>
+		</div>
+		<div class="row form-group">
 				<input id="flagsec6" type="text" value="N" class="form-control hidden" />
 		</div>
 		<div class="row form-group">
@@ -68,18 +108,66 @@
 			</div>
 		</div>
 		</form>
-		<form method="post" action="request/file_upload.php" enctype="multipart/form-data">
+		<form role="form" action="javascript:void(0)" onsubmit="return false;" class="form-horizontal" id="sec5" enctype="multipart/form-data">
 		<div class="row form-group">
-			<label for="Filename" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">File Upload</label>
-			<div class="col-sm-10">
-			<input type="file" name="Filename" required> 
-			<input TYPE="submit" name="upload" value="Upload"/>
+			<label for="uploadPDF" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">File Upload</label>
+			<label id="Filename" class="col-sm-8 btn btn-default">
+				<input id="uploadPDF" type="file" name="myPDF"/>&nbsp;
+			</label>
+			<div class="col-sm-2">
+				<input type="button" class="btn btn-default" value="Preview" data-toggle="modal" data-target="#preview_1" onclick="PreviewImage();" />
+				<input type="submit" class="btn btn-default" value="Upload" />
 			</div>
-		</div>	
+			<div class="modal fade" id="preview_1" role="dialog">
+				<div class="modal-dialog">
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title" style="color:#000099; font-size:14px">File Preview</h4>
+						</div>
+						<div class="modal-body" style="color:#000099; font-size:14px">
+							<iframe id="viewer" frameborder="0" scrolling="no" class="col-xs-12" height="600"></iframe>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<script type="text/javascript">
+			function PreviewImage() {
+				pdffile=document.getElementById("uploadPDF").files[0];
+				pdffile_url=URL.createObjectURL(pdffile);
+				$('#viewer').attr('src',pdffile_url);
+				}
+			</script>
 		</form>
 	</div>
 </div>
 
 <script>
-	
+	$("#sec5").on('submit',function(e) {
+	var formid=$(this).attr('id');//get this form's id
+    e.preventDefault(); // avoid to execute the actual submit of the form.
+	setTimeout(function(e){ //wait 50ms to allow validator to execute
+    var url = "request/"+formid+".php"; // the script where you handle the form input.
+	var formData = new FormData($("#sec5")[0]);
+$.ajax({
+url: url,
+type: 'POST',
+data: formData,
+datatype: 'json',
+success: function(data) {
+alert(data);
+},
+error: function(xhr, status, error) {
+alert(xhr.responseText);
+},
+cache: false,
+contentType: false,
+processData: false
+});
+	}, 50);
+});
 </script>

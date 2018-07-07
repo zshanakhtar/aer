@@ -30,7 +30,7 @@ else if($member_action=="del")
 else if($member_action=="update")
 {
 
-	 $query="UPDATE teammember SET member_name='$member_name',member_email ='$member_email',gender='$gender',father_name='$father_name',year='$year',team_mobile='$team_mobile',roll='$roll',stream='$member_stream' WHERE app_id='$username' AND mem_id='$mem_id'";
+	 $query="UPDATE teammember SET member_name='$member_name',member_email ='$member_email',member_age ='$member_age',gender='$gender',father_name='$father_name',year='$year',team_mobile='$team_mobile',roll='$roll',stream='$member_stream' WHERE app_id='$username' AND mem_id='$mem_id'";
 	mysqli_query($conn, $query);
 	if($roll=='Team Leader')
 		mysqli_query($conn, "UPDATE student SET flagsec3='Y' WHERE app_id='$username'");
