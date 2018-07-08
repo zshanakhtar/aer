@@ -7,9 +7,9 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
 extract($_POST);
 extract($_SESSION);
 
+$size = (int) $_SERVER['CONTENT_LENGTH'];
 
-
-// echo $Q7;
+echo "Size of request:".$size."\n";
 
 $Q1 = mysqli_real_escape_string($conn, $Q1);
 $Q2 = mysqli_real_escape_string($conn, $Q2);

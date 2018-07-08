@@ -293,6 +293,114 @@ $resultteam=mysqli_query($conn,$query);
 	</div>
 </div>
 </form>
+<form role="form" action="javascript:void(0)" onsubmit="return false;" class="form-horizontal" id="sec5"  enctype="multipart/form-data">
+<div class="panel panel-info">
+	<div class="panel-heading" data-toggle="collapse" data-target="#five" style="font-size:150%;"><b>Upload Necessary Documents</b><span class="btn btn-info pull-right glyphicon glyphicon-chevron-up"></span></div>
+	<div  class="panel-body collapse in one" id="five">
+		<div class="row form-group">
+			<label for="NOC_pdf" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">College NOC</label>
+			<label class="col-sm-8 btn btn-default">
+				<input id="NOC_pdf" type="file" class="hidden" name="NOC_pdf" accept="application/pdf"/>
+				<span class="glyphicon glyphicon-folder-open">
+				</span>
+				<br>
+				<span>
+					Click to browse or drag and drop a file here
+				</span>
+			</label>
+			<div class="col-sm-2">
+				<input type="button" class="btn btn-default" value="Preview" data-toggle="modal" data-target="#PDF_preview" data-file="NOC_pdf" onclick="PreviewPDF(this);" />
+			</div>
+		</div>
+		<div class="row form-group">
+			<label for="Summary_pdf" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">Project Summary</label>
+			<label class="col-sm-8 btn btn-default">
+				<input id="summary_pdf" type="file" class="hidden" name="summary_pdf" accept="application/pdf"/>
+				<span class="glyphicon glyphicon-folder-open">
+				</span>
+				<br>
+				<span>
+					Click to browse or drag and drop a file here
+				</span>
+			</label>
+			<div class="col-sm-2">
+				<input type="button" class="btn btn-default" value="Preview" data-toggle="modal" data-target="#PDF_preview" data-file="summary_pdf" onclick="PreviewPDF(this);" />
+			</div>
+		</div>
+		<div class="row form-group">
+			<div class="col-sm-offset-5 col-sm-2">
+				<button type="submit" class="btn btn-warning col-sm-6 col-sm-offset-3">
+					<span class="glyphicon glyphicon-floppy-disk"></span>
+					<span>Upload</span>
+				</button>
+			</div>
+		</div>
+			<div class="modal fade" id="PDF_preview" role="dialog">
+				<div class="modal-dialog">
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title" style="color:#000099; font-size:14px">File Preview</h4>
+						</div>
+						<div class="modal-body" style="color:#000099; font-size:14px">
+							<iframe id="PDF_viewer" frameborder="0" scrolling="no" class="col-xs-12" height="600"></iframe>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<script type="text/javascript">
+			function PreviewPDF(elem) {
+				pdffile=document.getElementById($(elem).data("file")).files[0];
+				alert("File size:"+pdffile.size/1024/1024+"MB");
+				pdffile_url=URL.createObjectURL(pdffile);
+				$('#PDF_viewer').attr('src',pdffile_url);
+				}
+			</script>
+	</div>
+
+
+
+</div>
+</form>
+
+<script>
+	$("#sec5").on('submit',function(e) {
+	var formid=$(this).attr('id');//get this form's id
+    e.preventDefault(); // avoid to execute the actual submit of the form.
+	setTimeout(function(e){ //wait 50ms to allow validator to execute
+    var url = "request/"+formid+".php"; // the script where you handle the form input.
+	var formData = new FormData($("#sec5")[0]);
+	if($("#NOC_pdf")[0].files[0].size/1024/1024<2 && $("#summary_pdf")[0].files[0].size/1024/1024<2)
+	{
+		$.ajax({
+			url: url,
+			type: 'POST',
+			data: formData,
+			datatype: 'json',
+			success: function(data) {
+				alert(data);
+				},
+				error: function(xhr, status, error) {
+					alert(data);
+					alert(xhr.responseText);
+					},
+					cache: false,
+					contentType: false,
+					processData: false
+					});
+	}
+	else
+	{
+		alert("Please upload files smaller than 2MB");
+	}
+
+	}, 50);
+});
+</script>
 
 <?php
 $resultsum=mysqli_query($conn,"SELECT * FROM student WHERE app_id='$username'");
