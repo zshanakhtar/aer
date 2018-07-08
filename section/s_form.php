@@ -305,7 +305,7 @@ $resultteam=mysqli_query($conn,$query);
 				</span>
 				<br>
 				<span>
-					Click to browse or drag and drop a file here
+					Click to browse
 				</span>
 			</label>
 			<div class="col-sm-2">
@@ -320,7 +320,7 @@ $resultteam=mysqli_query($conn,$query);
 				</span>
 				<br>
 				<span>
-					Click to browse or drag and drop a file here
+					Click to browse
 				</span>
 			</label>
 			<div class="col-sm-2">
