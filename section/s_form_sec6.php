@@ -112,7 +112,7 @@
 		<div class="row form-group">
 			<label for="uploadPDF" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">File Upload</label>
 			<label id="Filename" class="col-sm-8 btn btn-default">
-				<input id="uploadPDF" type="file" name="myPDF"/>&nbsp;
+				<input id="uploadPDF" type="file" name="myPDF" accept="application/pdf"/>&nbsp;
 			</label>
 			<div class="col-sm-2">
 				<input type="button" class="btn btn-default" value="Preview" data-toggle="modal" data-target="#preview_1" onclick="PreviewImage();" />

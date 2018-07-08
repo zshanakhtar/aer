@@ -32,16 +32,16 @@ $FILL="INSERT INTO student (spoc_name,spoc_email,spoc_mobile,app_id,spoc_aadhar,
 if ($conn->query($FILL) === TRUE) {
 	
 	$message="Dear Applicant, Your registration has been done successfully. Your Application number is: ".$app_id;
-	include("testsms.php");
+	include("msg_test.php");
 	$mclass = new sendSms();
-    $mclass->sendSmsToUser($message,$mobile,". AICTE",238161,"registration","vishwakarma");
+    $mclass->sendSmsToUser($message,$spoc_mobile,". AICTE",238161,"registration","vishwakarma");
 	 
 	 $subject="Application ID for Vishwakarma Award";
 	 $body="Dear Applicant,<br>
 	 Your registration has been done successfully. Your Application number is: ".$app_id;
-	 sendmail($subject,$body,$email,"Applicant");
-	 header('Refresh: 1; URL=index.php');	
-	 echo "<script> alert('Your registration done Succesfully. Check your mail for more information.');</script>";
+	// sendmail($subject,$body,$spoc_email,"Applicant");
+	 header('Refresh: 1; URL=logout.php');	
+	 echo "<script> alert('Your registration done Succesfully. Check your mobile and mail for more Application ID.');</script>";
 		 
 } else {
     echo "Error: " . $FILL . "<br>" . $conn->error;
