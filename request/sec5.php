@@ -18,19 +18,33 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
         if($row = $resultsum->fetch_assoc())
         {	
             $fileName = $username.'.pdf';
-            $target = "../Documents/";
+            $target = "Abstract/";
             $fileTarget = $target.$fileName;
             $tempFileName = $_FILES["myPDF"]["tmp_name"];
             $result = move_uploaded_file($tempFileName,$fileTarget);
-            if($result) { 
-                echo "Your file <html><b><i>".$fileName."</i></b></html> has been successfully uploaded";		
-                $query = "INSERT INTO file_upload(filepath,filename) VALUES ('$fileTarget','$fileName')";	
-                mysqli_query($conn, $query);
+            $file_type=$_FILES['myPDF']['type'];
+            if ($file_type!="application/pdf")
+            {
+                echo "Only PDF Files allowed";
             }
-            else {			
-                echo "Sorry !!! There was an error in uploading your file";			
-            }
+            else
+            {
+                  if($result)
+                   { 
+                     echo "Your file <html><b><i>".$fileName."</i></b></html> has been successfully uploaded";		
+                    $query = "INSERT INTO file_upload(filepath_abstract,File_abstract) VALUES ('$fileTarget','$fileName')";
+                    //$link->query($query) or die("Error : ".mysqli_error($link));		
+                    mysqli_query($conn, $query);
+                   }
+                    else 
+                    {			
+                        echo "Sorry !!! There was an error in uploading your file";			
+                    }
+        
             mysqli_close($conn);
+            }
+            
+     
             // 	$query ="UPDATE student set similar_area='$similar_area', society_problem ='$society_problem',publications='$publications',student_feedback='$student_feedback',achievement='$achievement', patents='$patents',flagsec5='$flagsec5'   
             // 		WHERE app_id='$username'";
             // 		mysqli_query($conn, $query);

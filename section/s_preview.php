@@ -34,8 +34,24 @@ Application Status
 </td>
 <td id="app_status" colspan="2">5
 </td>
-
 </tr>
+
+<tr>
+<td colspan="6">
+Team Leader Name
+</td>
+<td id="spoc_name" colspan="2">5
+</td>
+</tr>
+
+<tr>
+<td colspan="6">
+Team Leader Aadhar
+</td>
+<td id="spoc_aadhar" colspan="2">5
+</td>
+</tr>
+
 <tr>
 <td colspan="6">
 Team Name
@@ -43,6 +59,8 @@ Team Name
 <td id="team_name" colspan="2">5
 </td>
 </tr>
+
+
 
 <tr>
 <td colspan="6">
@@ -386,6 +404,8 @@ About Your Project
 $("#app_id").html("<?php echo $app_id;?>");
 $("#app_status").html("<?php echo htmlspecialchars($row['app_status']);?>");
 $("#team_name").html("<?php echo htmlspecialchars($row['team_name']);?>");
+$("#spoc_name").html("<?php echo htmlspecialchars($row['spoc_name']);?>");
+$("#spoc_aadhar").html("<?php echo htmlspecialchars($row['spoc_aadhar']);?>");
 $("#project_name").html("<?php echo htmlspecialchars($row['project_name']);?>");
 $("#problem").html("<?php echo htmlspecialchars($row['problem']);?>");
 $("#award_cat").html("<?php echo htmlspecialchars($row['award_cat']);?>");
