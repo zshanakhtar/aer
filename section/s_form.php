@@ -142,6 +142,7 @@ $resultteam=mysqli_query($conn,$query);
 			<label for="inst_state" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">State</label>
 			<div class="col-sm-10">
 				<select required class="form-control" id="inst_state" name="inst_state" required>
+					<option value="">--Select--</option>
 					<option value="Andhra Pradesh">Andhra Pradesh</option>
 					<option value="Arunachal Pradesh">Arunachal Pradesh</option>
 					<option value="Assam">Assam</option>
@@ -151,7 +152,7 @@ $resultteam=mysqli_query($conn,$query);
 					<option value="Gujarat">Gujarat</option>
 					<option value="Haryana">Haryana</option>
 					<option value="Himachal Pradesh">Himachal Pradesh</option>
-					<option value="Jammu">Jammu & Kashmir</option>
+					<option value="Jammu & Kashmir">Jammu & Kashmir</option>
 					<option value="Jharkhand">Jharkhand</option>
 					<option value="Karnataka">Karnataka</option>
 					<option value="Kerala">Kerala</option>
