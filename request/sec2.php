@@ -13,6 +13,8 @@ extract($_SESSION);
 
 $inst_name = mysqli_real_escape_string($conn, $inst_name);
 $inst_address = mysqli_real_escape_string($conn, $inst_address );
+$inst_city = mysqli_real_escape_string($conn,$inst_city);
+$inst_principal = mysqli_real_escape_string($conn,$inst_principal);
 $resultsum=mysqli_query($conn,"SELECT * FROM student WHERE app_id='$username' AND app_status='Submitted'");
    if($row = $resultsum->fetch_assoc())
 	{

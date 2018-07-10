@@ -12,6 +12,11 @@ extract($_SESSION);
 // echo $username;
 
 $mentor_address = mysqli_real_escape_string($conn,$mentor_address);
+$stream = mysqli_real_escape_string($conn,$stream);
+$qualification = mysqli_real_escape_string($conn,$qualification);
+$mentor_name = mysqli_real_escape_string($conn,$mentor_name);
+$mentor_desi = mysqli_real_escape_string($conn,$mentor_desi);
+
 $resultsum=mysqli_query($conn,"SELECT * FROM student WHERE app_id='$username' AND app_status='Submitted'");
    if($row = $resultsum->fetch_assoc())
 	{
