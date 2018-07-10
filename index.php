@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AER Portal-Login, Register and more</title>
 
 <!-- Bootstrap -->
@@ -97,8 +97,7 @@ if(isset($_SESSION['usertype'])) { // if already login
 <hr>
 <div class="row">
     <div class="col-sm-4 col-xs-12">
-      <div class="panel panel-default text-center">
-      <div class="panel panel-info">
+      <div class="panel panel-info text-center">
         <div class="panel-heading">
           <h1><i class="fa fa-calendar" aria-hidden="true"></i> Important Dates</h1>
         </div>
@@ -108,31 +107,28 @@ if(isset($_SESSION['usertype'])) { // if already login
   
 <p>
           <li>Online application will start from:xx-yy-zzzz</li><br>
+          <li>Last date to submit the application:xx-yy-zzzz</li><br>
+          <li>Last date to submit the application:xx-yy-zzzz</li><br>
               <li>Last date to submit the application:xx-yy-zzzz</li><br>
-  <li>Last date to submit the application:xx-yy-zzzz</li><br>
               <li>Last date to submit the application:xx-yy-zzzz</li><br>
-              <li>Last date to submit the application:xx-yy-zzzz</li><br></p>
 </ol>
+</p>
 <br><br>
         </div>
+</div>
+<div class="panel panel-info text-center">
         <div class="panel-heading">
-          <h1><i class="fa fa-download" aria-hidden="true"></i> Download</h1>
+          <h1><i class="fa fa-download" aria-hidden="true"></i>Download</h1>
         </div>
       <div class="panel-body">
-         <ol align="left">
-  <p>
-  
-
-          <li>Online application will start from:xx-yy-zzzz</li><br>
-              <li>Last date to submit the application:xx-yy-zzzz</li><br>
- <li>Last date to submit the application:xx-yy-zzzz</li><br>
-    </p>         
-</ol>
-<br><br>
+      <ul class="list-group">
+        <li class="list-group-item"><a href="downloads/Guidelines-Chattra-Vishwakarma_2018.pdf" target="_blank">Guidelines</a><span class="badge">10-07-2018</span></li>
+        <li class="list-group-item">Deleted <span class="badge">5</span></li>
+        <li class="list-group-item">Warnings <span class="badge">3</span></li>
+      </ul> 
         </div>
       </div> 
 </div>
-    </div> 
 <div class="col-sm-8 col-xs-12">
   <h3>To recognize and honour innovative work of the students displaying exceptional skills in
   different Engineering streams. Awards will be given in following categories separately
