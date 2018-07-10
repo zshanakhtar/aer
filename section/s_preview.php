@@ -9,7 +9,8 @@ $row = $resultsum->fetch_assoc();
 $resultsum1=mysqli_query($conn,"SELECT * FROM regist WHERE username='$username'");
 $row1 = $resultsum1->fetch_assoc();
 ?>
-<table  class ="table table-bordered table-striped" >
+<div style="overflow-x:auto;">
+<table  class ="table table-bordered table-striped table-responsive" >
 <thead>
 
 </thead>
@@ -34,8 +35,24 @@ Application Status
 </td>
 <td id="app_status" colspan="2">5
 </td>
-
 </tr>
+
+<tr>
+<td colspan="6">
+Team Leader Name
+</td>
+<td id="spoc_name" colspan="2">5
+</td>
+</tr>
+
+<tr>
+<td colspan="6">
+Team Leader Aadhar
+</td>
+<td id="spoc_aadhar" colspan="2">5
+</td>
+</tr>
+
 <tr>
 <td colspan="6">
 Team Name
@@ -43,6 +60,8 @@ Team Name
 <td id="team_name" colspan="2">5
 </td>
 </tr>
+
+
 
 <tr>
 <td colspan="6">
@@ -279,84 +298,84 @@ About Your Project
 
 
 <tr>
-<td colspan="2">
+<td colspan="5">
 1.	Explain about the Problem/Development Challenge/Market Need/Opportunity Identified and how big is the problem. (maximum 50-100 words)
 </td>
-<td id="Q1" colspan="6">5
+<td id="Q1" colspan="3">5
 </td>
 </tr>
 
 <tr>
-<td colspan="2">
+<td colspan="5">
 2.	Explain about Innovation of Solution that you are proposing to address the Problem/Development Challenge/Market Need/Opportunity Identified (maximum 50-100 words)
 </td>
-<td id="Q2" colspan="6">5
+<td id="Q2" colspan="3">5
 </td>
 </tr>
 
 <tr>
-<td colspan="2">
+<td colspan="5">
 3.	Explain the Technology and Intellectual property right component involved in your proposed innovative solutions (maximum 50-100 words)
 </td>
-<td id="Q3" colspan="6">5
+<td id="Q3" colspan="3">5
 </td>
 </tr>
 
 <tr>
-<td colspan="2">
+<td colspan="5">
 4.	Explain about size of market or target beneficiary group and level of acceptance/adoption of your innovation (maximum 50-100 words)
 </td>
-<td id="Q4" colspan="6">5
+<td id="Q4" colspan="3">5
 </td>
 </tr>
 
 <tr>
-<td colspan="2">
+<td colspan="5">
 5.	Quantify kind of immediate benefit (Output), long term benefit (Outcome and impact it will create once will be adopted by them (maximum 50-100 words)
 </td>
-<td id="Q5" colspan="6">5
+<td id="Q5" colspan="3">5
 </td>
 </tr>
 
 <tr>
-<td colspan="2">
+<td colspan="5">
 6.	Highlight the delivery model on how you will implement or take the innovation to market or target beneficiary for quick adoption. (maximum 50-100 words)
 </td>
-<td id="Q6" colspan="6">5
+<td id="Q6" colspan="3">5
 </td>
 </tr>
 
 <tr>
-<td colspan="2">
+<td colspan="5">
 7.	Do you have developed prototype already? (Yes/ No)
 </td>
-<td id="Q7" colspan="6">5
+<td id="Q7" colspan="3">5
 </td>
 </tr>
 
 <tr>
-<td colspan="2">
+<td colspan="5">
 8.	Does your innovation have Intellectual Property rights? (Yes/No)
 </td>
-<td id="Q8" colspan="6">5
+<td id="Q8" colspan="3">5
 </td>
 </tr>
 
 
 <tr>
-<td colspan="2">
+<td colspan="5">
 9.	Do you have field tested the applicability of innovation/prototype? (Yes/No)
 </td>
-<td id="Q9" colspan="6">5
+<td id="Q9" colspan="3">5
 </td>
 </tr>
 
 
 <tr>
-<td colspan="2">
+<td colspan="5">
 10.	Do you feel that, your innovation have potential to take in form of business/start-up? (Yes/No)
 </td>
-<td id="Q10" colspan="6">5
+<td id="Q10" colspan="3">5
 </td>
 </tr>
 
@@ -382,10 +401,13 @@ About Your Project
 </tbody>
 
 </table>
+</div>
 <script>
 $("#app_id").html("<?php echo $app_id;?>");
 $("#app_status").html("<?php echo htmlspecialchars($row['app_status']);?>");
 $("#team_name").html("<?php echo htmlspecialchars($row['team_name']);?>");
+$("#spoc_name").html("<?php echo htmlspecialchars($row['spoc_name']);?>");
+$("#spoc_aadhar").html("<?php echo htmlspecialchars($row['spoc_aadhar']);?>");
 $("#project_name").html("<?php echo htmlspecialchars($row['project_name']);?>");
 $("#problem").html("<?php echo htmlspecialchars($row['problem']);?>");
 $("#award_cat").html("<?php echo htmlspecialchars($row['award_cat']);?>");
