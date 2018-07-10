@@ -17,38 +17,50 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
         $resultsum=mysqli_query($conn,"SELECT * FROM student WHERE app_id='$username'");
         if($row = $resultsum->fetch_assoc())
         {	
-            $fileName = $username.'.pdf';
-            $target = "Abstract/";
-            $fileTarget = $target.$fileName;
-            $tempFileName = $_FILES["myPDF"]["tmp_name"];
-            $result = move_uploaded_file($tempFileName,$fileTarget);
-            $file_type=$_FILES['myPDF']['type'];
-            if ($file_type!="application/pdf")
+            $fileNameNOC = trim($username).'_NOC.pdf';
+            $targetNOC = "../NOC/";
+            $fileTargetNOC = $targetNOC.$fileNameNOC;
+            $tempFileNameNOC = $_FILES["NOC_pdf"]["tmp_name"];
+            $resultNOC = move_uploaded_file($tempFileNameNOC,$fileTargetNOC);
+            $file_typeNOC=$_FILES['NOC_pdf']['type'];
+            $fileNamesummary = trim($username).'_summary.pdf';
+            $targetsummary = "../summary/";
+            $fileTargetsummary = $targetsummary.$fileNamesummary;
+            $tempFileNamesummary = $_FILES["summary_pdf"]["tmp_name"];
+            $resultsummary = move_uploaded_file($tempFileNamesummary,$fileTargetsummary);
+            $file_typeNOC=$_FILES['summary_pdf']['type'];
+            if ($file_typeNOC!="application/pdf" && $file_typesummary!="application/pdf")
             {
-                echo "Only PDF Files allowed";
+                echo "\nOnly PDF Files allowed";
             }
             else
             {
-                  if($result)
+                  if($resultNOC)
                    { 
-                     echo "Your file <html><b><i>".$fileName."</i></b></html> has been successfully uploaded";		
-                    $query = "INSERT INTO file_upload(filepath_abstract,File_abstract) VALUES ('$fileTarget','$fileName')";
-                    //$link->query($query) or die("Error : ".mysqli_error($link));		
-                    mysqli_query($conn, $query);
+                     echo "Your NOC has been successfully uploaded\n";		
+                     		
+                     $query = "UPDATE student set NOC_filepath='$fileTargetNOC',NOC_file='$fileNameNOC' WHERE app_id='$username'";
+                     mysqli_query($conn, $query);
+                     
                    }
                     else 
                     {			
-                        echo "Sorry !!! There was an error in uploading your file";			
+                        echo "Sorry !!! There was an error in uploading your NOC";
                     }
-        
+                    if($resultsummary)
+                   { 
+                     	
+                     echo "Your summary has been successfully uploaded";		
+                     
+                     $query = "UPDATE student set summary_filepath='$fileTargetsummary',summary_file='$fileNamesummary' WHERE app_id='$username'";
+                     mysqli_query($conn, $query);
+                   }
+                    else 
+                    {			
+                        echo "Sorry !!! There was an error in uploading your summary";	
+                    }
             mysqli_close($conn);
             }
-            
-     
-            // 	$query ="UPDATE student set similar_area='$similar_area', society_problem ='$society_problem',publications='$publications',student_feedback='$student_feedback',achievement='$achievement', patents='$patents',flagsec5='$flagsec5'   
-            // 		WHERE app_id='$username'";
-            // 		mysqli_query($conn, $query);
-            // 	echo "Mentor Details saved";
         }
         else
         {
