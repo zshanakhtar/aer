@@ -34,7 +34,7 @@
         <div class="tab-content">
           <div class="tab-pane active" id="Login">
 		  
-            <form data-toggle="validator" role="form" class="form-horizontal" method="post" action="request/login.php">
+            <form data-toggle="validator" role="form" class="form-horizontal" method="post" action="login.php">
               <div class="form-group">
                 <label for="l_username" class="col-sm-3 control-label" style="color:#000099; font-size:14px">Username</label>
                 <div class="col-sm-9">
