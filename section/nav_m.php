@@ -12,8 +12,11 @@
 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
   <ul class="nav navbar-nav">
-<li><a href="javascript:void(0)" data-module="form">Apply Online</a></li>
-<li><a href="javascript:void(0)" data-module="preview">Preview Application</a></li>
+<li class="active"><a href="javascript:void(0)" data-module="summary">Summary</a></li>
+<li><a href="javascript:void(0)" data-module="view_app">View Applications</a></li>
+<li><a href="javascript:void(0)" data-module="create_judge">Create Judges</a></li>
+<li><a href="javascript:void(0)" data-module="allocate_judge">Allocate Judges</a></li>
+<li><a href="javascript:void(0)" data-module="under">Under Cons</a></li>
   </ul>
 </div>
 </div>
@@ -21,7 +24,6 @@
 </div>
 
 <style>
-
   .navbar .navbar-nav {
   display: inline-block;
   float: none;
@@ -120,11 +122,9 @@ color: #fff;
           color: #333;
     }
 }
-  
-  </style>
+</style>
 
-
-  <script> 
+<script> 
 
 $( '#topheader .navbar-nav a' ).on( 'click', function () {
 $( '#topheader .navbar-nav' ).find( 'li.active' ).removeClass( 'active' );
@@ -146,6 +146,4 @@ $.ajax({
 
 
 });
-  
-  
-  </script>
+</script>

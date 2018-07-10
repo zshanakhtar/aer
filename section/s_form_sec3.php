@@ -11,6 +11,7 @@
 					<tr>
 						<th class="hidden">Sr.No</th>
 						<th>Name of Student</th>
+						<th>Age</th>
 						<th>Gender</th>
 						<th>Father's Name</th>
 						<th>Stream</th>
@@ -23,15 +24,15 @@
 				</thead>
 				<tbody>
 					<?php 
-					$result=mysqli_query($conn,"SELECT mem_id,member_name,gender,father_name,stream,year,team_mobile,member_email,roll FROM teammember WHERE app_id='$app_id' ORDER BY mem_id ASC");
+					$result=mysqli_query($conn,"SELECT mem_id,member_name,member_age,gender,father_name,stream,year,team_mobile,member_email,roll FROM teammember WHERE app_id='$app_id' ORDER BY mem_id ASC");
 					$count=1;
 					while($row = $result->fetch_assoc()){
 					?>
 					<tr>
 						<td class="hidden"><p class="mem_serial"><?php $count=$row['mem_id'];echo $count; ?></p></td>
 						<td><input type="text" class="form-control" value="<?php echo ($row['member_name']);?>" /></td>
+						<td><input type="text" class="form-control" value="<?php echo ($row['member_age']);?>" /></td>
 						<td>
-						<!-- <input type="text" class="form-control" value="<?php //echo ($row['gender']);?>" /> -->
 						<select required class="form-control">
 							<option value="" <?php if($row["gender"]==""){echo "selected";}?> >--Select--</option>
 							<option value="Male" <?php if($row["gender"]=="Male"){echo "selected";}?> >Male</option>
@@ -40,7 +41,6 @@
 						</td>
 						<td><input type="text" class="form-control" value="<?php echo ($row['father_name']);?>" /></td>
 						<td>
-						<!-- <input type="text" class="form-control" value="<?php //echo ($row['stream']);?>" /> -->
 						<select required class="form-control">
 							<option value="" <?php if($row["stream"]==""){echo "selected";}?> >--Select--</option>
 							<option value="CSE" <?php if($row["stream"]=="CSE"){echo "selected";}?> >CSE and Allied Branches</option>
@@ -74,8 +74,8 @@
 					<tr class="empty-member hidden">
 							<td class="hidden"><p class="mem_serial"><?php echo ($count+1); ?></p></td>
 							<td><input type="text" class="form-control" /></td>
+							<td><input type="text" class="form-control" /></td>
 							<td>
-							<!-- <input type="text" class="form-control" /> -->
 							<select required class="form-control">
 							<option value=""  >--Select--</option>
 							<option value="Male"  >Male</option>
@@ -124,6 +124,7 @@
 		<form data-toggle="validator" role="form"  action="javascript:void(0)" onsubmit="return false;" class="form-horizontal ajaxsubmitform" id="sec3" >
 		<input type="text" id="mem_id" name="mem_id" class="form-control hidden" required />
 		<input type="text" id="member_name" name="member_name" class="form-control hidden" required />
+		<input type="text" id="member_age" name="member_age" class="form-control hidden" required />
 		<input type="text" id="gender" name="gender" class="form-control hidden" required />
 		<input type="text" id="father_name" name="father_name" class="form-control hidden" required />
 		<input type="text" id="member_stream" name="member_stream" class="form-control hidden" required />

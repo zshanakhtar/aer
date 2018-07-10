@@ -10,8 +10,14 @@ extract($_SESSION);
 // echo $username;
 if($usertype=='a')
 {
+$resultcappid=mysqli_query($conn,"SELECT count(judge_id) FROM judge WHERE app_id='$app_id'");
+$row = $resultcappid->fetch_assoc();
 $resultsum=mysqli_query($conn,"SELECT * FROM judge WHERE judge_id='$judge_id' AND app_id='$app_id'");
-if($row = $resultsum->fetch_assoc())
+if($row['count(judge_id)']>="2")
+{
+	echo "4";
+}
+else if($row = $resultsum->fetch_assoc())
 {
 	echo "2";
 }
@@ -24,7 +30,7 @@ else
 }
 else
 {
-    echo "2";
+    echo "3";
 }
 }
 ?>

@@ -1,8 +1,4 @@
 
-$(document).ready(function(){
-
-});
-
 var savesuccess=0;;
 
 function submitmem(elem,str){
@@ -11,13 +7,14 @@ function submitmem(elem,str){
 	$("#member_action").val(str);
 	$("#mem_id").val($(memberrow[0]).html());
 	$("#member_name").val($(memberrow[1]).val());
-	$("#gender").val($(memberrow[2]).val());
-	$("#father_name").val($(memberrow[3]).val());
-	$("#member_stream").val($(memberrow[4]).val());
-	$("#year").val($(memberrow[5]).val());
-	$("#team_mobile").val($(memberrow[6]).val());
-	$("#member_email").val($(memberrow[7]).val());
-	$("#roll").val($(memberrow[8]).val());
+	$("#member_age").val($(memberrow[2]).val());
+	$("#gender").val($(memberrow[3]).val());
+	$("#father_name").val($(memberrow[4]).val());
+	$("#member_stream").val($(memberrow[5]).val());
+	$("#year").val($(memberrow[6]).val());
+	$("#team_mobile").val($(memberrow[7]).val());
+	$("#member_email").val($(memberrow[8]).val());
+	$("#roll").val($(memberrow[9]).val());
 	var c=0;
 	$("#sec3").find("input").each(function(){
 	if(this.checkValidity())
@@ -25,7 +22,7 @@ function submitmem(elem,str){
 	});
 	
 	
-	if(c==10||str=="del")
+	if(c==11||str=="del")
 	{
 		$("#sec3").submit();
 		if(str=="del")
@@ -34,7 +31,7 @@ function submitmem(elem,str){
 			updatemem(elem);
 	}
 	else
-		alert("Please provide valid member details: No of errors "+(10-c));
+		alert("Please provide valid member details: No of errors "+(11-c));
 	
 	
 	

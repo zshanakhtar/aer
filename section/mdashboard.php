@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Judge - Scoring Applications, Preview Scores</title>
+
+<title>Manager Dashboard - See alloted application forms, Allot Evaluators, Create judges, Allot judges</title>
 
 <!-- Bootstrap -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -15,20 +15,25 @@
 
 <!-- universal css -->
 <link rel="stylesheet" href="css/universal.css">
-<!-- sdashboard css -->
-<link rel="stylesheet" href="css/jdashboard.css">
+<!-- adashboard css -->
+<link rel="stylesheet" href="css/mdashboard.css">
 
 <!-- universal js -->
 <script src="js/universal.js"></script>
-<!-- sdashboard js -->
-<script src="js/jdashboard.js"></script>
-</head>
+<!-- adashboard js -->
+<script src="js/mdashboard.js"></script>
 
+<!-- datatable css -->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/jszip-2.5.0/dt-1.10.16/b-1.5.1/b-flash-1.5.1/b-html5-1.5.1/datatables.min.css"/>
+<!-- datatable js -->
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs/jszip-2.5.0/dt-1.10.16/b-1.5.1/b-flash-1.5.1/b-html5-1.5.1/datatables.min.js"></script>
+  
+</head>
 <body>
 
 <?php include 'section/ajaxloader.php'; ?>
-<?php include "navdashboard.php"; ?>
-<?php include "nav_j.php"; ?>
+<?php include 'section/navdashboard.php'; ?>
+<?php include 'section/nav_m.php'; ?>
 
 <img src="images/logo.png"  style="margin-top:10px;margin-left:150px;width:25%;" alt="Image">
 <br>

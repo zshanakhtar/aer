@@ -34,7 +34,7 @@
         <div class="tab-content">
           <div class="tab-pane active" id="Login">
 		  
-            <form data-toggle="validator" role="form" class="form-horizontal" method="post" action="request/login.php">
+            <form data-toggle="validator" role="form" class="form-horizontal" method="post" action="login.php">
               <div class="form-group">
                 <label for="l_username" class="col-sm-3 control-label" style="color:#000099; font-size:14px">Username</label>
                 <div class="col-sm-9">
@@ -59,7 +59,7 @@
           </div>
 		  
           <div class="tab-pane" id="Registration">
-		  		  <form data-toggle="validator" role="form" method="post" action="request/regist.php">
+		  		  <form data-toggle="validator" role="form" method="post" action="registration.php">
   <div class="form-group col-sm-12">
     <label for="Role" class="col-sm-2 control-label" style="color:#000099; font-size:14px">Role</label>
 	<div class="col-sm-10">
@@ -76,6 +76,12 @@
     <label for="spoc_mobile" class="col-sm-2 control-label" style="color:#000099; font-size:14px">Mobile</label>
 	<div class="col-sm-10">
                   <input id="spoc_mobile" name="spoc_mobile" type="text" class="form-control" placeholder="Mobile" required>
+                </div>
+  </div>
+  <div class="form-group col-sm-12">
+    <label for="spoc_aadhar" class="col-sm-2 control-label" style="color:#000099; font-size:14px">Aadhar Number</label>
+	<div class="col-sm-10">
+                  <input id="spoc_aadhar" name="spoc_aadhar" type="text" class="form-control" placeholder="Enter Aadhar Number" required>
                 </div>
   </div>
   <div class="form-group col-sm-12">

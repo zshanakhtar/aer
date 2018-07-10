@@ -1,4 +1,4 @@
-<form role="form" action="javascript:void(0)" onsubmit="return false;" class="form-horizontal ajaxsubmitform" id="jallocate1" >
+<form role="form" action="javascript:void(0)" onsubmit="return false;" class="form-horizontal" id="jallocate1" >
 <div class="panel panel-info">
 	<div class="panel-heading" data-toggle="collapse" data-target="#one" style="font-size:150%;"><b>General Information</b><span class="btn btn-info pull-right glyphicon glyphicon-chevron-up"></span></div>
 	<div  class="panel-body collapse in one" id="one">
@@ -11,7 +11,7 @@
             $resultjudges=mysqli_query($conn,"SELECT username FROM regist WHERE usertype='j'");
             while($rowjudges = $resultjudges->fetch_assoc())
             {
-              ?>
+          ?>
 	  			<option value="<?php echo addslashes($rowjudges['username']);?>"><?php echo htmlspecialchars($rowjudges['username']);?></option>
             <?php } ?>
 	  		</select>
@@ -66,167 +66,51 @@
 	</div>
 </div>
 </form>
-  <ul class="nav nav-tabs">
-      <li class="active"><a data-toggle="tab" href="#problem1">Problem 1</a></li>
-      <li><a data-toggle="tab" href="#problem2">Problem 2</a></li>
-      <li><a data-toggle="tab" href="#problem3">Problem 3</a></li>
-      <li><a data-toggle="tab" href="#problem4">Problem 4</a></li>
-      <li><a data-toggle="tab" href="#problem5">Problem 5</a></li>
-      <li><a data-toggle="tab" href="#problem6">Problem 6</a></li>
-      <li><a data-toggle="tab" href="#problem7">Problem 7</a></li>
+  <ul class="nav nav-tabs" id="problem_tabs">
+      <li class="active"><a data-toggle="tab" data-i="0">Problem 0&nbsp;<span class="btn btn-xs btn-danger" id="pr0_count"></span></a></li>
+      <li><a data-toggle="tab" data-i="1">Problem 1&nbsp;<span class="btn btn-xs btn-danger" id="pr1_count"></span></a></li>
+      <li><a data-toggle="tab" data-i="2">Problem 2&nbsp;<span class="btn btn-xs btn-danger" id="pr2_count"></span></a></li>
+      <li><a data-toggle="tab" data-i="3">Problem 3&nbsp;<span class="btn btn-xs btn-danger" id="pr3_count"></span></a></li>
+      <li><a data-toggle="tab" data-i="4">Problem 4&nbsp;<span class="btn btn-xs btn-danger" id="pr4_count"></span></a></li>
+      <li><a data-toggle="tab" data-i="5">Problem 5&nbsp;<span class="btn btn-xs btn-danger" id="pr5_count"></span></a></li>
+      <li><a data-toggle="tab" data-i="6">Problem 6&nbsp;<span class="btn btn-xs btn-danger" id="pr6_count"></span></a></li>
+      <li><a data-toggle="tab" data-i="7">Problem 7&nbsp;<span class="btn btn-xs btn-danger" id="pr7_count"></span></a></li>
   </ul>
-    <div class="tab-content">
-      <div id="problem1" class="tab-pane fade in active">
-  <div class="row form-group">
-		  	<label for="abstract" class="col-sm-2 col-sm-offset-1 control-label" style="color:#337ab7">Select all teams having stream</label>
-		  	<div class="col-sm-8">
-          <?php
-                
-                $resultstream=mysqli_query($conn,"SELECT DISTINCT teammember.stream FROM teammember INNER JOIN student ON student.app_id=teammember.app_id WHERE student.app_status='Submitted'");
-                while($rowstream = $resultstream->fetch_assoc())
-                {
-          ?>
-                <span class="btn btn-default filter-control">
-                  <?php echo htmlspecialchars($rowstream['stream']);?>
-                </span>
-            <?php 
-                }
-                ?>
-            
-		  	</div>
+  <div class="tab-content subreview">
 
-		  </div>
-      <table id="problem1_table" class="table table-bordered table-striped table-responsive">
-        <thead>
-          <tr>
-            <td>
-              S.No
-            </td>
-            <td>
-              Application ID
-            </td>
-            <td>
-              Team Name
-            </td>
-            <td>
-              Award Category
-            </td>
-            <td>
-              Streams
-            </td>
-          </tr>
-        </thead>
-        <tbody>
-          <?php
-          $resultteam=mysqli_query($conn,"SELECT app_id,team_name,award_cat FROM student WHERE problem='1'");// AND app_status='Submitted'
-					$count=1;
-					while($rowteam = $resultteam->fetch_assoc()){
-            $app_id=$rowteam['app_id'];
-            ?>
-          <tr data-appid="<?php echo addslashes($app_id);?>">
-            <td><label class="btn"><?php echo $count++; ?></label></td>
-            <td>
-              <span class="btn btn-default filter-anchor">
-                <?php echo htmlspecialchars($app_id);?>
-              </span>
-            </td>
-            <td><?php echo htmlspecialchars($rowteam['team_name']);?></td>
-            <td><?php echo htmlspecialchars($rowteam['award_cat']);?></td>
-            <td>
-              <?php
-                $resultstream=mysqli_query($conn,"SELECT DISTINCT stream FROM teammember WHERE app_id='$app_id'");
-                while($rowstream = $resultstream->fetch_assoc())
-                {
-                ?>
-                <span class="btn btn-default filter">
-                  <?php echo htmlspecialchars($rowstream['stream']);?>
-                </span>
-              <?php } ?>
-            </td>
-          </tr>
-          <?php
-					}
-					?>
-        </tbody>
-      </table>
-      
-      
-    </div>
-  
-	<div id="problem2" class="tab-pane fade">
-      <h3>Problem 2</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-	<div id="problem3" class="tab-pane fade">
-      <h3>Problem 3</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-	<div id="problem4" class="tab-pane fade">
-      <h3>Problem 4</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-	<div id="problem5" class="tab-pane fade">
-      <h3>Problem 5</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-	<div id="problem6" class="tab-pane fade">
-      <h3>Problem 6</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-	<div id="problem7" class="tab-pane fade">
-      <h3>Problem 7</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
   </div>
 
 
 
 
   <script>
-
-  $("#problem1_table").DataTable();
-
-  var appid_arr=[];
-  $('.filter-control').on('click',function(){
-    if($(this).hasClass("btn-default")) resetfilters();
-        var filtertoggle=$(this).html();
-        var filtercurrent;
-        $(this).toggleClass("btn-danger");
-        $(this).toggleClass("btn-default");
-        
-        $('.filter').each(function(){
-          filtercurrent=$(this).html();
-          if(filtercurrent==filtertoggle)
-          {
-            $(this).toggleClass("filter-active");
-            var appidcurrent=$(this).closest('tr').data('appid');
-            if($(this).hasClass("filter-active"))
-              addappid(appidcurrent);
-            else
-              removeappid(appidcurrent);
-          }
-        });
-        refreshfilteranchors();
+  $(document).ready(function(){
+    $($("#problem_tabs li a")[0]).click();
+  });
+  $("#problem_tabs li a").on('click',function(){
+    var i=$(this).data("i");
+    $.ajax({
+    url: "request/getsubmodule.php",
+    type: "POST",
+    data: "module=allocate_judge"+"&submodule=problem"+"&i="+i,
+    success: function(response){ 
+        $('.subreview').html(response);
+        $("#problem_table").DataTable();
+        resetfilters();
+        //handle returned arrayList
+    },
+    error: function(e){  
+        alert("error");
+        //handle error
+    } 
     });
+  });
 
-    $('.filter-anchor').on('click',function(){
-      var appidcurrent=$(this).closest('tr').data('appid');
-      if($(this).hasClass("btn-default"))
-      {
-        $(this).addClass("btn-danger");
-        $(this).removeClass("btn-default");
-        addappid(appidcurrent);
-      }
-      else
-      {
-        $(this).removeClass("btn-danger");
-        $(this).addClass("btn-default");
-        removeappid(appidcurrent);
-      }
-      $('.filter-control').removeClass("btn-danger");
-      $('.filter-control').addClass("btn-default");
-      refreshfilteranchors();      
-    });
+
+
+
+var appid_arr=[];
+  
 
     function addappid(appid)
     {
@@ -293,6 +177,7 @@
 $("#jallocate1").validator();
 
 $("#jallocate1").on('submit',function(e) {
+  // alert('Form submitted');
 	var formid=$(this).attr('id');//get this form's id
     e.preventDefault(); // avoid to execute the actual submit of the form.
 	setTimeout(function(e){ //wait 50ms to allow validator to execute
@@ -333,6 +218,12 @@ $("#jallocate1").on('submit',function(e) {
                   $("#appid_exists").css('width',(savewarn/appid_arr.length*100)+'%');
                   $("#appid_exists").html('Already Exist: '+(savewarn)+'/'+(appid_arr.length));
                 }
+                else if(response.toString()=='4') //show response from the php script
+                {
+                  savewarn+=1;
+                  $("#appid_error").css('width',(savewarn/appid_arr.length*100)+'%');
+                  $("#appid_error").html('Application already has two judges: '+(savewarn)+'/'+(appid_arr.length));
+                }
                 // alert("Details saved");
              },
             error: function(data,response){  
@@ -349,4 +240,4 @@ $("#jallocate1").on('submit',function(e) {
 	}, 50);
 });
 
-  </script>
+</script>
