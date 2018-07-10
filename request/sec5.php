@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
                    }
                     else 
                     {			
-                        echo "Sorry !!! There was an error in uploading your NOC";			
+                        echo "Sorry !!! There was an error in uploading your NOC";
                     }
                     if($resultsummary)
                    { 
@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
                    }
                     else 
                     {			
-                        echo "Sorry !!! There was an error in uploading your summary";			
+                        echo "Sorry !!! There was an error in uploading your summary";	
                     }
             mysqli_close($conn);
             }
