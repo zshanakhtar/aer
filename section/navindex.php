@@ -59,7 +59,7 @@
           </div>
 		  
           <div class="tab-pane" id="Registration">
-		  		  <form data-toggle="validator" role="form" method="post" action="request/regist.php">
+		  		  <form data-toggle="validator" role="form" method="post" action="registration.php">
   <div class="form-group col-sm-12">
     <label for="Role" class="col-sm-2 control-label" style="color:#000099; font-size:14px">Role</label>
 	<div class="col-sm-10">

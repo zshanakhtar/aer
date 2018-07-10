@@ -1,5 +1,5 @@
 <?php
-include "../request/".'connection.php'; //connect the connection page
+include "request/".'connection.php'; //connect the connection page
 session_start();
 date_default_timezone_set("Asia/Calcutta"); 
 $app_id='VIS'.date('dmHis');
@@ -17,12 +17,18 @@ $r_password = mysqli_real_escape_string($conn, $r_password);
 // echo $app_id."\n";
 // echo $r_password."\n";
 
-$resultsum=mysqli_query($conn,"SELECT * FROM student WHERE spoc_email='$spoc_email'");
-    if($row = $resultsum->fetch_assoc())
+$resultem=mysqli_query($conn,"SELECT * FROM student WHERE spoc_email='$spoc_email'");
+$resultmob=mysqli_query($conn,"SELECT * FROM student WHERE spoc_mobile='$spoc_mobile'");
+    if($row = $resultem->fetch_assoc())
 	{
 		$error="Email already registered";
-    }
-else{
+	}
+	else if($row = $resultmob->fetch_assoc())
+	{
+		$error="Mobile already registered";
+	}
+	else
+	{
 
 	$FILLteam="INSERT INTO teammember(mem_id,member_name,member_email,team_mobile,roll,app_id) values('1','$spoc_name','$spoc_email','$spoc_mobile','Team Leader','$app_id')";
 	
@@ -105,7 +111,7 @@ function sendmail($subject,$body,$sender,$sendertype)
 		// echo "Not found";
 		// }
 	}
-		include "../section/registration.php";
+		
 		
 // mysqli_close($conn); // Closing Connection with Server
 }

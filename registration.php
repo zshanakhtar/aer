@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -14,21 +16,24 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js"></script> 
 
 <!-- universal css -->
-<link rel="stylesheet" href="../css/universal.css">
+<link rel="stylesheet" href="css/universal.css">
 <!-- sdashboard css -->
-<link rel="stylesheet" href="../css/sdashboard.css">
+<link rel="stylesheet" href="css/sdashboard.css">
 
 <!-- universal js -->
-<script src="../js/universal.js"></script>
+<script src="js/universal.js"></script>
 <!-- sdashboard js -->
-<script src="../js/sdashboard.js"></script>
+<script src="js/sdashboard.js"></script>
 </head>
 
 <body>
 
-<?php include "navindex.php"; ?>
+<?php 
+include "request/regist.php";
+include "section/navindex.php";
+?>
 
-<img src="../images/logo.png"  style="margin-top:10px;margin-left:150px;width:25%;" alt="Image">
+<img src="images/logo.png"  style="margin-top:10px;margin-left:150px;width:25%;" alt="Image">
 <br>
 <div id="myDiv1"></div>
 <br>
@@ -44,37 +49,7 @@
 
 </div>
 
-<div class="container">
-<marquee>
-<div class="col-xs-12">
-<h2 class="text-danger">*Do not use Internet Explore to Fill the Entry*</h2>
-</div>
-</marquee>
-</div>
-<footer class="col-xs-12 text-center">
-
-
-
-  <div class="col-xs-3">
-  <img src="../images/m.jpg" class="img-responsive" width="60%">
-  
-  </div>
-  
-  <div class="col-xs-3">
-  <img src="../images/n.png" class="img-responsive" width="30%">
-  
-  </div>
-
-
-<div class="col-xs-6 pull-right">
- 
-      <p><span class="glyphicon glyphicon-map-marker"></span>New delhi</p>
-      <p><span class="glyphicon glyphicon-phone"></span> 01129581322</p>
-      <p><span class="glyphicon glyphicon-envelope"></span> sdc@aicte-india.org</p> 
-  </div>
-  
-
-</footer>
+<?php include 'section/footer.php'; ?>
 
 </body>
 </html>
