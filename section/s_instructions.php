@@ -1,0 +1,12 @@
+<h3 style="text-align:center">Here the students get any instructions you wish to provide
+<br>
+<br>
+<br>
+1-Use the 'Apply Online' pane to fill details about your team, institute and mentor
+<br>
+2-Use the save buttons to save your information while filling your details
+<br>
+3-Use the 'Preview' pane to verify saved information and submit application
+<br>
+4-Only submitted applications will proceed to the next stage
+</h3>

@@ -28,32 +28,14 @@
 
 <?php include 'section/ajaxloader.php'; ?>
 <?php include "navdashboard.php"; ?>
-<?php include "navstudent.php"; ?>
+<?php include "nav_s.php"; ?>
+
+<img src="images/logo.png"  style="margin-top:10px;margin-left:150px;width:25%;" alt="Image">
 <br>
-  <div id="myDiv1"></div>
-<div  class="review col-xs-12 col-sm-10 col-sm-offset-1">
-
-
-
+<div id="myDiv1"></div>
+<br>
+<div class="review col-xs-12 col-sm-10 col-sm-offset-1">
 </div>
-
-<script>
-function changeview(elem){
-$.ajax({
-    url: "request/getmodule.php",
-    type: "POST",
-    data: "module="+$(elem).data('module'),
-    success: function(response){ 
-        $('.review').html(response);
-        //handle returned arrayList
-    },
-    error: function(e){  
-        alert("error");
-        //handle error
-    } 
-});
-}
-</script>
 
 <?php include 'section/footer.php'; ?>
 </body>

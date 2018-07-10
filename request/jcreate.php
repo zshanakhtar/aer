@@ -6,12 +6,10 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
 	
 extract($_POST);
 
-$name = mysqli_real_escape_string($conn, $name);
+$judge_id = mysqli_real_escape_string($conn, $judge_id);
 $password = mysqli_real_escape_string($conn, $password);
 
-echo $name."\n";
-echo $email."\n";
-// echo $mobile."\n";
+
 echo "------Username: ".$judge_id."-------\n";
 echo "------Password: ".$password."-------\n";
 

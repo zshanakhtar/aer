@@ -6,13 +6,6 @@
     margin:2px;
     border-radius:4px;
 }
-.red-box{
-    background-color:#d9534f;
-    color:#ffffff;
-    padding:4px;
-    margin:2px;
-    border-radius:4px;
-}
 </style>
 
 <div id="problem" class="tab-pane fade in active">
@@ -20,7 +13,6 @@
 		  	<label for="" class="col-sm-2 col-sm-offset-1 control-label" style="color:#337ab7">Select all teams having stream</label>
 		  	<div class="col-sm-8">
           <?php
-                
                 $resultstream=mysqli_query($conn,"SELECT DISTINCT teammember.stream FROM teammember INNER JOIN student ON student.app_id=teammember.app_id WHERE student.app_status='Submitted'");
                 while($rowstream = $resultstream->fetch_assoc())
                 {
@@ -85,27 +77,16 @@
             </td>
             <td>
             <?php
-                $resultjalloted=mysqli_query($conn,"SELECT judge_id,flageval2 FROM judge WHERE app_id='$app_id'");
+                $resultjalloted=mysqli_query($conn,"SELECT judge_id FROM judge WHERE app_id='$app_id'");
                 while($rowjalloted = $resultjalloted->fetch_assoc())
                 {
-                  if($rowjalloted['flageval2']=='Y')
-                  {
                 ?>
                     <span class="blue-box">
                         <?php echo htmlspecialchars($rowjalloted['judge_id']);?>
                     </span>
                 <?php
-                  }
-                  else
-                  {
-                ?>
-                    <span class="red-box">
-                        <?php echo htmlspecialchars($rowjalloted['judge_id']);?>
-                    </span>
-                <?php
-                  }
-				        }
-			          ?>
+				}
+			    ?>
             </td>
           </tr>
           <?php
@@ -117,9 +98,10 @@
       
     </div>
     <script>
-    $("#pr<?php echo $i;?>_count").html("<?php echo $count-1;?>");
+$("#pr<?php echo $i;?>_count").html("<?php echo $count-1;?>");
 
-    $('.filter-control').on('click',function(){
+var appid_arr=[];
+  $('.filter-control').on('click',function(){
     if($(this).hasClass("btn-default")) resetfilters();
         var filtertoggle=$(this).html();
         var filtercurrent;
@@ -132,8 +114,6 @@
           {
             $(this).toggleClass("filter-active");
             var appidcurrent=$(this).closest('tr').data('appid');
-            // alert(appidcurrent);
-
             if($(this).hasClass("filter-active"))
               addappid(appidcurrent);
             else
@@ -161,4 +141,69 @@
       $('.filter-control').addClass("btn-default");
       refreshfilteranchors();      
     });
-    </script>
+
+    function addappid(appid)
+    {
+      if(!hasappid(appid))
+        appid_arr.push(appid);
+    }
+    function hasappid(appid)
+    {
+      for(var i=0;i<appid_arr.length;i++)
+      {
+        if(appid_arr[i]==appid)
+        {
+         return true;
+        }
+      }
+      return false;
+    }
+    function removeappid(appid)
+    {
+      for(var i=0;i<appid_arr.length;i++)
+      {
+        if(appid_arr[i]==appid)
+        {
+         appid_arr.splice(i,1);
+        }
+      }
+    }
+    function refreshfilteranchors()
+    {
+      var anchorname;
+      var activeanchors=0;
+      // alert(appid_arr);
+      $('.filter-anchor').each(function(){
+        anchorname=$(this).html().trim();
+        // alert(anchorname);
+        if(hasappid(anchorname))
+        {
+          // alert("TRUE");
+          activeanchors++;
+          $(this).addClass('btn-danger');
+          $(this).removeClass('btn-default');
+        }
+        else
+        {
+          // alert("FALSE");
+          $(this).removeClass('btn-danger');
+          $(this).addClass('btn-default');
+        }
+      });
+      $("#activeanchors").val(activeanchors);
+      $("#activeanchors").trigger('change');
+      $("#appid_arr").val(appid_arr);
+      $("#appid_arr").trigger('change');
+    }
+    function resetfilters()
+    {
+      appid_arr=[];
+      refreshfilteranchors();
+      $('.filter-control').removeClass("btn-danger");
+      $('.filter').removeClass("filter-active");
+      $('.filter-control').addClass("btn-default");
+    }
+
+
+
+</script>

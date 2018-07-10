@@ -46,98 +46,107 @@ if(isset($_SESSION['usertype'])) { // if already login
 <br>
 <div class="review col-xs-12 col-sm-10 col-sm-offset-1">
 
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
+<div class="top">
+<div class="row">
+<div class="col-sm-6">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel" >
+   
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
 
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-  </ol>
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner">
-    <div class="item active"> <img src="images/1.jpg"  style="height:528px; width:940px;"> </div>
-    <div class="item"> <img src="images/2.jpg"  style="height:528px; width:940px;"> </div>
-    <div class="item"> <img src="images/3.jpg"  style="height:528px; width:940px;"> </div>
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="images/1.jpg" alt="img0" style="width:100%;">
+      </div>
+
+      <div class="item">
+        <img src="images/2.jpg" alt="img" style="width:100%;">
+      </div>
+    
+      <div class="item">
+        <img src="images/3.jpg" alt="img1" style="width:100%;">
+      </div>
+    </div>
+
+  
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
   </div>
+
+</div>
+
+<div class="col-sm-6 col-xs-12 text">
+
+
+  <h1 class="margin text-center">About Vishwakarma Awards</h1>
+  <p>All India Council for Technical Education (AICTE), Ministry of Human Resource Development, Govt. of India ,The Indian Society for Technical Education (ISTE) & Engineering Council of India (ECI), the apex Engineering Body of India are jointly holding a competition "AICTE-ECI-ISTE Chhatra Vishwakarma Awards” for the students of AICTE approved Degree & Diploma level technical institutions.</p>
+  <br>
+</div>
+</div>
 </div>
 <hr>
-<div class="container">
-  <div class="row slideanim">
+<div class="row">
     <div class="col-sm-4 col-xs-12">
       <div class="panel panel-default text-center">
-        <div class="panel-heading custom_class" style="background-color:#CD5C5C">
-          <h1><i class="fa fa-calendar" aria-hidden="true" style="font-size:34px"></i> Important Dates</h1>
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h1><i class="fa fa-calendar" aria-hidden="true"></i> Important Dates</h1>
         </div>
         <div class="panel-body">
+         <ol align="left">
+ 
+  
+<p>
+          <li>Online application will start from:xx-yy-zzzz</li><br>
+              <li>Last date to submit the application:xx-yy-zzzz</li><br>
+  <li>Last date to submit the application:xx-yy-zzzz</li><br>
+              <li>Last date to submit the application:xx-yy-zzzz</li><br>
+              <li>Last date to submit the application:xx-yy-zzzz</li><br></p>
+</ol>
+<br><br>
+        </div>
+        <div class="panel-heading">
+          <h1><i class="fa fa-download" aria-hidden="true"></i> Download</h1>
+        </div>
+      <div class="panel-body">
          <ol align="left">
   <p>
   
 
-          <li>Online application will start from:xx-yy-zzzz</li><br></p>
-              <p><li>Last date to submit the application:xx-yy-zzzz</li><br></p>
-  <p><li>Last date to submit the application:xx-yy-zzzz</li><br></p>
-              <p><li>Last date to submit the application:xx-yy-zzzz</li><br></p>
-              <p><li>Last date to submit the application:xx-yy-zzzz</li><br></p>
+          <li>Online application will start from:xx-yy-zzzz</li><br>
+              <li>Last date to submit the application:xx-yy-zzzz</li><br>
+ <li>Last date to submit the application:xx-yy-zzzz</li><br>
+    </p>         
 </ol>
 <br><br>
         </div>
-        <div class="panel-footer">
-          
-          <button class="btn btn-lg">Sign Up</button>
-        </div>
-      </div>      
-    </div>     
-    <div class="col-sm-4 col-xs-12">
-      <div class="panel panel-default text-center">
-        <div class="panel-heading custom_class" style="background-color:#CD5C5C">
-          <h1 class="common"><i class="fa fa-user" aria-hidden="true" style="font-size:34px"></i> Mentor</h1>
-        </div>
-        <div class="panel-body">
-           <p> Students from following stream or its aligned streams:<br></p>
-          <ol align="left">
-		   <p><li>
-Civil/ Electrical/ Mechanical/ Electronics/Computer Engineering/Bio Technology and other aligned streams.</li></p>
-             <p>  <li>Students of UG Engineering, Diploma Engineering Programs and Vocational Diploma programme of Community College are eligible to apply.</li></p>
-  <p> <li>Nominations/Applications from girls / women are especially encouraged</li></p>
-             <p>  <li>Number of UG/ Diploma projects guided to solve problem of society during the last three years, List of ideas to be included.</li></p>
-            <p>   <li>Application for only Practical Demonstrable models (no theoretical knowledge papers) will be entertained.</li></p>
-</ol>
-        </div>
-        <div class="panel-footer">
-         
-          <button class="btn btn-lg">Sign Up</button>
-        </div>
-      </div>      
-    </div>       
-    <div class="col-sm-4 col-xs-12">
-      <div class="panel panel-default text-center">
-        <div class="panel-heading custom_class" style="background-color:#CD5C5C">
-          <h1><i class="fa fa-user" aria-hidden="true" style="font-size:34px"></i>   Mentor</h1>
-        </div>
-        <div class="panel-body">
-          <ol align="left">
-           <p> <li>Mentor/ Teacher-In-charge whose students have been adjudged worthy of receiving the Category-I award shall be eligible for the consideration of award.</li></p>
-           <p> <li>Other criteria shall include achievements of the mentor:</p>
-<ol type="a" align="left">
-            <p><li>Number of UG/ Diploma projects guided on similar area during the last three years.</li></p>
-            <p><li>Number of UG/ Diploma projects guided to solve problem of society during the last three years.</li></p>
-            <p><li>Number of research publications during last three years</li></p>
-<p> <li>Student Feedback Index</li></p>
-    
-<p><li>Number of Awards/Patents (if any)</li></p>
-            </ol>
-        </div>
-        <div class="panel-footer">
-
-          <button class="btn btn-lg">Sign Up</button>
-        </div>
-      </div>      
-    </div>    
-  </div>
+      </div> 
+</div>
+    </div> 
+<div class="col-sm-8 col-xs-12">
+  <h3>To recognize and honour innovative work of the students displaying exceptional skills in
+  different Engineering streams. Awards will be given in following categories separately
+  for Degree and Diploma Students (including students from AICTE approved Community College:</h3>
+ <br><p>1. <strong>Category-I</strong>: Outstanding Student Engineers (3 Awards each in Civil, Electrical, Mechanical,
+ Electronics Engineering, Computer Science and Biotechnology streams or their allied branches)(Ref. 
+ Annexure-A for allied Branches).</p> <br><p> 2.<strong> Category-II</strong>: Outstanding Teachers Awards (3 Awards each in
+ Civil, Electrical, Mechanical, Electronics Engineering, Computer Science and Biotechnology streams 
+ or their allied branches).</p> <br><p>3.<strong> Category-III</strong>: Outstanding Institutions Awards (3 Awards) based on
+ the maximum number of awards won from the above two categories and other criteria.</p>
+</div>
+</div>
 </div>
 
-</div>
 <?php include 'section/footer.php'; ?>
 
 </body>

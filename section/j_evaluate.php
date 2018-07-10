@@ -198,7 +198,7 @@ $rowapp = $resultapp->fetch_assoc();
 
 
 <script>
-    $('#application1').validator();
+    $('#eval2').validator();
     $('.scorer i').on('click',function(){
         var score=parseInt($(this).html());
         $(this).addClass("btn-danger");

@@ -1,11 +1,23 @@
+<?php
+include "../request/"."connection.php";
+
+extract($_SESSION);
+
+?>
+
+
 <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
-	<div class="panel panel-success">
+	<div class="panel panel-info">
 		<div class="panel-heading">
 			<div class="row">
 				<div class="col-xs-12 text-center">
-					<div>Registration</div>
+					<div>Submitted Applications</div>
 					<div id="regist">
-						<?php echo '56'?>
+						<?php 
+						$resultapp=mysqli_query($conn,"SELECT count(app_id) from student where app_status='Submitted'");
+						$rowapp = $resultapp->fetch_assoc();
+						echo $rowapp['count(app_id)'];
+						?>
 					</div>   
 				</div>
 			</div>
@@ -13,13 +25,17 @@
 	</div>
 </div>
 <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
-	<div class="panel panel-success">
+	<div class="panel panel-warning">
 		<div class="panel-heading">
 			<div class="row">
 				<div class="col-xs-12 text-center">
-					<div>Registration</div>
+					<div>Distinct Streams</div>
 					<div id="regist">
-						<?php echo '56'?>
+						<?php
+						$resultstream=mysqli_query($conn,"SELECT count(DISTINCT teammember.stream) FROM teammember INNER JOIN student ON student.app_id=teammember.app_id WHERE student.app_status='Submitted'");
+						$rowstream = $resultstream->fetch_assoc();
+						echo $rowstream['count(DISTINCT teammember.stream)'];
+						?>
 					</div>   
 				</div>
 			</div>
@@ -27,13 +43,17 @@
 	</div>
 </div>
 <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
-	<div class="panel panel-success">
+	<div class="panel panel-danger">
 		<div class="panel-heading">
 			<div class="row">
 				<div class="col-xs-12 text-center">
-					<div>Registration</div>
+					<div>Total Judges</div>
 					<div id="regist">
-						<?php echo '56'?>
+						<?php
+						$resultj=mysqli_query($conn,"SELECT count(username) from regist where usertype='j'");
+						$rowj = $resultj->fetch_assoc();
+						echo $rowj['count(username)'];
+						?>
 					</div>   
 				</div>
 			</div>
@@ -41,13 +61,13 @@
 	</div>
 </div>
 <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
-	<div class="panel panel-success">
+	<div class="panel panel-info">
 		<div class="panel-heading">
 			<div class="row">
 				<div class="col-xs-12 text-center">
-					<div>Registration</div>
+					<div>Total something</div>
 					<div id="regist">
-						<?php echo '56'?>
+						<?php echo 'xx'?>
 					</div>   
 				</div>
 			</div>
@@ -55,13 +75,13 @@
 	</div>
 </div>
 <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
-	<div class="panel panel-success">
+	<div class="panel panel-warning">
 		<div class="panel-heading">
 			<div class="row">
 				<div class="col-xs-12 text-center">
-					<div>Registration</div>
+					<div>Something Else</div>
 					<div id="regist">
-						<?php echo '56'?>
+						<?php echo 'yy'?>
 					</div>   
 				</div>
 			</div>
@@ -69,13 +89,13 @@
 	</div>
 </div>
 <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
-	<div class="panel panel-success">
+	<div class="panel panel-danger">
 		<div class="panel-heading">
 			<div class="row">
 				<div class="col-xs-12 text-center">
-					<div>Registration</div>
+					<div>Yet Another</div>
 					<div id="regist">
-						<?php echo '56'?>
+						<?php echo 'zz'?>
 					</div>   
 				</div>
 			</div>
@@ -83,13 +103,13 @@
 	</div>
 </div>
 <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
-	<div class="panel panel-success">
+	<div class="panel panel-info">
 		<div class="panel-heading">
 			<div class="row">
 				<div class="col-xs-12 text-center">
-					<div>Registration</div>
+					<div>Total something</div>
 					<div id="regist">
-						<?php echo '56'?>
+						<?php echo 'xx'?>
 					</div>   
 				</div>
 			</div>
@@ -97,13 +117,13 @@
 	</div>
 </div>
 <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
-	<div class="panel panel-success">
+	<div class="panel panel-warning">
 		<div class="panel-heading">
 			<div class="row">
 				<div class="col-xs-12 text-center">
-					<div>Registration</div>
+					<div>Something Else</div>
 					<div id="regist">
-						<?php echo '56'?>
+						<?php echo 'yy'?>
 					</div>   
 				</div>
 			</div>
@@ -111,13 +131,13 @@
 	</div>
 </div>
 <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
-	<div class="panel panel-success">
+	<div class="panel panel-danger">
 		<div class="panel-heading">
 			<div class="row">
 				<div class="col-xs-12 text-center">
-					<div>Registration</div>
+					<div>Yet Another</div>
 					<div id="regist">
-						<?php echo '56'?>
+						<?php echo 'zz'?>
 					</div>   
 				</div>
 			</div>
@@ -125,13 +145,13 @@
 	</div>
 </div>
 <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
-	<div class="panel panel-success">
+	<div class="panel panel-info">
 		<div class="panel-heading">
 			<div class="row">
 				<div class="col-xs-12 text-center">
-					<div>Registration</div>
+					<div>Total something</div>
 					<div id="regist">
-						<?php echo '56'?>
+						<?php echo 'xx'?>
 					</div>   
 				</div>
 			</div>
@@ -139,13 +159,13 @@
 	</div>
 </div>
 <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
-	<div class="panel panel-success">
+	<div class="panel panel-warning">
 		<div class="panel-heading">
 			<div class="row">
 				<div class="col-xs-12 text-center">
-					<div>Registration</div>
+					<div>Something Else</div>
 					<div id="regist">
-						<?php echo '56'?>
+						<?php echo 'yy'?>
 					</div>   
 				</div>
 			</div>
@@ -153,13 +173,13 @@
 	</div>
 </div>
 <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
-	<div class="panel panel-success">
+	<div class="panel panel-danger">
 		<div class="panel-heading">
 			<div class="row">
 				<div class="col-xs-12 text-center">
-					<div>Registration</div>
+					<div>Yet Another</div>
 					<div id="regist">
-						<?php echo '56'?>
+						<?php echo 'zz'?>
 					</div>   
 				</div>
 			</div>
@@ -167,13 +187,13 @@
 	</div>
 </div>
 <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
-	<div class="panel panel-success">
+	<div class="panel panel-info">
 		<div class="panel-heading">
 			<div class="row">
 				<div class="col-xs-12 text-center">
-					<div>Registration</div>
+					<div>Total something</div>
 					<div id="regist">
-						<?php echo '56'?>
+						<?php echo 'xx'?>
 					</div>   
 				</div>
 			</div>
@@ -181,13 +201,13 @@
 	</div>
 </div>
 <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
-	<div class="panel panel-success">
+	<div class="panel panel-warning">
 		<div class="panel-heading">
 			<div class="row">
 				<div class="col-xs-12 text-center">
-					<div>Registration</div>
+					<div>Something Else</div>
 					<div id="regist">
-						<?php echo '56'?>
+						<?php echo 'yy'?>
 					</div>   
 				</div>
 			</div>
@@ -195,13 +215,13 @@
 	</div>
 </div>
 <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
-	<div class="panel panel-success">
+	<div class="panel panel-danger">
 		<div class="panel-heading">
 			<div class="row">
 				<div class="col-xs-12 text-center">
-					<div>Registration</div>
+					<div>Yet Another</div>
 					<div id="regist">
-						<?php echo '56'?>
+						<?php echo 'zz'?>
 					</div>   
 				</div>
 			</div>
@@ -209,13 +229,13 @@
 	</div>
 </div>
 <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
-	<div class="panel panel-success">
+	<div class="panel panel-info">
 		<div class="panel-heading">
 			<div class="row">
 				<div class="col-xs-12 text-center">
-					<div>Registration</div>
+					<div>Total something</div>
 					<div id="regist">
-						<?php echo '56'?>
+						<?php echo 'xx'?>
 					</div>   
 				</div>
 			</div>
@@ -223,13 +243,13 @@
 	</div>
 </div>
 <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
-	<div class="panel panel-success">
+	<div class="panel panel-warning">
 		<div class="panel-heading">
 			<div class="row">
 				<div class="col-xs-12 text-center">
-					<div>Registration</div>
+					<div>Something Else</div>
 					<div id="regist">
-						<?php echo '56'?>
+						<?php echo 'yy'?>
 					</div>   
 				</div>
 			</div>
@@ -237,13 +257,13 @@
 	</div>
 </div>
 <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
-	<div class="panel panel-success">
+	<div class="panel panel-danger">
 		<div class="panel-heading">
 			<div class="row">
 				<div class="col-xs-12 text-center">
-					<div>Registration</div>
+					<div>Yet Another</div>
 					<div id="regist">
-						<?php echo '56'?>
+						<?php echo 'zz'?>
 					</div>   
 				</div>
 			</div>
@@ -251,13 +271,13 @@
 	</div>
 </div>
 <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
-	<div class="panel panel-success">
+	<div class="panel panel-info">
 		<div class="panel-heading">
 			<div class="row">
 				<div class="col-xs-12 text-center">
-					<div>Registration</div>
+					<div>Total something</div>
 					<div id="regist">
-						<?php echo '56'?>
+						<?php echo 'xx'?>
 					</div>   
 				</div>
 			</div>
@@ -265,13 +285,13 @@
 	</div>
 </div>
 <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
-	<div class="panel panel-success">
+	<div class="panel panel-warning">
 		<div class="panel-heading">
 			<div class="row">
 				<div class="col-xs-12 text-center">
-					<div>Registration</div>
+					<div>Something Else</div>
 					<div id="regist">
-						<?php echo '56'?>
+						<?php echo 'yy'?>
 					</div>   
 				</div>
 			</div>
@@ -279,13 +299,13 @@
 	</div>
 </div>
 <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
-	<div class="panel panel-success">
+	<div class="panel panel-danger">
 		<div class="panel-heading">
 			<div class="row">
 				<div class="col-xs-12 text-center">
-					<div>Registration</div>
+					<div>Yet Another</div>
 					<div id="regist">
-						<?php echo '56'?>
+						<?php echo 'zz'?>
 					</div>   
 				</div>
 			</div>
@@ -293,13 +313,41 @@
 	</div>
 </div>
 <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
-	<div class="panel panel-success">
+	<div class="panel panel-info">
 		<div class="panel-heading">
 			<div class="row">
 				<div class="col-xs-12 text-center">
-					<div>Registration</div>
+					<div>Total something</div>
 					<div id="regist">
-						<?php echo '56'?>
+						<?php echo 'xx'?>
+					</div>   
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
+	<div class="panel panel-warning">
+		<div class="panel-heading">
+			<div class="row">
+				<div class="col-xs-12 text-center">
+					<div>Something Else</div>
+					<div id="regist">
+						<?php echo 'yy'?>
+					</div>   
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
+	<div class="panel panel-danger">
+		<div class="panel-heading">
+			<div class="row">
+				<div class="col-xs-12 text-center">
+					<div>Yet Another</div>
+					<div id="regist">
+						<?php echo 'zz'?>
 					</div>   
 				</div>
 			</div>
