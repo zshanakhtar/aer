@@ -20,43 +20,43 @@
 		</div> -->
 		<form role="form" action="javascript:void(0)" onsubmit="return false;" class="form-horizontal ajaxsubmitform" id="sec6" >
 		<div class="row form-group">
-			<label for="Q1" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">1.	Explain about the Problem/Development Challenge/Market Need/Opportunity Identified and how big is the problem. (maximum 50-100 words)</label>
+			<label for="Q1" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">1.	Explain the Problem/Development Challenge/Market Need/Opportunity Identified and how big is the problem. (maximum 100 words)</label>
 			<div class="col-sm-10">
 				<textarea class="form-control" rows="5" id="Q1" name="Q1" required><?php echo htmlspecialchars($row['Q1']);?></textarea>
 			</div>
 		</div>
 		<div class="row form-group">
-			<label for="Q2" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">2.	Explain about Innovation of Solution that you are proposing to address the Problem/Development Challenge/Market Need/Opportunity Identified (maximum 50-100 words)</label>
+			<label for="Q2" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">2.	Explain the Innovation in solution that you are proposing to address the Problem/Development Challenge/Market Need/Opportunity Identified (maximum 100 words)</label>
 			<div class="col-sm-10">
 				<textarea class="form-control" rows="5" id="Q2" name="Q2" required><?php echo htmlspecialchars($row['Q2']);?></textarea>
 			</div>
 		</div>
 		<div class="row form-group">
-			<label for="Q3" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">3.	Explain the Technology and Intellectual property right component involved in your proposed innovative solutions (maximum 50-100 words)</label>
+			<label for="Q3" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">3.	Explain the Scientific principle and technology involved in your proposed innovative solutions (maximum 150 words)</label>
 			<div class="col-sm-10">
 				<textarea class="form-control" rows="5" id="Q3" name="Q3" required><?php echo htmlspecialchars($row['Q3']);?></textarea>
 			</div>
 		</div>
 		<div class="row form-group">
-			<label for="Q4" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">4.	Explain about size of market or target beneficiary group and level of acceptance/adoption of your innovation (maximum 50-100 words)</label>
+			<label for="Q4" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">4.	Explain the size of market or target beneficiary group and level of acceptance/adoption of your innovation (maximum 100 words)</label>
 			<div class="col-sm-10">
 				<textarea class="form-control" rows="5" id="Q4" name="Q4" required><?php echo htmlspecialchars($row['Q4']);?></textarea>
 			</div>
 		</div>
 		<div class="row form-group">
-			<label for="Q5" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">5.	Quantify kind of immediate benefit (Output), long term benefit (Outcome and impact it will create once will be adopted by them (maximum 50-100 words)</label>
+			<label for="Q5" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">5.	Indicate the output, outcome and impact of your solution. (maximum 150 words).</label>
 			<div class="col-sm-10">
 				<textarea class="form-control" rows="5" id="Q5" name="Q5" required><?php echo htmlspecialchars($row['Q5']);?></textarea>
 			</div>
 		</div>
 		<div class="row form-group">
-			<label for="Q6" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">6.	Highlight the delivery model on how you will implement or take the innovation to market or target beneficiary for quick adoption. (maximum 50-100 words)</label>
+			<label for="Q6" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">6.	Highlight the delivery model on how you will implement or take the innovation to market or target beneficiary for quick adoption. (maximum 100 words)</label>
 			<div class="col-sm-10">
 				<textarea class="form-control" rows="5" id="Q6" name="Q6" required><?php echo htmlspecialchars($row['Q6']);?></textarea>
 			</div>
 		</div>
 		<div class="row form-group">
-			<label for="Q7" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">7.	Do you have developed prototype already? (Yes/ No)</label>
+			<label for="Q7" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">7.	Have you developed the prototype already? (Yes/ No)</label>
 			<div class="col-sm-10">
 				<select required class="form-control" onchange="" id="Q7" name="Q7">
 					<option value="">--Select--</option>
@@ -66,7 +66,7 @@
 			</div>
 		</div>
 		<div class="row form-group">
-			<label for="Q8" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">8.	Does your innovation have Intellectual Property rights? (Yes/No)</label>
+			<label for="Q8" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">8.	Have you protected your innovation/ invention through any Intellectual Property rights (IPR)? (Yes/No)</label>
 			<div class="col-sm-10">
 				<select required class="form-control" onchange="" id="Q8" name="Q8">
 					<option value="">--Select--</option>
@@ -76,7 +76,7 @@
 			</div>
 		</div>
 		<div class="row form-group">
-			<label for="Q9" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">9.	Do you have field tested the applicability of innovation/prototype? (Yes/No)</label>
+			<label for="Q9" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">9.	Have you field tested the applicability of innovation/prototype? (Yes/No)</label>
 			<div class="col-sm-10">
 				<select required class="form-control" onchange="" id="Q9" name="Q9">
 					<option value="">--Select--</option>
@@ -86,7 +86,7 @@
 			</div>
 		</div>
 		<div class="row form-group">
-			<label for="Q10" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">10.	Do you feel that, your innovation have potential to take in form of business/start-up? (Yes/No)</label>
+			<label for="Q10" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">10. Do you feel that, your innovation has potential to take in form of business/start-up? (Yes/No)</label>
 			<div class="col-sm-10">
 				<select required class="form-control" onchange="" id="Q10" name="Q10">
 					<option value="">--Select--</option>
