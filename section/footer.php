@@ -14,7 +14,7 @@
 
 
   <div class="col-xs-3">
-  <img src="images/m.jpg" class="img-responsive" width="60%">
+  <img src="images/m.png" class="img-responsive" width="60%">
   
   </div>
   

@@ -37,8 +37,11 @@ if(isset($_SESSION['usertype'])) { // if already login
 <?php include 'section/ajaxloader.php'; ?>
 <?php include 'section/navindex.php'; ?>
 
-
- <img src="images/logo.png"  style="margin-top:10px;margin-left:150px;width:25%;" alt="Image">
+<div style="display:inline-block;">
+ <img src="images/m.png"  style="margin-top:10px;margin-left:150px;width:147px;height:80px;" alt="Image">
+ <img src="images/logo.png"  style="margin-top:10px;margin-left:150px;width:25%; height:50px;" alt="Image">
+ <img src="images/n.png"  style="margin-top:10px;margin-left:150px;width:80px;height:80px;" alt="Image">
+</div>
  <br>
  
  
@@ -89,7 +92,7 @@ if(isset($_SESSION['usertype'])) { // if already login
 
 
   <h1 class="margin text-center">About Vishwakarma Awards</h1>
-  <p>All India Council for Technical Education (AICTE), Ministry of Human Resource Development, Govt. of India ,The Indian Society for Technical Education (ISTE) & Engineering Council of India (ECI), the apex Engineering Body of India are jointly holding a competition "AICTE-ECI-ISTE Chhatra Vishwakarma Awards” for the students of AICTE approved Degree & Diploma level technical institutions.</p>
+  <p>All India Council for Technical Education (AICTE), Ministry of Human Resource Development, Govt. of India, Engineering Council of India (ECI), and the Indian Society for Technical Education (ISTE), are jointly holding a competition “AICTE-ECI-ISTE Chhatra Vishwakarma Awards-2018” for the students of AICTE approved Degree & Diploma level Technical institutions.</p><p>The Awards are aimed for motivating young individuals, inspiring leaders and institutions/ organizations to raise their performance in their specific domains leading to significant contribution towards the growth and development of the nation.</p>
   <br>
 </div>
 </div>
@@ -121,15 +124,31 @@ if(isset($_SESSION['usertype'])) { // if already login
       </div> 
 </div>
 <div class="col-sm-7 col-xs-12">
-  <h3>To recognize and honour innovative work of the students displaying exceptional skills in
-  different Engineering streams. Awards will be given in following categories separately
-  for Degree and Diploma Students (including students from AICTE approved Community College:</h3>
- <br><p>1. <strong>Category-I</strong>: Outstanding Student Engineers (3 Awards each in Civil, Electrical, Mechanical,
- Electronics Engineering, Computer Science and Biotechnology streams or their allied branches)(Ref. 
- Annexure-A for allied Branches).</p> <br><p> 2.<strong> Category-II</strong>: Outstanding Teachers Awards (3 Awards each in
- Civil, Electrical, Mechanical, Electronics Engineering, Computer Science and Biotechnology streams 
- or their allied branches).</p> <br><p>3.<strong> Category-III</strong>: Outstanding Institutions Awards (3 Awards) based on
- the maximum number of awards won from the above two categories and other criteria.</p>
+  <p>To recognize and honour innovative work of the students displaying exceptional skills by providing the innovative solution on the given theme. 
+ <br>
+ Applications will be short listed based on their conformity to the guidelines and information furnished by nominees for specific categories. The recipients will be finalised based on the Recommendation and NOC forwarded by the institute and scrutiny of the applications by the jury & practical demonstrations by the contestants. 
+ <br> 
+ Awards will be given in following Categories for Degree and Diploma Students (including students from AICTE approved Community College):
+ </p>
+ <p class="text-center"><strong class="text-info">Category-I:</strong> Outstanding Innovative Team Award (Degree and Diploma)
+ <br><strong class="text-info"> Category-II:</strong> Outstanding Teacher Award for mentoring Students Project</p>
+ <h3><strong class="text-info"> The Problem:</strong> The participants need to provide and innovative solution to following problem:</h3>
+ <h2 class="text-center text-danger">“Empowerment of Villages through Technologies”</h2>
+ <p>For the holistic development of villages under the above theme, the following <b class="text-danger">8 sub-themes</b> have been shortlisted: -
+<ol>
+<li>Water & Irrigation</li>
+<li>Sanitation & Solid Liquid Waste Management</li>
+<li>Rural Infrastructure</li>
+<li>Tourism</li>
+<li>Agriculture & Food</li>
+<li>Education, Skill Initiative & Startups</li>
+<li>Rural Craft & Livelihood</li>
+<li>Any other Rural Appropriate Technologies</li>
+ </ol>
+</p>
+<h1 class="text-info text-center"><u>Who Can Apply?</u></h1>
+  <p>The Awards cover the students of AICTE approved Degree and Diploma Technical Institutions and Polytechnics. It also includes students from AICTE approved Community Colleges.</p>
+  <p><b><i>Nominations/Applications from all girls teams are especially encouraged….!</i></b></p>
 </div>
 </div>
 </div>
