@@ -11,7 +11,7 @@ extract($_SESSION);
 
 
 
-$resultsum=mysqli_query($conn,"SELECT * FROM student WHERE app_id='$username' and flagsec1='Y' and flagsec2='Y' and flagsec3='Y' and flagsec4='Y' and flagsec6='Y' ");
+$resultsum=mysqli_query($conn,"SELECT * FROM student WHERE app_id='$username' and flagsec1='Y' and flagsec2='Y' and flagsec3='Y' and flagsec4='Y' and flagsec5='Y' and flagsec6='Y' ");
    if($row = $resultsum->fetch_assoc())
    { 
 	$query ="UPDATE student set app_status='Submitted' WHERE app_id='$username'";
