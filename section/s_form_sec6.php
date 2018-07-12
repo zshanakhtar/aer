@@ -102,8 +102,8 @@
 			<div class="col-sm-offset-5 col-sm-2">
 			     <button type="submit" class="btn btn-warning col-sm-6 col-sm-offset-3">
 					<span class="glyphicon glyphicon-floppy-disk"></span>
-									
-										<span>Save</span>
+					<br class="hidden-lg hidden-sm hidden-xs">					
+					<span class="hidden-sm">Save</span>
 				 </button>
 			</div>
 		</div>
