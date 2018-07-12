@@ -51,7 +51,7 @@ if(isset($_SESSION['usertype'])) { // if already login
 
 <div class="top">
 <div class="row">
-<div class="col-sm-6">
+<div class="col-sm-5">
   <div id="myCarousel" class="carousel slide" data-ride="carousel" >
    
     <ol class="carousel-indicators">
@@ -88,11 +88,14 @@ if(isset($_SESSION['usertype'])) { // if already login
 
 </div>
 
-<div class="col-sm-6 col-xs-12 text">
+<div class="col-sm-7 col-xs-12 text">
 
 
-  <h1 class="margin text-center">About Vishwakarma Awards</h1>
-  <p>All India Council for Technical Education (AICTE), Ministry of Human Resource Development, Govt. of India, Engineering Council of India (ECI), and the Indian Society for Technical Education (ISTE), are jointly holding a competition “AICTE-ECI-ISTE Chhatra Vishwakarma Awards-2018” for the students of AICTE approved Degree & Diploma level Technical institutions.</p><p>The Awards are aimed for motivating young individuals, inspiring leaders and institutions/ organizations to raise their performance in their specific domains leading to significant contribution towards the growth and development of the nation.</p>
+  <h1 class="margin text-center" style="color:blue;"><b>About Vishwakarma Awards</b></h1>
+  <br>
+  <h3>All India Council for Technical Education (AICTE), Ministry of Human Resource Development, Govt. of India, Engineering Council of India (ECI), and the Indian Society for Technical Education (ISTE), are jointly holding a competition “AICTE-ECI-ISTE Chhatra Vishwakarma Awards-2018” for the students of AICTE approved Degree & Diploma level Technical institutions.</h3>
+  <br>
+  <h3>The Awards are aimed for motivating young individuals, inspiring leaders and institutions/ organizations to raise their performance in their specific domains leading to significant contribution towards the growth and development of the nation.</h3>
   <br>
 </div>
 </div>

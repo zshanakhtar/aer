@@ -10,6 +10,20 @@ $app_id2=mysqli_fetch_array($result,MYSQLI_ASSOC);
 $query="select * from teammember where app_id='$app_id'";
 $resultteam=mysqli_query($conn,$query);
 ?>
+<div class="panel panel-info">
+	<div class="panel-heading" data-toggle="collapse" data-target="#zero" style="font-size:150%;"><b>Instructions</b><span class="btn btn-info pull-right glyphicon glyphicon-chevron-up"></span></div>
+	<div  class="panel-body collapse in one" id="zero">
+		<h3 style="margin-left:100px;">
+		1-Use the 'Apply Online' pane to fill details about your team, institute and mentor
+		<br>
+		2-Use the save buttons to save your information while filling your details
+		<br>
+		3-Use the 'Preview' pane to verify saved information and submit application
+		<br>
+		4-Only submitted applications will proceed to the next stage
+		</h3>
+	</div>
+</div>
 <form role="form" action="javascript:void(0)" onsubmit="return false;" class="form-horizontal ajaxsubmitform" id="sec1" >
 <div class="panel panel-info">
 	<div class="panel-heading" data-toggle="collapse" data-target="#one" style="font-size:150%;"><b>General Information</b><span class="btn btn-info pull-right glyphicon glyphicon-chevron-up"></span></div>
