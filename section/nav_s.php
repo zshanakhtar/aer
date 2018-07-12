@@ -14,7 +14,7 @@
   <ul class="nav navbar-nav">
 <li><a href="javascript:void(0)" data-module="instructions">Instructions</a></li>
 <li><a href="javascript:void(0)" data-module="form">Apply Online</a></li>
-<li><a href="javascript:void(0)" data-module="preview">Preview Application</a></li>
+<li><a href="javascript:void(0)" data-module="preview">Preview and Submit Application</a></li>
   </ul>
 </div>
 </div>
