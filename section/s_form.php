@@ -369,10 +369,10 @@ $resultteam=mysqli_query($conn,$query);
 </form>
 
 <script>
-	$("#sec5").on('submit',function(e) {
+$("#sec5").on('submit',function(e) {
 	var formid=$(this).attr('id');//get this form's id
     e.preventDefault(); // avoid to execute the actual submit of the form.
-	setTimeout(function(e){ //wait 50ms to allow validator to execute
+	
     var url = "request/"+formid+".php"; // the script where you handle the form input.
 	var formData = new FormData($("#sec5")[0]);
 	if($("#NOC_pdf")[0].files[0].size/1024/1024<2 && $("#summary_pdf")[0].files[0].size/1024/1024<2)
@@ -399,7 +399,7 @@ $resultteam=mysqli_query($conn,$query);
 		alert("Please upload files smaller than 2MB");
 	}
 
-	}, 50);
+	
 });
 </script>
 

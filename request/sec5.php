@@ -18,13 +18,13 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
         if($row = $resultsum->fetch_assoc())
         {	
             $fileNameNOC = trim($username).'_NOC.pdf';
-            $targetNOC = "../NOC/";
+            $targetNOC = "../attachment/NOC/";
             $fileTargetNOC = $targetNOC.$fileNameNOC;
             $tempFileNameNOC = $_FILES["NOC_pdf"]["tmp_name"];
             $resultNOC = move_uploaded_file($tempFileNameNOC,$fileTargetNOC);
             $file_typeNOC=$_FILES['NOC_pdf']['type'];
             $fileNamesummary = trim($username).'_summary.pdf';
-            $targetsummary = "../summary/";
+            $targetsummary = "../attachment/summary/";
             $fileTargetsummary = $targetsummary.$fileNamesummary;
             $tempFileNamesummary = $_FILES["summary_pdf"]["tmp_name"];
             $resultsummary = move_uploaded_file($tempFileNamesummary,$fileTargetsummary);
