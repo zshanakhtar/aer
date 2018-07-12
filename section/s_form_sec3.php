@@ -32,7 +32,7 @@
 						<td class="hidden"><p class="mem_serial"><?php $count=$row['mem_id'];echo $count; ?></p></td>
 						<td><input type="text" class="form-control" value="<?php echo ($row['member_name']);?>" /></td>
 						<td><input type="text" class="form-control" value="<?php echo ($row['member_age']);?>" /></td>
-						<td>
+						<td style="width:120px">
 						<select required class="form-control">
 							<option value="" <?php if($row["gender"]==""){echo "selected";}?> >--Select--</option>
 							<option value="Male" <?php if($row["gender"]=="Male"){echo "selected";}?> >Male</option>
