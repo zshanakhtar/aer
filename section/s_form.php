@@ -331,7 +331,7 @@ $resultteam=mysqli_query($conn,$query);
 		<div class="row form-group">
 			<div class="col-sm-offset-5 col-sm-2">
 			     <button type="submit" class="btn btn-warning col-sm-6 col-sm-offset-3">
-					<span class="glyphicon glyphicon-floppy-disk-open"></span>
+					<span class="glyphicon glyphicon-floppy-open"></span>
 					<br class="hidden-lg hidden-sm hidden-xs">					
 					<span class="hidden-sm">Upload</span>
 				 </button>

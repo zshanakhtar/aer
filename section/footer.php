@@ -5,30 +5,24 @@
 <div class="container">
 <marquee>
 <div class="col-xs-12">
-<h2 class="text-danger">*Do not use Internet Explore to Fill the Entry*</h2>
+<h2 class="text-danger">* Site works best with latest versions of Mozilla Firefox and Google Chrome. Please do not use Internet Explorer *</h2>
 </div>
 </marquee>
 </div>
-<footer class="col-xs-12 text-center">
+<footer class="col-xs-12">
 
 
 
-  <div class="col-xs-3">
-  <img src="images/m.png" class="img-responsive" width="60%">
-  
-  </div>
-  
-  <div class="col-xs-3">
-  <img src="images/n.png" class="img-responsive" width="30%">
-  
-  </div>
-
-
-<div class="col-xs-6 pull-right">
+<div class="col-xs-12 pull-right">
  
-      <p><span class="glyphicon glyphicon-map-marker"></span>New delhi</p>
-      <p><span class="glyphicon glyphicon-phone"></span> 01129581322</p>
-      <p><span class="glyphicon glyphicon-envelope"></span> sdc@aicte-india.org</p> 
+      <span class="col-xs-4">
+        <span class="glyphicon glyphicon-map-marker"></span>
+        ALL INDIA COUNCIL FOR TECHNICAL EDUCATION
+        <br>Nelson Mandela Marg, Vasant Kunj,
+        <br>New Delhi -110070
+      </span>
+      <span class="col-xs-4 text-center"><span class="glyphicon glyphicon-phone"></span> 01129581322</span>
+      <span class="col-xs-4"><span class="glyphicon glyphicon-envelope"></span> sdc@aicte-india.org</span> 
   </div>
   
 
