@@ -37,11 +37,14 @@ if(isset($_SESSION['usertype'])) { // if already login
 <?php include 'section/ajaxloader.php'; ?>
 <?php include 'section/navindex.php'; ?>
 
-<div class="col-xs-12 col-sm-10 col-sm-offset-1" style="margin-top:10px;">
- <img class="col-sm-2" src="images/m.png"  style="height:80px;" alt="Image">
- <img class="col-sm-5 col-sm-offset-2" src="images/logo.png"  style="height:80px;" alt="Image">
- <img class="col-sm-1 col-sm-offset-2" src="images/n.png"  style="height:80px;" alt="Image">
+<div class="container" style="margin-top:10px; margin-left:10%;">
+  <div class="row">
+    <div class="hidden-xs col-sm-3"><img src="images/m.png" alt="Image"></div>
+    <div class="col-xs-12 col-sm-6"><img src="images/logo.png" class="img-responsive" alt="Image"></div>
+    <div class="col-sm-3 hidden-xs"><img src="images/n.png" style="height:80px;" alt="Image"></div>
+  </div>
 </div>
+
  <br>
  
  
