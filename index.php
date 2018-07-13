@@ -39,7 +39,7 @@ if(isset($_SESSION['usertype'])) { // if already login
 
 <div class="container" style="margin-top:10px; margin-left:10%;">
   <div class="row">
-    <div class="hidden-xs col-sm-3"><img src="images/m.png" alt="Image"></div>
+    <div class="hidden-xs col-sm-3"><img src="images/m.png" style="height:80px;" alt="Image"></div>
     <div class="col-xs-12 col-sm-6"><img src="images/logo.png" class="img-responsive" alt="Image"></div>
     <div class="col-sm-3 hidden-xs"><img src="images/n.png" style="height:80px;" alt="Image"></div>
   </div>
