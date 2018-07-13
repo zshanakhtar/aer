@@ -394,13 +394,13 @@ About Your Project
 <td colspan="2">
 	<a class="btn btn-info col-xs-12" href="request/getNOC.php" target="_blank" >
 		<span class="glyphicon glyphicon-floppy-save"></span>
-		<span>Download Uploaded NOC</span>
+		<span>Preview Uploaded NOC</span>
 	</a>
 </td>
 <td colspan="2">
 	<a class="btn btn-info col-xs-12" href="request/getsummary.php" target="_blank" >
 		<span class="glyphicon glyphicon-floppy-save"></span>
-		<span>Download Uploaded Summary</span>
+		<span>Preview Uploaded Summary</span>
 	</a>
 </td>
 <td colspan="5">

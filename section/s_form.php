@@ -411,7 +411,7 @@ $("#sec5").on('submit',function(e) {
 	}
 	else
 	{
-		alert("Please upload files smaller than 2MB");
+		alert("Please upload files smaller than 2MB each");
 	}
 
 	
