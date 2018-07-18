@@ -1,8 +1,7 @@
 <?php
 include "../request/"."connection.php";
 
-extract($_SESSION);
-$app_id=trim($username);
+
 $query="select * from student where app_id='$app_id'";
 $result=mysqli_query($conn,$query);
 $app_id2=mysqli_fetch_array($result,MYSQLI_ASSOC);

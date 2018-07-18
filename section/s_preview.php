@@ -1,9 +1,6 @@
 <?php
 include "../request/"."connection.php";
 
-extract($_SESSION);
-$app_id=trim($username);
-
 $resultsum=mysqli_query($conn,"SELECT * FROM student WHERE app_id='$app_id'");
 $row = $resultsum->fetch_assoc();
 $resultsum1=mysqli_query($conn,"SELECT * FROM regist WHERE username='$username'");
