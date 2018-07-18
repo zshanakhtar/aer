@@ -46,6 +46,7 @@
 							<option value="CSE" <?php if($row["stream"]=="CSE"){echo "selected";}?> >CSE and Allied Branches</option>
 							<option value="CIVIL" <?php if($row["stream"]=="CIVIL"){echo "selected";}?> >Civil and Allied Branches</option>
 							<option value="ECE" <?php if($row["stream"]=="ECE"){echo "selected";}?> >ECE and Allied Branches</option>
+							<option value="MECHANICAL" <?php if($row["stream"]=="MECHANICAL"){echo "selected";}?> >MECHANICAL and Allied Branches</option>
 						</select>
 						</td>
 						<td><input type="text" class="form-control" value="<?php echo ($row['year']);?>" /></td>
