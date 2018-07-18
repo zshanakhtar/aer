@@ -46,6 +46,9 @@
             <td>
               Judges
             </td>
+            <td>
+              Action
+            </td>
           </tr>
         </thead>
         <tbody>
@@ -88,6 +91,18 @@
 				}
 			    ?>
             </td>
+            <td>
+              <button type="submit" class="btn btn-danger z-optionbtn" data-i="<?php echo $count;?>" style="float:left;">
+                <span class="glyphicon glyphicon-cog"></span>
+              </button>
+              <div class="col-xs-12 fade hidden" style="float:left;position:relative">
+                <ul class="z-optionbox z-i<?php echo $count;?>">
+                  <li class="z-option" data-zaction="s_form"><span class="glyphicon glyphicon-edit"></span><br>Edit</li>
+                  <li class="z-option" data-zaction="s_preview"><span class="glyphicon glyphicon-eye-open"></span><br>Preview</li>
+                  <li class="z-option" data-zaction="s_delete"><span class="glyphicon glyphicon-trash"></span><br>Delete (clears all data)</li>
+                </ul>
+              </div>
+            </td>
           </tr>
           <?php
 					}
@@ -98,6 +113,34 @@
       
     </div>
     <script>
+      $(".z-optionbtn").on('click',function(){
+        var i=$(this).data("i");
+        $(".z-optionbox").closest('div').removeClass("in");
+        $(".z-optionbox").closest('div').addClass("hidden");
+        $(".z-optionbox.z-i"+i).closest('div').toggleClass("in");
+        $(".z-optionbox.z-i"+i).closest('div').toggleClass("hidden");
+      });
+
+        $(".z-option").on('click',function(){
+          var appid=$(this).closest("tr").data("appid");
+          var action=$(this).data("zaction");
+          alert(appid+" "+action);
+          // $.ajax({
+          // url: "request/getsubmodule.php",
+          // type: "POST",
+          // data: "module=view_app"+"&submodule=problem"+"&i="+i,
+          // success: function(response){ 
+          //     $('.subreview').html(response);
+          //     $("#problem_table").DataTable();
+          //     //handle returned arrayList
+          // },
+          // error: function(e){  
+          //     alert("error");
+          //     //handle error
+          // } 
+          // });
+        });
+      
 $("#pr<?php echo $i;?>_count").html("<?php echo $count-1;?>");
 
 var appid_arr=[];
