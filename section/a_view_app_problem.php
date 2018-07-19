@@ -8,7 +8,7 @@
 }
 </style>
 
-<div id="problem" class="tab-pane fade in active">
+<div id="problem_view" class="tab-pane fade in active" style="overflow-x:auto;margin-top:30px;margin-bottom:30px;">
         <div class="row form-group">
 		  	<label for="" class="col-sm-2 col-sm-offset-1 control-label" style="color:#337ab7">Select all teams having stream</label>
 		  	<div class="col-sm-8">
@@ -53,7 +53,7 @@
         </thead>
         <tbody>
           <?php
-          $resultteam=mysqli_query($conn,"SELECT app_id,team_name,award_cat FROM student WHERE problem='$i' AND app_status='Submitted'");
+          $resultteam=mysqli_query($conn,"SELECT app_id,team_name,award_cat FROM student WHERE problem='$i'");
 					$count=1;
 					while($rowteam = $resultteam->fetch_assoc()){
             $app_id=$rowteam['app_id'];
@@ -99,7 +99,7 @@
                 <ul class="z-optionbox z-i<?php echo $count;?>">
                   <li class="z-option" data-zaction="s_form"><span class="glyphicon glyphicon-edit"></span><br>Edit</li>
                   <li class="z-option" data-zaction="s_preview"><span class="glyphicon glyphicon-eye-open"></span><br>Preview</li>
-                  <li class="z-option" data-zaction="s_delete"><span class="glyphicon glyphicon-trash"></span><br>Delete (clears all data)</li>
+                  <li class="z-option" data-zaction="s_delete"><span class="glyphicon glyphicon-trash"></span><br>Delete</li>
                 </ul>
               </div>
             </td>
@@ -124,24 +124,23 @@
         $(".z-option").on('click',function(){
           var appid=$(this).closest("tr").data("appid");
           var action=$(this).data("zaction");
-          alert(appid+" "+action);
-          // $.ajax({
-          // url: "request/getsubmodule.php",
-          // type: "POST",
-          // data: "module=view_app"+"&submodule=problem"+"&i="+i,
-          // success: function(response){ 
-          //     $('.subreview').html(response);
-          //     $("#problem_table").DataTable();
-          //     //handle returned arrayList
-          // },
-          // error: function(e){  
-          //     alert("error");
-          //     //handle error
-          // } 
-          // });
+          // alert(appid+" "+action);
+          $.ajax({
+          url: "request/getsegue.php",
+          type: "POST",
+          data: "module="+action+"&app_id="+appid,
+          success: function(response){
+              $('.viewsegue').html(response);
+              //handle returned arrayList
+          },
+          error: function(e){  
+              alert("error");
+              //handle error
+          } 
+          });
         });
       
-$("#pr<?php echo $i;?>_count").html("<?php echo $count-1;?>");
+$("#pr<?php echo $i;?>_count").html("<?php echo $count-1;?>");//refreshing number of applications under this category
 
 var appid_arr=[];
   $('.filter-control').on('click',function(){
@@ -185,67 +184,7 @@ var appid_arr=[];
       refreshfilteranchors();      
     });
 
-    function addappid(appid)
-    {
-      if(!hasappid(appid))
-        appid_arr.push(appid);
-    }
-    function hasappid(appid)
-    {
-      for(var i=0;i<appid_arr.length;i++)
-      {
-        if(appid_arr[i]==appid)
-        {
-         return true;
-        }
-      }
-      return false;
-    }
-    function removeappid(appid)
-    {
-      for(var i=0;i<appid_arr.length;i++)
-      {
-        if(appid_arr[i]==appid)
-        {
-         appid_arr.splice(i,1);
-        }
-      }
-    }
-    function refreshfilteranchors()
-    {
-      var anchorname;
-      var activeanchors=0;
-      // alert(appid_arr);
-      $('.filter-anchor').each(function(){
-        anchorname=$(this).html().trim();
-        // alert(anchorname);
-        if(hasappid(anchorname))
-        {
-          // alert("TRUE");
-          activeanchors++;
-          $(this).addClass('btn-danger');
-          $(this).removeClass('btn-default');
-        }
-        else
-        {
-          // alert("FALSE");
-          $(this).removeClass('btn-danger');
-          $(this).addClass('btn-default');
-        }
-      });
-      $("#activeanchors").val(activeanchors);
-      $("#activeanchors").trigger('change');
-      $("#appid_arr").val(appid_arr);
-      $("#appid_arr").trigger('change');
-    }
-    function resetfilters()
-    {
-      appid_arr=[];
-      refreshfilteranchors();
-      $('.filter-control').removeClass("btn-danger");
-      $('.filter').removeClass("filter-active");
-      $('.filter-control').addClass("btn-default");
-    }
+    
 
 
 

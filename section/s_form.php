@@ -418,7 +418,7 @@ $("#sec5").on('submit',function(e) {
 </script>
 
 <?php
-$resultsum=mysqli_query($conn,"SELECT * FROM student WHERE app_id='$username'");
+$resultsum=mysqli_query($conn,"SELECT * FROM student WHERE app_id='$app_id'");
 $row = $resultsum->fetch_assoc();
 $resultsum1=mysqli_query($conn,"SELECT * FROM regist WHERE username='$app_id'");
 $row1 = $resultsum1->fetch_assoc();

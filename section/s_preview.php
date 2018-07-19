@@ -3,7 +3,7 @@ include "../request/"."connection.php";
 
 $resultsum=mysqli_query($conn,"SELECT * FROM student WHERE app_id='$app_id'");
 $row = $resultsum->fetch_assoc();
-$resultsum1=mysqli_query($conn,"SELECT * FROM regist WHERE username='$username'");
+$resultsum1=mysqli_query($conn,"SELECT * FROM regist WHERE username='$app_id'");
 $row1 = $resultsum1->fetch_assoc();
 ?>
 <div style="overflow-x:auto;">
