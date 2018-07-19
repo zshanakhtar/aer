@@ -8,8 +8,20 @@
       <li><a data-toggle="tab" data-i="6">Problem 6&nbsp;<span class="btn btn-xs btn-danger" id="pr6_count"></span></a></li>
       <li><a data-toggle="tab" data-i="7">Problem 7&nbsp;<span class="btn btn-xs btn-danger" id="pr7_count"></span></a></li>
   </ul>
-  <div class="tab-content subreview">
+  <div class="tab-content">
+      <div class="subreview">
 
+      </div>
+      
+          <div class="panel panel-danger">
+        	<div class="panel-heading" data-toggle="collapse" data-target="#playground" style="font-size:150%;"><b>Playground</b><span class="btn btn-danger pull-right glyphicon glyphicon-chevron-up"></span></div>
+        	<div  class="panel-body collapse in viewsegue" id="playground">
+        		<h1 style="margin-left:100px;">
+        		Admin Playground
+        		</h1>
+        	</div>
+        </div>
+      
   </div>
 
 

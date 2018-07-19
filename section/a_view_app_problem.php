@@ -99,7 +99,8 @@
                 <ul class="z-optionbox z-i<?php echo $count;?>">
                   <li class="z-option" data-zaction="s_form"><span class="glyphicon glyphicon-edit"></span><br>Edit</li>
                   <li class="z-option" data-zaction="s_preview"><span class="glyphicon glyphicon-eye-open"></span><br>Preview</li>
-                  <li class="z-option" data-zaction="s_delete"><span class="glyphicon glyphicon-trash"></span><br>Delete</li>
+                  <li class="z-option" data-zaction="a_s_flags"><span class="glyphicon glyphicon-eye-open"></span><br>Check Flags</li>
+                  <li class="z-option" data-zaction="a_s_delete"><span class="glyphicon glyphicon-trash"></span><br>Delete</li>
                 </ul>
               </div>
             </td>

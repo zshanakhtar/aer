@@ -6,11 +6,15 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
     
     extract($_POST);
     extract($_SESSION);
+    if($usertype='a')
+    {
+        $username=$app_id;
+    }
     $flagNOC=0;
     $flagsummary=0;
     // echo $username;
     $resultsum=mysqli_query($conn,"SELECT * FROM student WHERE app_id='$username' AND app_status='Submitted'");
-    if($row = $resultsum->fetch_assoc())
+    if($row = $resultsum->fetch_assoc() && $usertype!='a')
 	{
 		echo "Application already submitted, details could not be updated";
     }

@@ -6,10 +6,13 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
 	
 extract($_POST);
 extract($_SESSION);
-
+if($usertype=='a')
+{
+    $username=$app_id;
+}
 $size = (int) $_SERVER['CONTENT_LENGTH'];
 
-echo "Size of request:".$size."\n";
+// echo "Size of request:".$size."\n";
 
 $Q1 = mysqli_real_escape_string($conn, $Q1);
 $Q2 = mysqli_real_escape_string($conn, $Q2);
@@ -25,7 +28,7 @@ $Q10 = mysqli_real_escape_string($conn, $Q10);
 
 
 $resultsum=mysqli_query($conn,"SELECT * FROM student WHERE app_id='$username' AND app_status='Submitted'");
-if($row = $resultsum->fetch_assoc())
+if($row = $resultsum->fetch_assoc() && $usertype!='a')
 	{
 		echo "Application already submitted, details could not be updated";
 	}
