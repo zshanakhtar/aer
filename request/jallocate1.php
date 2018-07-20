@@ -8,7 +8,7 @@ extract($_POST);
 extract($_SESSION);
 
 // echo $username;
-if($usertype=='a')
+if($usertype=='a'||$usertype=='m')
 {
 $resultcappid=mysqli_query($conn,"SELECT count(judge_id) FROM judge WHERE app_id='$app_id'");
 $row = $resultcappid->fetch_assoc();
