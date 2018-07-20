@@ -97,10 +97,10 @@
               </button>
               <div class="col-xs-12 fade hidden" style="float:left;position:relative">
                 <ul class="z-optionbox z-i<?php echo $count;?>">
-                  <li class="z-option" data-zaction="s_form"><span class="glyphicon glyphicon-edit"></span><br>Edit</li>
-                  <li class="z-option" data-zaction="s_preview"><span class="glyphicon glyphicon-eye-open"></span><br>Preview</li>
-                  <li class="z-option" data-zaction="a_s_insight"><span class="glyphicon glyphicon-eye-open"></span><br>Insights</li>
-                  <li class="z-option" data-zaction="a_s_delete"><span class="glyphicon glyphicon-trash"></span><br>Delete</li>
+                  <li class="z-option" data-zaction="s_form" title="Open Application Form as Student"><span class="glyphicon glyphicon-edit"></span><br>Edit</li>
+                  <li class="z-option" data-zaction="s_preview" title="Open Application Preview as Student"><span class="glyphicon glyphicon-eye-open"></span><br>Preview</li>
+                  <li class="z-option" data-zaction="a_s_insight" title="View and update flags"><span class="glyphicon glyphicon-eye-open"></span><br>Insights</li>
+                  <li class="z-option" data-zaction="a_s_delete" title="View and delete student data"><span class="glyphicon glyphicon-trash"></span><br>Delete</li>
                 </ul>
               </div>
             </td>
