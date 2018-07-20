@@ -39,9 +39,10 @@ else
 }
 ?>
 
+<form role="form"  action="javascript:void(0)" onsubmit="return false;" class="form-horizontal ajaxsubmitform" id="flagset" >
 <div class="panel panel-info">
-	<div class="panel-heading" data-toggle="collapse" data-target="#four" style="font-size:150%;"><b>Student form insights</b><span class="btn btn-info pull-right glyphicon glyphicon-chevron-up"></span></div>
-	<div  class="panel-body collapse in one" id="four">
+	<div class="panel-heading" data-toggle="collapse" data-target="#insight" style="font-size:150%;"><b>Student form insights</b><span class="btn btn-info pull-right glyphicon glyphicon-chevron-up"></span></div>
+	<div  class="panel-body collapse in one" id="insight">
         <div class="col-sm-12 form-group">
 			<label for="app_id" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">Application Number</label>
             <div class="col-sm-10">
@@ -150,8 +151,19 @@ else
             </div>
 		</div>
 
+        <div class="col-sm-12 form-group">
+			<div class="col-sm-offset-5 col-sm-2">
+			     <button type="submit" class="btn btn-warning col-sm-6 col-sm-offset-3">
+					<span class="glyphicon glyphicon-floppy-disk"></span>
+					<br class="hidden-lg hidden-sm hidden-xs">					
+					<span class="hidden-sm">Update</span>
+				 </button>
+			</div>
+		</div>
+
 	</div>
 </div>
+</form>
 
 <script>
     $('#flagsec1,#flagsec2,#flagsec3,#flagsec4,#flagsec5,#flagsec6,#app_status,#flageval1,#flageval2').on('keyup',function(e){
@@ -166,7 +178,7 @@ else
         $(this).closest('div.form-group').find('.scorer-disabled i').each(function(){
             if($(this).data('eval').toUpperCase()==score)
             {
-                $(this).addClass("btn-warning");
+                $(this).addClass("btn-primary");
                 $(this).removeClass("btn-default");
                 $(this).siblings().removeClass("btn-warning");
                 $(this).siblings().addClass("btn-default");
@@ -204,4 +216,31 @@ else
     $("#flageval2").val("<?php echo addslashes($flageval2);?>");
     $('#flageval2').trigger('keyup');
     
+    $(".ajaxsubmitform").on('submit',function(e) {
+	    var formid=$(this).attr('id');//get this form's id
+        e.preventDefault(); // avoid to execute the actual submit of the form.
+	    setTimeout(function(e){ //wait 50ms to allow validator to execute
+            var url = "request/"+formid+".php"; // the script where you handle the form input.
+	        // var data1=$("#"+formid).serialize()+"&flag"+formid+"=Y";
+	        // alert($("#"+formid).find('.has-error').length);//No of errors in the form
+	        if($("#"+formid).find('.has-error').length==0) 
+	        {
+                $.ajax({
+                   type: "POST",
+                   url: url,
+                   data: $("#"+formid).serialize(), // serializes the form's elements.
+                   success: function(response)
+                   {
+	        		   alert(response.toString()); //show response from the php script
+                       //alert("Details saved");
+                   },
+	        	   error: function(data,response){  
+	        			alert("Network error");
+	        		//handle error
+	        		}
+                 });
+	        }
+	    }, 50);
+    });
+
 </script>
