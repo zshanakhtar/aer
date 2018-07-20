@@ -1,8 +1,7 @@
 <?php
 include "../request/"."connection.php";
 
-extract($_SESSION);
-$app_id=trim($username);
+
 $query="select * from student where app_id='$app_id'";
 $result=mysqli_query($conn,$query);
 $app_id2=mysqli_fetch_array($result,MYSQLI_ASSOC);
@@ -10,6 +9,20 @@ $app_id2=mysqli_fetch_array($result,MYSQLI_ASSOC);
 $query="select * from teammember where app_id='$app_id'";
 $resultteam=mysqli_query($conn,$query);
 ?>
+<div class="panel panel-info">
+	<div class="panel-heading" data-toggle="collapse" data-target="#zero" style="font-size:150%;"><b>Instructions</b><span class="btn btn-info pull-right glyphicon glyphicon-chevron-up"></span></div>
+	<div  class="panel-body collapse in one" id="zero">
+		<h3 style="margin-left:100px;">
+		1-Use the 'Apply Online' pane to fill details about your team, institute and mentor
+		<br>
+		2-Use the save buttons to save your information while filling your details
+		<br>
+		3-Use the 'Preview' pane to verify saved information and submit application
+		<br>
+		4-Only submitted applications will proceed to the next stage
+		</h3>
+	</div>
+</div>
 <form role="form" action="javascript:void(0)" onsubmit="return false;" class="form-horizontal ajaxsubmitform" id="sec1" >
 <div class="panel panel-info">
 	<div class="panel-heading" data-toggle="collapse" data-target="#one" style="font-size:150%;"><b>General Information</b><span class="btn btn-info pull-right glyphicon glyphicon-chevron-up"></span></div>
@@ -206,8 +219,8 @@ $resultteam=mysqli_query($conn,$query);
 			<div class="col-sm-offset-5 col-sm-2">
 			     <button type="submit" class="btn btn-warning col-sm-6 col-sm-offset-3">
 					<span class="glyphicon glyphicon-floppy-disk"></span>
-										
-										<span>Save</span>
+					<br class="hidden-lg hidden-sm hidden-xs">					
+					<span class="hidden-sm">Save</span>
 				 </button>
 			</div>
 		</div>
@@ -285,8 +298,8 @@ $resultteam=mysqli_query($conn,$query);
 			<div class="col-sm-offset-5 col-sm-2">
 			     <button type="submit" class="btn btn-warning col-sm-6 col-sm-offset-3">
 					<span class="glyphicon glyphicon-floppy-disk"></span>
-										
-										<span>Save</span>
+					<br class="hidden-lg hidden-sm hidden-xs">					
+					<span class="hidden-sm">Save</span>
 				 </button>
 			</div>
 		</div>
@@ -330,10 +343,11 @@ $resultteam=mysqli_query($conn,$query);
 		</div>
 		<div class="row form-group">
 			<div class="col-sm-offset-5 col-sm-2">
-				<button type="submit" class="btn btn-warning col-sm-6 col-sm-offset-3">
-					<span class="glyphicon glyphicon-floppy-disk"></span>
-					<span>Upload</span>
-				</button>
+			     <button type="submit" class="btn btn-warning col-sm-6 col-sm-offset-3">
+					<span class="glyphicon glyphicon-floppy-open"></span>
+					<br class="hidden-lg hidden-sm hidden-xs">					
+					<span class="hidden-sm">Upload</span>
+				 </button>
 			</div>
 		</div>
 			<div class="modal fade" id="PDF_preview" role="dialog">
@@ -369,10 +383,10 @@ $resultteam=mysqli_query($conn,$query);
 </form>
 
 <script>
-	$("#sec5").on('submit',function(e) {
+$("#sec5").on('submit',function(e) {
 	var formid=$(this).attr('id');//get this form's id
     e.preventDefault(); // avoid to execute the actual submit of the form.
-	setTimeout(function(e){ //wait 50ms to allow validator to execute
+	
     var url = "request/"+formid+".php"; // the script where you handle the form input.
 	var formData = new FormData($("#sec5")[0]);
 	if($("#NOC_pdf")[0].files[0].size/1024/1024<2 && $("#summary_pdf")[0].files[0].size/1024/1024<2)
@@ -396,15 +410,15 @@ $resultteam=mysqli_query($conn,$query);
 	}
 	else
 	{
-		alert("Please upload files smaller than 2MB");
+		alert("Please upload files smaller than 2MB each");
 	}
 
-	}, 50);
+	
 });
 </script>
 
 <?php
-$resultsum=mysqli_query($conn,"SELECT * FROM student WHERE app_id='$username'");
+$resultsum=mysqli_query($conn,"SELECT * FROM student WHERE app_id='$app_id'");
 $row = $resultsum->fetch_assoc();
 $resultsum1=mysqli_query($conn,"SELECT * FROM regist WHERE username='$app_id'");
 $row1 = $resultsum1->fetch_assoc();

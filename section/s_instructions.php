@@ -1,4 +1,4 @@
-<h3 style="text-align:center">Here the students get any instructions you wish to provide
+<h3 style="text-align:center">Instructions
 <br>
 <br>
 <br>
