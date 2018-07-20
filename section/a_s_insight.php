@@ -41,7 +41,7 @@ else
 
 <form role="form"  action="javascript:void(0)" onsubmit="return false;" class="form-horizontal ajaxsubmitform" id="flagset" >
 <div class="panel panel-info">
-	<div class="panel-heading" data-toggle="collapse" data-target="#insight" style="font-size:150%;"><b>Student form insights</b><span class="btn btn-info pull-right glyphicon glyphicon-chevron-up"></span></div>
+	<div class="panel-heading" data-toggle="collapse" data-target="#insight" style="font-size:150%;"><b>Student Form Insights</b><span class="btn btn-info pull-right glyphicon glyphicon-chevron-up"></span></div>
 	<div  class="panel-body collapse in one" id="insight">
         <div class="col-sm-12 form-group">
 			<label for="app_id" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">Application Number</label>
