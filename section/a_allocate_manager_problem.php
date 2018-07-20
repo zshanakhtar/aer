@@ -52,7 +52,7 @@
               Streams
             </td>
             <td>
-              Judges
+              Managers
             </td>
           </tr>
         </thead>
@@ -85,22 +85,22 @@
             </td>
             <td>
             <?php
-                $resultjalloted=mysqli_query($conn,"SELECT judge_id,flageval2 FROM judge WHERE app_id='$app_id'");
-                while($rowjalloted = $resultjalloted->fetch_assoc())
+                $resultmalloted=mysqli_query($conn,"SELECT manager_id,flageval0 FROM manager WHERE app_id='$app_id'");
+                while($rowmalloted = $resultmalloted->fetch_assoc())
                 {
-                  if($rowjalloted['flageval2']=='Y')
+                  if($rowmalloted['flageval0']=='N')
                   {
                 ?>
-                    <span class="blue-box">
-                        <?php echo htmlspecialchars($rowjalloted['judge_id']);?>
+                    <span class="blue-box" title="Not forwarded to evaluator">
+                        <?php echo htmlspecialchars($rowmalloted['manager_id']);?>
                     </span>
                 <?php
                   }
                   else
                   {
                 ?>
-                    <span class="red-box">
-                        <?php echo htmlspecialchars($rowjalloted['judge_id']);?>
+                    <span class="red-box" title="Forwarded to evaluator">
+                        <?php echo htmlspecialchars($rowmalloted['manager_id']);?>
                     </span>
                 <?php
                   }

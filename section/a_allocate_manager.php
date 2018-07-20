@@ -1,18 +1,18 @@
-<form role="form" action="javascript:void(0)" onsubmit="return false;" class="form-horizontal" id="jallocate1" >
+<form role="form" action="javascript:void(0)" onsubmit="return false;" class="form-horizontal" id="mallocate1" >
 <div class="panel panel-info">
-	<div class="panel-heading" data-toggle="collapse" data-target="#one" style="font-size:150%;"><b>General Information</b><span class="btn btn-info pull-right glyphicon glyphicon-chevron-up"></span></div>
+	<div class="panel-heading" data-toggle="collapse" data-target="#one" style="font-size:150%;"><b>Send to manager</b><span class="btn btn-info pull-right glyphicon glyphicon-chevron-up"></span></div>
 	<div  class="panel-body collapse in one" id="one">
     <div class="row form-group">
-	  	<label for="judge_id" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">Judge</label>
+	  	<label for="manager_id" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">Manager</label>
 	  	<div class="col-sm-10">
-	  		<select required class="form-control" id="judge_id" name="judge_id">
+	  		<select required class="form-control" id="manager_id" name="manager_id">
 	  			<option value="">--Select--</option>
           <?php
-            $resultjudges=mysqli_query($conn,"SELECT username FROM regist WHERE usertype='j'");
-            while($rowjudges = $resultjudges->fetch_assoc())
+            $resultmanagers=mysqli_query($conn,"SELECT username FROM regist WHERE usertype='m'");
+            while($rowmanagers = $resultmanagers->fetch_assoc())
             {
           ?>
-	  			<option value="<?php echo addslashes($rowjudges['username']);?>"><?php echo htmlspecialchars($rowjudges['username']);?></option>
+	  			<option value="<?php echo addslashes($rowmanagers['username']);?>"><?php echo htmlspecialchars($rowmanagers['username']);?></option>
             <?php } ?>
 	  		</select>
 	  	</div>
@@ -49,7 +49,7 @@
             Network Error: 0/0
           </div>
           <div class="progress-bar progress-bar-danger" id="appid_error" role="progressbar" style="width:100%;">
-            Select a judge and applications to send
+            Select a manager and applications to send
           </div>
         </div>
 	  	</div>
@@ -59,7 +59,7 @@
         <button type="submit" class="btn btn-warning col-sm-10 col-sm-offset-1">
           <span class="glyphicon glyphicon-floppy-disk"></span>
           <br class="hidden-lg hidden-sm hidden-xs">					
-          <span class="hidden-sm">Send to Judge</span>
+          <span class="hidden-sm">Send to manager</span>
          </button>
       </div>
     </div>
@@ -92,7 +92,7 @@
     $.ajax({
     url: "request/getsubmodule.php",
     type: "POST",
-    data: "module=allocate_judge"+"&submodule=problem"+"&i="+i,
+    data: "module=allocate_manager"+"&submodule=problem"+"&i="+i,
     success: function(response){ 
         $('.subreview').html(response);
         $("#problem_table").DataTable();
@@ -174,9 +174,9 @@ var appid_arr=[];
       $('.filter-control').addClass("btn-default");
     }
 
-$("#jallocate1").validator();
+$("#mallocate1").validator();
 
-$("#jallocate1").on('submit',function(e) {
+$("#mallocate1").on('submit',function(e) {
   // alert('Form submitted');
 	var formid=$(this).attr('id');//get this form's id
     e.preventDefault(); // avoid to execute the actual submit of the form.
@@ -222,7 +222,7 @@ $("#jallocate1").on('submit',function(e) {
                 {
                   savewarn+=1;
                   $("#appid_error").css('width',(savewarn/appid_arr.length*100)+'%');
-                  $("#appid_error").html('Application already has two judges: '+(savewarn)+'/'+(appid_arr.length));
+                  $("#appid_error").html('Application already has two managers: '+(savewarn)+'/'+(appid_arr.length));
                 }
                 // alert("Details saved");
              },

@@ -15,7 +15,7 @@
 <li class="active"><a href="javascript:void(0)" data-module="summary">Summary</a></li>
 <li><a href="javascript:void(0)" data-module="view_app">View Applications</a></li>
 <li><a href="javascript:void(0)" data-module="create_user">Create User</a></li>
-<li><a href="javascript:void(0)" data-module="allocate_judge">Allocate Judges</a></li>
+<li><a href="javascript:void(0)" data-module="allocate_manager">Allocate Managers</a></li>
 <li><a href="javascript:void(0)" data-module="under">Under Cons</a></li>
   </ul>
 </div>
