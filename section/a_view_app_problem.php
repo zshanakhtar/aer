@@ -8,7 +8,7 @@
 }
 </style>
 
-<div id="problem_view" class="tab-pane fade in active" style="overflow-x:auto;margin-top:30px;margin-bottom:30px;">
+<div id="problem_view" class="tab-pane fade in active">
         <div class="row form-group">
 		  	<label for="" class="col-sm-2 col-sm-offset-1 control-label" style="color:#337ab7">Select all teams having stream</label>
 		  	<div class="col-sm-8">
@@ -99,7 +99,7 @@
                 <ul class="z-optionbox z-i<?php echo $count;?>">
                   <li class="z-option" data-zaction="s_form"><span class="glyphicon glyphicon-edit"></span><br>Edit</li>
                   <li class="z-option" data-zaction="s_preview"><span class="glyphicon glyphicon-eye-open"></span><br>Preview</li>
-                  <li class="z-option" data-zaction="a_s_flags"><span class="glyphicon glyphicon-eye-open"></span><br>Check Flags</li>
+                  <li class="z-option" data-zaction="a_s_insight"><span class="glyphicon glyphicon-eye-open"></span><br>Insights</li>
                   <li class="z-option" data-zaction="a_s_delete"><span class="glyphicon glyphicon-trash"></span><br>Delete</li>
                 </ul>
               </div>
