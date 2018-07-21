@@ -1,5 +1,5 @@
 $(window).on('click',function(event){
-    if(!$(event.target).hasClass("z-optionbtn"))
+    if($(event.target).closest(".z-optionbtn").length==0)
     {
       $(".z-optionbox").closest('div').removeClass("in");
       $(".z-optionbox").closest('div').addClass("hidden");
