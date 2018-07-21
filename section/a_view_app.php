@@ -1,6 +1,6 @@
 <div class="panel panel-danger">
-    <div class="panel-heading">Applications</div>
-    <div class="panel-body">
+	<div class="panel-heading" data-toggle="collapse" data-target="#one" style="font-size:150%;"><b>Applications</b><span class="btn btn-danger pull-right glyphicon glyphicon-chevron-up"></span></div>
+	<div  class="panel-body collapse in one" id="one">
         <ul class="nav nav-tabs" id="problem_tabs">
             <li class="active"><a data-toggle="tab" data-i="0">Problem 0&nbsp;<span class="btn btn-xs btn-danger" id="pr0_count"></span></a></li>
             <li><a data-toggle="tab" data-i="1">Problem 1&nbsp;<span class="btn btn-xs btn-danger" id="pr1_count"></span></a></li>
