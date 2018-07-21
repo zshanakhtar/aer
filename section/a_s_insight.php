@@ -39,130 +39,125 @@ else
 }
 ?>
 
-<form role="form"  action="javascript:void(0)" onsubmit="return false;" class="form-horizontal ajaxsubmitform" id="flagset" >
-<div class="panel panel-info">
-	<div class="panel-heading" data-toggle="collapse" data-target="#insight" style="font-size:150%;"><b>Student Form Insights</b><span class="btn btn-info pull-right glyphicon glyphicon-chevron-up"></span></div>
-	<div  class="panel-body collapse in one" id="insight">
-        <div class="col-sm-12 form-group">
-			<label for="app_id" class="col-sm-2 control-label" style="color:#337ab7; font-size:14px">Application Number</label>
-            <div class="col-sm-10">
-                <input id="app_id" name="app_id" type="text" class="form-control" disabled required />
-			</div>
-		</div>
+<form role="form"  action="javascript:void(0)" onsubmit="return false;" class="ajaxsubmitform" id="flagset" >
 
-		<div class="col-sm-4 form-group">
-			<label for="flagsec1" class="col-sm-5 control-label" style="color:#337ab7; font-size:14px">General Information (Sec 1)</label>
-            <div class="col-sm-3">
-                <input id="flagsec1" name="flagsec1" type="text" class="form-control" required />
-			</div>
-            <div class="scorer col-sm-4" data-qname="flagsec1">
-                <i class="btn btn-default" data-eval="Y"><span class="glyphicon glyphicon-ok"></span></i>
-                <i class="btn btn-default" data-eval="N"><span class="glyphicon glyphicon-remove"></span></i>
-            </div>
+        <div class="form-group input-group has-warning">
+			<span class="input-group-addon">Application Number</span>
+            <input id="app_id" name="app_id" type="text" class="form-control text-center" readonly required />
 		</div>
-		
-		<div class="col-sm-4 form-group">
-			<label for="flagsec2" class="col-sm-5 control-label" style="color:#337ab7; font-size:14px">Institute Details (Sec 2)</label>
-            <div class="col-sm-3">
-                <input id="flagsec2" name="flagsec2" type="text" class="form-control" required />
-			</div>
-            <div class="scorer col-sm-4" data-qname="flagsec2">
-                <i class="btn btn-default" data-eval="Y"><span class="glyphicon glyphicon-ok"></span></i>
-                <i class="btn btn-default" data-eval="N"><span class="glyphicon glyphicon-remove"></span></i>
-            </div>
-		</div>
-		
-		<div class="col-sm-4 form-group">
-			<label for="flagsec3" class="col-sm-5 control-label" style="color:#337ab7; font-size:14px">Team Information (Sec 3)</label>
-            <div class="col-sm-3">
-                <input id="flagsec3" name="flagsec3" type="text" class="form-control" required />
-			</div>
-            <div class="scorer col-sm-4" data-qname="flagsec3">
-                <i class="btn btn-default" data-eval="Y"><span class="glyphicon glyphicon-ok"></span></i>
-                <i class="btn btn-default" data-eval="N"><span class="glyphicon glyphicon-remove"></span></i>
-            </div>
-		</div>
-		
-		<div class="col-sm-4 form-group">
-			<label for="flagsec4" class="col-sm-5 control-label" style="color:#337ab7; font-size:14px">Mentor Details (Sec 4)</label>
-            <div class="col-sm-3">
-                <input id="flagsec4" name="flagsec4" type="text" class="form-control" required />
-			</div>
-            <div class="scorer col-sm-4" data-qname="flagsec4">
-                <i class="btn btn-default" data-eval="Y"><span class="glyphicon glyphicon-ok"></span></i>
-                <i class="btn btn-default" data-eval="N"><span class="glyphicon glyphicon-remove"></span></i>
-            </div>
-		</div>
-		
-		<div class="col-sm-4 form-group">
-			<label for="flagsec5" class="col-sm-5 control-label" style="color:#337ab7; font-size:14px">Document Uploads (Sec 5)</label>
-            <div class="col-sm-3">
-                <input id="flagsec5" name="flagsec5" type="text" class="form-control" required />
-			</div>
-            <div class="scorer col-sm-4" data-qname="flagsec5">
-                <i class="btn btn-default" data-eval="Y"><span class="glyphicon glyphicon-ok"></span></i>
-                <i class="btn btn-default" data-eval="N"><span class="glyphicon glyphicon-remove"></span></i>
-            </div>
-		</div>
-		
-		<div class="col-sm-4 form-group">
-			<label for="flagsec6" class="col-sm-5 control-label" style="color:#337ab7; font-size:14px">About Project (Sec 6)</label>
-            <div class="col-sm-3">
-                <input id="flagsec6" name="flagsec6" type="text" class="form-control" required />
-			</div>
-            <div class="scorer col-sm-4" data-qname="flagsec6">
-                <i class="btn btn-default" data-eval="Y"><span class="glyphicon glyphicon-ok"></span></i>
-                <i class="btn btn-default" data-eval="N"><span class="glyphicon glyphicon-remove"></span></i>
-            </div>
-		</div>
-		
-		<div class="col-sm-6 form-group">
-			<label for="app_status" class="col-sm-4 control-label" style="color:#337ab7; font-size:14px">Application Status</label>
-            <div class="col-sm-5">
-                <input id="app_status" name="app_status" type="text" class="form-control" />
-			</div>
-            <div class="scorer col-sm-3" data-qname="app_status">
-                <i class="btn btn-default" data-eval="Submitted"><span class="glyphicon glyphicon-ok"></span></i>
-                <i class="btn btn-default" data-eval=""><span class="glyphicon glyphicon-remove"></span></i>
-            </div>
-		</div>
-		
-		<div class="col-sm-3 form-group">
-			<label for="flageval1" class="col-sm-4 control-label" style="color:#337ab7; font-size:14px">Evaluated</label>
-            <div class="">
-                <input id="flageval1" type="text" class="form-control hidden" />
-			</div>
-            <div class="scorer-disabled col-sm-8" data-qname="flageval1">
-                <i class="btn btn-default" data-eval="N"><span class="glyphicon glyphicon-remove"></span></i>
-                <i class="btn btn-default" data-eval="P"><span class="glyphicon glyphicon-time"></span></i>
-                <i class="btn btn-default" data-eval="Y"><span class="glyphicon glyphicon-ok"></span></i>
-            </div>
-		</div>
-
-        <div class="col-sm-3 form-group">
-			<label for="flageval2" class="col-sm-4 control-label" style="color:#337ab7; font-size:14px">Scored</label>
-            <div class="">
-                <input id="flageval2" type="text" class="form-control hidden" />
-			</div>
-            <div class="scorer-disabled col-sm-8" data-qname="flageval2">
-                <i class="btn btn-default" data-eval="N"><span class="glyphicon glyphicon-remove"></span></i>
-                <i class="btn btn-default" data-eval="P"><span class="glyphicon glyphicon-time"></span></i>
-                <i class="btn btn-default" data-eval="Y"><span class="glyphicon glyphicon-ok"></span></i>
-            </div>
-		</div>
-
-        <div class="col-sm-12 form-group">
-			<div class="col-sm-offset-5 col-sm-2">
-			     <button type="submit" class="btn btn-warning col-sm-6 col-sm-offset-3">
-					<span class="glyphicon glyphicon-floppy-disk"></span>
-					<br class="hidden-lg hidden-sm hidden-xs">					
-					<span class="hidden-sm">Update</span>
-				 </button>
-			</div>
-		</div>
-
-	</div>
-</div>
+        <div class="panel panel-info">
+        <div class="panel-heading">Flags</div>
+        <div class="panel-body">
+	    	<div class="col-sm-4 form-group">
+	    		<label for="flagsec1" class="col-sm-5 control-label" style="color:#337ab7; font-size:14px">General Information (Sec 1)</label>
+                <div class="col-sm-3">
+                    <input id="flagsec1" name="flagsec1" type="text" class="form-control" required />
+	    		</div>
+                <div class="scorer col-sm-4" data-qname="flagsec1">
+                    <i class="btn btn-default" data-eval="Y"><span class="glyphicon glyphicon-ok"></span></i>
+                    <i class="btn btn-default" data-eval="N"><span class="glyphicon glyphicon-remove"></span></i>
+                </div>
+	    	</div>
+    
+	    	<div class="col-sm-4 form-group">
+	    		<label for="flagsec2" class="col-sm-5 control-label" style="color:#337ab7; font-size:14px">Institute Details (Sec 2)</label>
+                <div class="col-sm-3">
+                    <input id="flagsec2" name="flagsec2" type="text" class="form-control" required />
+	    		</div>
+                <div class="scorer col-sm-4" data-qname="flagsec2">
+                    <i class="btn btn-default" data-eval="Y"><span class="glyphicon glyphicon-ok"></span></i>
+                    <i class="btn btn-default" data-eval="N"><span class="glyphicon glyphicon-remove"></span></i>
+                </div>
+	    	</div>
+    
+	    	<div class="col-sm-4 form-group">
+	    		<label for="flagsec3" class="col-sm-5 control-label" style="color:#337ab7; font-size:14px">Team Information (Sec 3)</label>
+                <div class="col-sm-3">
+                    <input id="flagsec3" name="flagsec3" type="text" class="form-control" required />
+	    		</div>
+                <div class="scorer col-sm-4" data-qname="flagsec3">
+                    <i class="btn btn-default" data-eval="Y"><span class="glyphicon glyphicon-ok"></span></i>
+                    <i class="btn btn-default" data-eval="N"><span class="glyphicon glyphicon-remove"></span></i>
+                </div>
+	    	</div>
+    
+	    	<div class="col-sm-4 form-group">
+	    		<label for="flagsec4" class="col-sm-5 control-label" style="color:#337ab7; font-size:14px">Mentor Details (Sec 4)</label>
+                <div class="col-sm-3">
+                    <input id="flagsec4" name="flagsec4" type="text" class="form-control" required />
+	    		</div>
+                <div class="scorer col-sm-4" data-qname="flagsec4">
+                    <i class="btn btn-default" data-eval="Y"><span class="glyphicon glyphicon-ok"></span></i>
+                    <i class="btn btn-default" data-eval="N"><span class="glyphicon glyphicon-remove"></span></i>
+                </div>
+	    	</div>
+    
+	    	<div class="col-sm-4 form-group">
+	    		<label for="flagsec5" class="col-sm-5 control-label" style="color:#337ab7; font-size:14px">Document Uploads (Sec 5)</label>
+                <div class="col-sm-3">
+                    <input id="flagsec5" name="flagsec5" type="text" class="form-control" required />
+	    		</div>
+                <div class="scorer col-sm-4" data-qname="flagsec5">
+                    <i class="btn btn-default" data-eval="Y"><span class="glyphicon glyphicon-ok"></span></i>
+                    <i class="btn btn-default" data-eval="N"><span class="glyphicon glyphicon-remove"></span></i>
+                </div>
+	    	</div>
+    
+	    	<div class="col-sm-4 form-group">
+	    		<label for="flagsec6" class="col-sm-5 control-label" style="color:#337ab7; font-size:14px">About Project (Sec 6)</label>
+                <div class="col-sm-3">
+                    <input id="flagsec6" name="flagsec6" type="text" class="form-control" required />
+	    		</div>
+                <div class="scorer col-sm-4" data-qname="flagsec6">
+                    <i class="btn btn-default" data-eval="Y"><span class="glyphicon glyphicon-ok"></span></i>
+                    <i class="btn btn-default" data-eval="N"><span class="glyphicon glyphicon-remove"></span></i>
+                </div>
+	    	</div>
+		    <div class="col-sm-6 form-group">
+		    	<label for="app_status" class="col-sm-4 control-label" style="color:#337ab7; font-size:14px">Application Status</label>
+                <div class="col-sm-5">
+                    <input id="app_status" name="app_status" type="text" class="form-control" />
+		    	</div>
+                <div class="scorer col-sm-3" data-qname="app_status">
+                    <i class="btn btn-default" data-eval="Submitted"><span class="glyphicon glyphicon-ok"></span></i>
+                    <i class="btn btn-default" data-eval=""><span class="glyphicon glyphicon-remove"></span></i>
+                </div>
+		    </div>
+            <div class="col-sm-6 form-group">
+		    	<div class="col-sm-offset-2 col-sm-8">
+		    	     <button type="submit" class="btn btn-warning col-sm-6 col-sm-offset-3">
+		    			<span class="glyphicon glyphicon-floppy-disk"></span>
+		    			<br class="hidden-lg hidden-sm hidden-xs">					
+		    			<span class="hidden-sm">Update Flags</span>
+		    		 </button>
+		    	</div>
+		    </div>
+	    </div>
+        </div>
+		<div class="row">
+		    <div class="col-sm-6 form-group">
+		    	<label for="flageval1" class="col-sm-4 control-label" style="color:#337ab7; font-size:14px">Evaluated</label>
+                <div class="">
+                    <input id="flageval1" type="text" class="form-control hidden" />
+		    	</div>
+                <div class="scorer-disabled col-sm-8" data-qname="flageval1">
+                    <i class="btn btn-default" data-eval="N"><span class="glyphicon glyphicon-remove"></span></i>
+                    <i class="btn btn-default" data-eval="P"><span class="glyphicon glyphicon-time"></span></i>
+                    <i class="btn btn-default" data-eval="Y"><span class="glyphicon glyphicon-ok"></span></i>
+                </div>
+		    </div>
+            <div class="col-sm-6 form-group">
+		    	<label for="flageval2" class="col-sm-4 control-label" style="color:#337ab7; font-size:14px">Scored</label>
+                <div class="">
+                    <input id="flageval2" type="text" class="form-control hidden" />
+		    	</div>
+                <div class="scorer-disabled col-sm-8" data-qname="flageval2">
+                    <i class="btn btn-default" data-eval="N"><span class="glyphicon glyphicon-remove"></span></i>
+                    <i class="btn btn-default" data-eval="P"><span class="glyphicon glyphicon-time"></span></i>
+                    <i class="btn btn-default" data-eval="Y"><span class="glyphicon glyphicon-ok"></span></i>
+                </div>
+		    </div>
+        </div>
 </form>
 
 <script>
