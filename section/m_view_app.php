@@ -20,7 +20,7 @@
     <div class="panel-heading" data-toggle="collapse" data-target="#playground" style="font-size:150%;"><b>Playground</b><span class="btn btn-danger pull-right glyphicon glyphicon-chevron-up"></span></div>
     <div  class="panel-body collapse in viewsegue" id="playground">
         <h1 style="margin-left:100px;">
-            Admin Playground
+            Manager Playground
         </h1>
     </div>
 </div>

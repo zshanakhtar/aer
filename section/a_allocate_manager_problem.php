@@ -6,13 +6,21 @@
     margin:2px;
     border-radius:4px;
 }
+.red-box{
+    background-color:#d9534f;
+    color:#ffffff;
+    padding:4px;
+    margin:2px;
+    border-radius:4px;
+}
 </style>
 
-<div id="problem_view" class="tab-pane fade in active">
+<div id="problem" class="tab-pane fade in active">
         <div class="row form-group">
 		  	<label for="" class="col-sm-2 col-sm-offset-1 control-label" style="color:#337ab7">Select all teams having stream</label>
 		  	<div class="col-sm-8">
           <?php
+                
                 $resultstream=mysqli_query($conn,"SELECT DISTINCT teammember.stream FROM teammember INNER JOIN student ON student.app_id=teammember.app_id WHERE student.app_status='Submitted'");
                 while($rowstream = $resultstream->fetch_assoc())
                 {
@@ -44,16 +52,13 @@
               Streams
             </td>
             <td>
-              Judges
-            </td>
-            <td>
-              Action
+              Managers
             </td>
           </tr>
         </thead>
         <tbody>
           <?php
-          $resultteam=mysqli_query($conn,"SELECT app_id,team_name,award_cat FROM student WHERE problem='$i'");
+          $resultteam=mysqli_query($conn,"SELECT app_id,team_name,award_cat FROM student WHERE problem='$i' AND app_status='Submitted'");
 					$count=1;
 					while($rowteam = $resultteam->fetch_assoc()){
             $app_id=$rowteam['app_id'];
@@ -80,29 +85,27 @@
             </td>
             <td>
             <?php
-                $resultjalloted=mysqli_query($conn,"SELECT judge_id FROM judge WHERE app_id='$app_id'");
-                while($rowjalloted = $resultjalloted->fetch_assoc())
+                $resultmalloted=mysqli_query($conn,"SELECT manager_id,flageval0 FROM manager WHERE app_id='$app_id'");
+                while($rowmalloted = $resultmalloted->fetch_assoc())
                 {
+                  if($rowmalloted['flageval0']=='N')
+                  {
                 ?>
-                    <span class="blue-box">
-                        <?php echo htmlspecialchars($rowjalloted['judge_id']);?>
+                    <span class="blue-box" title="Not forwarded to evaluator">
+                        <?php echo htmlspecialchars($rowmalloted['manager_id']);?>
                     </span>
                 <?php
-				}
-			    ?>
-            </td>
-            <td>
-              <button type="submit" class="btn btn-danger z-optionbtn" data-i="<?php echo $count;?>" style="float:left;">
-                <span class="glyphicon glyphicon-cog"></span>
-              </button>
-              <div class="col-xs-12 fade hidden" style="float:left;position:relative">
-                <ul class="z-optionbox z-i<?php echo $count;?>">
-                  <li class="z-option" data-zaction="s_form" title="Open Application Form as Student"><span class="glyphicon glyphicon-edit"></span><br>Edit</li>
-                  <li class="z-option" data-zaction="s_preview" title="Open Application Preview as Student"><span class="glyphicon glyphicon-eye-open"></span><br>Preview</li>
-                  <li class="z-option" data-zaction="a_s_insight" title="View and update flags"><span class="glyphicon glyphicon-eye-open"></span><br>Insights</li>
-                  <li class="z-option" data-zaction="a_s_delete" title="View and delete student data"><span class="glyphicon glyphicon-trash"></span><br>Delete</li>
-                </ul>
-              </div>
+                  }
+                  else
+                  {
+                ?>
+                    <span class="red-box" title="Forwarded to evaluator">
+                        <?php echo htmlspecialchars($rowmalloted['manager_id']);?>
+                    </span>
+                <?php
+                  }
+				        }
+			          ?>
             </td>
           </tr>
           <?php
@@ -114,37 +117,9 @@
       
     </div>
     <script>
-      $(".z-optionbtn").on('click',function(){
-        var i=$(this).data("i");
-        $(".z-optionbox").closest('div').removeClass("in");
-        $(".z-optionbox").closest('div').addClass("hidden");
-        $(".z-optionbox.z-i"+i).closest('div').toggleClass("in");
-        $(".z-optionbox.z-i"+i).closest('div').toggleClass("hidden");
-      });
+    $("#pr<?php echo $i;?>_count").html("<?php echo $count-1;?>");
 
-        $(".z-option").on('click',function(){
-          var appid=$(this).closest("tr").data("appid");
-          var action=$(this).data("zaction");
-          // alert(appid+" "+action);
-          $.ajax({
-          url: "request/getsegue.php",
-          type: "POST",
-          data: "module="+action+"&app_id="+appid,
-          success: function(response){
-              $('.viewsegue').html(response);
-              //handle returned arrayList
-          },
-          error: function(e){  
-              alert("error");
-              //handle error
-          } 
-          });
-        });
-      
-$("#pr<?php echo $i;?>_count").html("<?php echo $count-1;?>");//refreshing number of applications under this category
-
-var appid_arr=[];
-  $('.filter-control').on('click',function(){
+    $('.filter-control').on('click',function(){
     if($(this).hasClass("btn-default")) resetfilters();
         var filtertoggle=$(this).html();
         var filtercurrent;
@@ -157,6 +132,8 @@ var appid_arr=[];
           {
             $(this).toggleClass("filter-active");
             var appidcurrent=$(this).closest('tr').data('appid');
+            // alert(appidcurrent);
+
             if($(this).hasClass("filter-active"))
               addappid(appidcurrent);
             else
@@ -184,9 +161,4 @@ var appid_arr=[];
       $('.filter-control').addClass("btn-default");
       refreshfilteranchors();      
     });
-
-    
-
-
-
-</script>
+    </script>
