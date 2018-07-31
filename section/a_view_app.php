@@ -26,6 +26,7 @@
 </div>
 
   <script>
+  var problem_table;
   $(document).ready(function(){
     $($("#problem_tabs li a")[0]).click();
   });
@@ -37,7 +38,7 @@
     data: "module=view_app"+"&submodule=problem"+"&i="+i,
     success: function(response){ 
         $('.subreview').html(response);
-        $("#problem_table").DataTable();
+        problem_table=$("#problem_table").DataTable();
         //handle returned arrayList
     },
     error: function(e){  

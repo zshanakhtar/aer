@@ -65,9 +65,13 @@ extract($_SESSION);
 		<div class="panel-heading">
 			<div class="row">
 				<div class="col-xs-12 text-center">
-					<div>Total something</div>
+					<div>Total Teams</div>
 					<div id="regist">
-						<?php echo 'xx'?>
+						<?php
+						$resultj=mysqli_query($conn,"SELECT count(username) from regist where usertype='s'");
+						$rowj = $resultj->fetch_assoc();
+						echo $rowj['count(username)'];
+						?>
 					</div>   
 				</div>
 			</div>
@@ -79,9 +83,13 @@ extract($_SESSION);
 		<div class="panel-heading">
 			<div class="row">
 				<div class="col-xs-12 text-center">
-					<div>Something Else</div>
+					<div>Total Managers</div>
 					<div id="regist">
-						<?php echo 'yy'?>
+						<?php
+						$resultj=mysqli_query($conn,"SELECT count(username) from regist where usertype='m'");
+						$rowj = $resultj->fetch_assoc();
+						echo $rowj['count(username)'];
+						?>
 					</div>   
 				</div>
 			</div>
@@ -93,9 +101,13 @@ extract($_SESSION);
 		<div class="panel-heading">
 			<div class="row">
 				<div class="col-xs-12 text-center">
-					<div>Yet Another</div>
+					<div>Total Evaluators</div>
 					<div id="regist">
-						<?php echo 'zz'?>
+						<?php
+						$resultj=mysqli_query($conn,"SELECT count(username) from regist where usertype='e'");
+						$rowj = $resultj->fetch_assoc();
+						echo $rowj['count(username)'];
+						?>
 					</div>   
 				</div>
 			</div>

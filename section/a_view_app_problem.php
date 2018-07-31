@@ -11,7 +11,7 @@
 <div id="problem_view" class="tab-pane fade in active">
         <div class="row form-group">
 		  	<label for="" class="col-sm-2 col-sm-offset-1 control-label" style="color:#337ab7">Select all teams having stream</label>
-		  	<div class="col-sm-8">
+		  	<div class="col-sm-9">
           <?php
                 $resultstream=mysqli_query($conn,"SELECT DISTINCT teammember.stream FROM teammember INNER JOIN student ON student.app_id=teammember.app_id WHERE student.app_status='Submitted'");
                 while($rowstream = $resultstream->fetch_assoc())
