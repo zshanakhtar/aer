@@ -73,7 +73,7 @@
                 while($rowstream = $resultstream->fetch_assoc())
                 {
                 ?>
-                <span class="btn btn-default filter">
+                <span class="btn btn-xs btn-default filter">
                   <?php echo htmlspecialchars($rowstream['stream']);?>
                 </span>
               <?php } ?>
@@ -97,9 +97,9 @@
               </button>
               <div class="col-xs-12 fade hidden" style="float:left;position:relative">
                 <ul class="z-optionbox z-i<?php echo $count;?>">
+                  <li class="z-option" data-zaction="a_s_insight" title="Flags, evaluation status and various other insights"><span class="glyphicon glyphicon-dashboard"></span><br>Insights</li>
                   <li class="z-option" data-zaction="s_form" title="Open Application Form as Student"><span class="glyphicon glyphicon-edit"></span><br>Edit</li>
                   <li class="z-option" data-zaction="s_preview" title="Open Application Preview as Student"><span class="glyphicon glyphicon-eye-open"></span><br>Preview</li>
-                  <li class="z-option" data-zaction="a_s_insight" title="View and update flags"><span class="glyphicon glyphicon-eye-open"></span><br>Insights</li>
                   <li class="z-option" data-zaction="a_s_delete" title="View and delete student data"><span class="glyphicon glyphicon-trash"></span><br>Delete</li>
                 </ul>
               </div>
@@ -116,10 +116,10 @@
     <script>
       $(".z-optionbtn").on('click',function(){
         var i=$(this).data("i");
-        $(".z-optionbox").closest('div').removeClass("in");
         $(".z-optionbox").closest('div').addClass("hidden");
-        $(".z-optionbox.z-i"+i).closest('div').toggleClass("in");
+        $(".z-optionbox").closest('div').removeClass("in");
         $(".z-optionbox.z-i"+i).closest('div').toggleClass("hidden");
+        $(".z-optionbox.z-i"+i).closest('div').toggleClass("in");
       });
 
         $(".z-option").on('click',function(){
