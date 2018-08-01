@@ -6,7 +6,10 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
 	
 extract($_POST);
 extract($_SESSION);
-
+if($usertype='a')
+{
+    $username=$app_id;
+}
 
 
 // echo $roll;

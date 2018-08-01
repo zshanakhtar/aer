@@ -1,11 +1,11 @@
 
 <!-- Navbar -->
-<nav class="navbar navbar-default" style="background-color:#f2552c;">
+<nav class="navbar navbar-default text-center" style="background-color:#f2552c;">
 <div class="container">
   <div class="navbar-header" >
-   
+  <h1 style="color:white;font-family:geor;margin-left:150px;">AICTE-ECI-ISTE CHHATRA VISHWAKARMA AWARDS 2018</h2>
    </div>
- 
+   
     <ul class="nav navbar-nav navbar-right" style="padding-top:5px;">
       <button type="button" class="btn btn-basic btn-md float-xs-right" data-toggle="modal" data-target="#myModal">Login/Register</button>  
       <button type="button" class="btn btn-primary btn-sm float-xs-right" data-toggle="modal" data-target="#myModal1">Contact Us</button>

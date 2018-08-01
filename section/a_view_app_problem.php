@@ -8,10 +8,10 @@
 }
 </style>
 
-<div id="problem" class="tab-pane fade in active">
+<div id="problem_view" class="tab-pane fade in active">
         <div class="row form-group">
 		  	<label for="" class="col-sm-2 col-sm-offset-1 control-label" style="color:#337ab7">Select all teams having stream</label>
-		  	<div class="col-sm-8">
+		  	<div class="col-sm-9">
           <?php
                 $resultstream=mysqli_query($conn,"SELECT DISTINCT teammember.stream FROM teammember INNER JOIN student ON student.app_id=teammember.app_id WHERE student.app_status='Submitted'");
                 while($rowstream = $resultstream->fetch_assoc())
@@ -46,11 +46,14 @@
             <td>
               Judges
             </td>
+            <td>
+              Action
+            </td>
           </tr>
         </thead>
         <tbody>
           <?php
-          $resultteam=mysqli_query($conn,"SELECT app_id,team_name,award_cat FROM student WHERE problem='$i' AND app_status='Submitted'");
+          $resultteam=mysqli_query($conn,"SELECT app_id,team_name,award_cat FROM student WHERE problem='$i'");
 					$count=1;
 					while($rowteam = $resultteam->fetch_assoc()){
             $app_id=$rowteam['app_id'];
@@ -70,7 +73,7 @@
                 while($rowstream = $resultstream->fetch_assoc())
                 {
                 ?>
-                <span class="btn btn-default filter">
+                <span class="btn btn-xs btn-default filter">
                   <?php echo htmlspecialchars($rowstream['stream']);?>
                 </span>
               <?php } ?>
@@ -88,6 +91,19 @@
 				}
 			    ?>
             </td>
+            <td>
+              <button type="submit" class="btn btn-danger z-optionbtn" data-i="<?php echo $count;?>" style="float:left;">
+                <span class="glyphicon glyphicon-cog"></span>
+              </button>
+              <div class="col-xs-12 fade hidden" style="float:left;position:relative">
+                <ul class="z-optionbox z-i<?php echo $count;?>">
+                  <li class="z-option" data-zaction="a_s_insight" title="Flags, evaluation status and various other insights"><span class="glyphicon glyphicon-dashboard"></span><br>Insights</li>
+                  <li class="z-option" data-zaction="s_form" title="Open Application Form as Student"><span class="glyphicon glyphicon-edit"></span><br>Edit</li>
+                  <li class="z-option" data-zaction="s_preview" title="Open Application Preview as Student"><span class="glyphicon glyphicon-eye-open"></span><br>Preview</li>
+                  <li class="z-option" data-zaction="a_s_delete" title="View and delete student data"><span class="glyphicon glyphicon-trash"></span><br>Delete</li>
+                </ul>
+              </div>
+            </td>
           </tr>
           <?php
 					}
@@ -98,7 +114,34 @@
       
     </div>
     <script>
-$("#pr<?php echo $i;?>_count").html("<?php echo $count-1;?>");
+      $(".z-optionbtn").on('click',function(){
+        var i=$(this).data("i");
+        $(".z-optionbox").closest('div').addClass("hidden");
+        $(".z-optionbox").closest('div').removeClass("in");
+        $(".z-optionbox.z-i"+i).closest('div').toggleClass("hidden");
+        $(".z-optionbox.z-i"+i).closest('div').toggleClass("in");
+      });
+
+        $(".z-option").on('click',function(){
+          var appid=$(this).closest("tr").data("appid");
+          var action=$(this).data("zaction");
+          // alert(appid+" "+action);
+          $.ajax({
+          url: "request/getsegue.php",
+          type: "POST",
+          data: "module="+action+"&app_id="+appid,
+          success: function(response){
+              $('.viewsegue').html(response);
+              //handle returned arrayList
+          },
+          error: function(e){  
+              alert("error");
+              //handle error
+          } 
+          });
+        });
+      
+$("#pr<?php echo $i;?>_count").html("<?php echo $count-1;?>");//refreshing number of applications under this category
 
 var appid_arr=[];
   $('.filter-control').on('click',function(){
@@ -142,67 +185,7 @@ var appid_arr=[];
       refreshfilteranchors();      
     });
 
-    function addappid(appid)
-    {
-      if(!hasappid(appid))
-        appid_arr.push(appid);
-    }
-    function hasappid(appid)
-    {
-      for(var i=0;i<appid_arr.length;i++)
-      {
-        if(appid_arr[i]==appid)
-        {
-         return true;
-        }
-      }
-      return false;
-    }
-    function removeappid(appid)
-    {
-      for(var i=0;i<appid_arr.length;i++)
-      {
-        if(appid_arr[i]==appid)
-        {
-         appid_arr.splice(i,1);
-        }
-      }
-    }
-    function refreshfilteranchors()
-    {
-      var anchorname;
-      var activeanchors=0;
-      // alert(appid_arr);
-      $('.filter-anchor').each(function(){
-        anchorname=$(this).html().trim();
-        // alert(anchorname);
-        if(hasappid(anchorname))
-        {
-          // alert("TRUE");
-          activeanchors++;
-          $(this).addClass('btn-danger');
-          $(this).removeClass('btn-default');
-        }
-        else
-        {
-          // alert("FALSE");
-          $(this).removeClass('btn-danger');
-          $(this).addClass('btn-default');
-        }
-      });
-      $("#activeanchors").val(activeanchors);
-      $("#activeanchors").trigger('change');
-      $("#appid_arr").val(appid_arr);
-      $("#appid_arr").trigger('change');
-    }
-    function resetfilters()
-    {
-      appid_arr=[];
-      refreshfilteranchors();
-      $('.filter-control').removeClass("btn-danger");
-      $('.filter').removeClass("filter-active");
-      $('.filter-control').addClass("btn-default");
-    }
+    
 
 
 

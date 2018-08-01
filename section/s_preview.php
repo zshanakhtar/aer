@@ -1,12 +1,9 @@
 <?php
 include "../request/"."connection.php";
 
-extract($_SESSION);
-$app_id=trim($username);
-
 $resultsum=mysqli_query($conn,"SELECT * FROM student WHERE app_id='$app_id'");
 $row = $resultsum->fetch_assoc();
-$resultsum1=mysqli_query($conn,"SELECT * FROM regist WHERE username='$username'");
+$resultsum1=mysqli_query($conn,"SELECT * FROM regist WHERE username='$app_id'");
 $row1 = $resultsum1->fetch_assoc();
 ?>
 <div style="overflow-x:auto;">
@@ -389,22 +386,25 @@ About Your Project
 </td>
 </tr>
 
-
-
 <tr>
-<td colspan="3">
-<button type="text" class="btn btn-info col-xs-12">
-					<span class="glyphicon glyphicon-floppy-disk"></span>
-									
-										<span>Print</span>
-				 </button>
+
+<td colspan="2">
+	<a class="btn btn-info col-xs-12" href="request/getNOC.php" target="_blank" >
+		<span class="glyphicon glyphicon-floppy-save"></span>
+		<span>Preview Uploaded NOC</span>
+	</a>
+</td>
+<td colspan="2">
+	<a class="btn btn-info col-xs-12" href="request/getsummary.php" target="_blank" >
+		<span class="glyphicon glyphicon-floppy-save"></span>
+		<span>Preview Uploaded Summary</span>
+	</a>
 </td>
 <td colspan="5">
-<button type="text" class="btn btn-danger col-xs-12" onclick="submitform()" >
-					<span class="glyphicon glyphicon-floppy-disk"></span>
-									
-										<span>Submit</span>
-				 </button>
+	<button type="text" class="btn btn-danger col-xs-4 col-xs-offset-4" onclick="submitform()" >
+		<span class="glyphicon glyphicon-floppy-disk"></span>
+		<span>Submit</span>
+	</button>
 </td>
 </tr>
 

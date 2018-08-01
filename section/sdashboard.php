@@ -30,7 +30,7 @@
 <?php include "navdashboard.php"; ?>
 <?php include "nav_s.php"; ?>
 
-<img src="images/logo.png"  style="margin-top:10px;margin-left:150px;width:25%;" alt="Image">
+
 <br>
 <div id="myDiv1"></div>
 <br>
