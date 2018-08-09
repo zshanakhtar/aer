@@ -1,6 +1,6 @@
 <?php
 
-$conn = mysqli_connect("localhost","root","","aer");
+$conn = mysqli_connect("localhost","root","ztest1","aer");
 
 
 ?>
