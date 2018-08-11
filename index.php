@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AER Portal-Login, Register and more</title>
 
 <!-- Bootstrap -->
@@ -37,8 +37,14 @@ if(isset($_SESSION['usertype'])) { // if already login
 <?php include 'section/ajaxloader.php'; ?>
 <?php include 'section/navindex.php'; ?>
 
+<div class="container" style="margin-top:10px; margin-left:10%;">
+  <div class="row">
+    <div class="hidden-xs col-sm-3"><img src="images/m.png" style="height:80px;" alt="Image"></div>
+    <div class="col-xs-12 col-sm-6"><img src="images/logo.png" class="img-responsive" alt="Image"></div>
+    <div class="col-sm-3 hidden-xs"><img src="images/n.png" style="height:80px;" alt="Image"></div>
+  </div>
+</div>
 
- <img src="images/logo.png"  style="margin-top:10px;margin-left:150px;width:25%;" alt="Image">
  <br>
  
  
@@ -48,7 +54,7 @@ if(isset($_SESSION['usertype'])) { // if already login
 
 <div class="top">
 <div class="row">
-<div class="col-sm-6">
+<div class="col-sm-5">
   <div id="myCarousel" class="carousel slide" data-ride="carousel" >
    
     <ol class="carousel-indicators">
@@ -85,64 +91,70 @@ if(isset($_SESSION['usertype'])) { // if already login
 
 </div>
 
-<div class="col-sm-6 col-xs-12 text">
+<div class="col-sm-7 col-xs-12 text">
 
 
-  <h1 class="margin text-center">About Vishwakarma Awards</h1>
-  <p>All India Council for Technical Education (AICTE), Ministry of Human Resource Development, Govt. of India ,The Indian Society for Technical Education (ISTE) & Engineering Council of India (ECI), the apex Engineering Body of India are jointly holding a competition "AICTE-ECI-ISTE Chhatra Vishwakarma Awards” for the students of AICTE approved Degree & Diploma level technical institutions.</p>
+  <h1 class="margin text-center" style="color:blue;"><b>About Vishwakarma Awards</b></h1>
+  <br>
+  <h3>All India Council for Technical Education (AICTE), Ministry of Human Resource Development, Govt. of India, Engineering Council of India (ECI), and the Indian Society for Technical Education (ISTE), are jointly holding a competition “AICTE-ECI-ISTE Chhatra Vishwakarma Awards-2018” for the students of AICTE approved Degree & Diploma level Technical institutions.</h3>
+  <br>
+  <h3>The Awards are aimed for motivating young individuals, inspiring leaders and institutions/ organizations to raise their performance in their specific domains leading to significant contribution towards the growth and development of the nation.</h3>
   <br>
 </div>
 </div>
 </div>
 <hr>
 <div class="row">
-    <div class="col-sm-4 col-xs-12">
-      <div class="panel panel-default text-center">
-      <div class="panel panel-info">
+    <div class="col-sm-5 col-xs-12">
+      <div class="panel panel-info text-center">
         <div class="panel-heading">
           <h1><i class="fa fa-calendar" aria-hidden="true"></i> Important Dates</h1>
         </div>
         <div class="panel-body">
-         <ol align="left">
- 
-  
-<p>
-          <li>Online application will start from:xx-yy-zzzz</li><br>
-              <li>Last date to submit the application:xx-yy-zzzz</li><br>
-  <li>Last date to submit the application:xx-yy-zzzz</li><br>
-              <li>Last date to submit the application:xx-yy-zzzz</li><br>
-              <li>Last date to submit the application:xx-yy-zzzz</li><br></p>
-</ol>
-<br><br>
+        <ul class="list-group">
+        <li class="list-group-item">Online application will start from: <span class="badge">10-07-2018</span></li>
+        <li class="list-group-item">Last date to submit the application: <span class="badge">10-08-2018</span></li>
+      </ul> 
         </div>
+</div>
+<div class="panel panel-info text-center">
         <div class="panel-heading">
-          <h1><i class="fa fa-download" aria-hidden="true"></i> Download</h1>
+          <h1><i class="fa fa-download" aria-hidden="true"></i> Downloads</h1>
         </div>
       <div class="panel-body">
-         <ol align="left">
-  <p>
-  
-
-          <li>Online application will start from:xx-yy-zzzz</li><br>
-              <li>Last date to submit the application:xx-yy-zzzz</li><br>
- <li>Last date to submit the application:xx-yy-zzzz</li><br>
-    </p>         
-</ol>
-<br><br>
+      <ul class="list-group">
+        <li class="list-group-item"><a href="downloads/Guidelines-Chattra-Vishwakarma_2018.pdf" target="_blank">Guidelines</a><span class="badge">10-07-2018</span></li>
+        <li class="list-group-item"><a href="downloads/Vishwa_ECI_2017.pdf" target="_blank">List of Winners for  Chhatra Vishwakarma Awards 2017</a><span class="badge">10-07-2018</span></li>
+      </ul> 
         </div>
       </div> 
 </div>
-    </div> 
-<div class="col-sm-8 col-xs-12">
-  <h3>To recognize and honour innovative work of the students displaying exceptional skills in
-  different Engineering streams. Awards will be given in following categories separately
-  for Degree and Diploma Students (including students from AICTE approved Community College:</h3>
- <br><p>1. <strong>Category-I</strong>: Outstanding Student Engineers (3 Awards each in Civil, Electrical, Mechanical,
- Electronics Engineering, Computer Science and Biotechnology streams or their allied branches)(Ref. 
- Annexure-A for allied Branches).</p> <br><p> 2.<strong> Category-II</strong>: Outstanding Teachers Awards (3 Awards each in
- Civil, Electrical, Mechanical, Electronics Engineering, Computer Science and Biotechnology streams 
- or their allied branches).</p> <br><p>3.<strong> Category-III</strong>: Outstanding Institutions Awards (3 Awards) based on
- the maximum number of awards won from the above two categories and other criteria.</p>
+<div class="col-sm-7 col-xs-12">
+  <p>To recognize and honour innovative work of the students displaying exceptional skills by providing the innovative solution on the given theme. 
+ <br>
+ Applications will be short listed based on their conformity to the guidelines and information furnished by nominees for specific categories. The recipients will be finalised based on the Recommendation and NOC forwarded by the institute and scrutiny of the applications by the jury & practical demonstrations by the contestants. 
+ <br> 
+ Awards will be given in following Categories for Degree and Diploma Students (including students from AICTE approved Community College):
+ </p>
+ <p class="text-center"><strong class="text-info">Category-I:</strong> Outstanding Innovative Team Award (Degree and Diploma)
+ <br><strong class="text-info"> Category-II:</strong> Outstanding Teacher Award for mentoring Students Project</p>
+ <h3><strong class="text-info"> The Problem:</strong> The participants need to provide and innovative solution to following problem:</h3>
+ <h2 class="text-center text-danger">“Empowerment of Villages through Technologies”</h2>
+ <p>For the holistic development of villages under the above theme, the following <b class="text-danger">8 sub-themes</b> have been shortlisted: -
+<ol>
+<li>Water & Irrigation</li>
+<li>Sanitation & Solid Liquid Waste Management</li>
+<li>Rural Infrastructure</li>
+<li>Tourism</li>
+<li>Agriculture & Food</li>
+<li>Education, Skill Initiative & Startups</li>
+<li>Rural Craft & Livelihood</li>
+<li>Any other Rural Appropriate Technologies</li>
+ </ol>
+</p>
+<h1 class="text-info text-center"><u>Who Can Apply?</u></h1>
+  <p>The Awards cover the students of AICTE approved Degree and Diploma Technical Institutions and Polytechnics. It also includes students from AICTE approved Community Colleges.</p>
+  <p><b><i>Nominations/Applications from all girls teams are especially encouraged….!</i></b></p>
 </div>
 </div>
 </div>

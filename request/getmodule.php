@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
 	
 extract($_POST);
 extract($_SESSION);
-	
+$app_id=trim($username);	
 // echo $module;
 // echo $usertype;
 // echo $username;

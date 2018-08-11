@@ -1,13 +1,16 @@
-<nav class="navbar navbar-default" style="background-color:#f2552c;">
-<div class="container">
- 
-  <div class="collapse navbar-collapse" id="myNavbar">
-  
-   
-<h1 style="color:white; font-family:geor;"> AICTE-ECI-ISTE CHHATRA VISHWAKARMA AWARDS 2018
- <ul class="nav navbar-nav navbar-right" style="padding-top:5px;">
-      <a href="request/logout.php" type="button" class="btn btn-primary btn-sm" >Logout</a>  
-      </ul></h1>	
+<div style="background-color:#f2552c;" >
+  <div class="container">
+<div class="row text-center">
+  <div class="col-sm-2">
+<img src="images/logo1.jpg">
+
   </div>
+<div class="col-sm-8">
+  <h2 style="color:white;">AICTE-ECI-ISTE CHHATRA VISHWAKARMA AWARDS 2018</h2> 
+  </div>
+  <div class="col-sm-2" style="padding:10px;">
+  <a class="btn btn-primary" href="request/logout.php">Logout</a>
 </div>
-</nav>
+</div>
+</div>
+</div>
