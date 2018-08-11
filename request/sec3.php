@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
 	
 extract($_POST);
 extract($_SESSION);
-if($usertype='a')
+if($usertype=='a')
 {
     $username=$app_id;
 }
@@ -23,7 +23,7 @@ if($member_action=="save")
 }
 else if($member_action=="del")
 {
-	$query = "DELETE FROM teammember WHERE mem_id='$mem_id' AND roll='Team Member'";
+	$query = "DELETE FROM teammember WHERE app_id='$username' AND mem_id='$mem_id' AND roll='Team Member'";
 	mysqli_query($conn, $query);
 	if($roll=='Team Leader')
 		echo "Team Leader cannot be deleted";
