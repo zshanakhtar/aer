@@ -19,6 +19,7 @@
         <div class="row form-group">
 		  	<label for="" class="col-sm-2 col-sm-offset-1 control-label" style="color:#337ab7">Select all teams having stream</label>
 		  	<div class="col-sm-8">
+          <span class="btn btn-default filter-control">Select All</span>
           <?php
                 
                 $resultstream=mysqli_query($conn,"SELECT DISTINCT teammember.stream FROM teammember INNER JOIN student ON student.app_id=teammember.app_id WHERE student.app_status='Submitted'");
@@ -128,7 +129,7 @@
         
         $('.filter').each(function(){
           filtercurrent=$(this).html();
-          if(filtercurrent==filtertoggle)
+          if(filtercurrent==filtertoggle || filtertoggle=="Select All")
           {
             $(this).toggleClass("filter-active");
             var appidcurrent=$(this).closest('tr').data('appid');
