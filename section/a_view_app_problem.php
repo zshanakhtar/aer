@@ -100,6 +100,7 @@
                   <li class="z-option" data-zaction="a_s_insight" title="Flags, evaluation status and various other insights"><span class="glyphicon glyphicon-dashboard"></span><br>Insights</li>
                   <li class="z-option" data-zaction="s_form" title="Open Application Form as Student"><span class="glyphicon glyphicon-edit"></span><br>Edit</li>
                   <li class="z-option" data-zaction="s_preview" title="Open Application Preview as Student"><span class="glyphicon glyphicon-eye-open"></span><br>Preview</li>
+                  <li class="z-option" data-zaction="a_s_notify" title="Send notification to student to complete application"><span class="glyphicon">!</span><br>Notify</li>
                   <li class="z-option" data-zaction="a_s_delete" title="View and delete student data"><span class="glyphicon glyphicon-trash"></span><br>Delete</li>
                 </ul>
               </div>

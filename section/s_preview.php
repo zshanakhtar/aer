@@ -420,7 +420,7 @@ $("#spoc_name").html("<?php echo htmlspecialchars($row['spoc_name']);?>");
 $("#spoc_aadhar").html("<?php echo htmlspecialchars($row['spoc_aadhar']);?>");
 $("#project_name").html("<?php echo htmlspecialchars($row['project_name']);?>");
 $("#problem").html("<?php echo htmlspecialchars($row['problem']);?>");
-$("#problem_det").html("<?php echo htmlspecialchars($row['problem_det']);?>");
+$("#problem_det").html("<?php echo mysqli_real_escape_string($conn,$row['problem_det']);?>");
 $("#award_cat").html("<?php echo htmlspecialchars($row['award_cat']);?>");
 $("#g_oriented").html("<?php echo htmlspecialchars($row['g_oriented']);?>");
 $("#i_entry").html("<?php echo htmlspecialchars($row['i_entry']);?>");

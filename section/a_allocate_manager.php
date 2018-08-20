@@ -95,7 +95,7 @@
     data: "module=allocate_manager"+"&submodule=problem"+"&i="+i,
     success: function(response){ 
         $('.subreview').html(response);
-        $("#problem_table").DataTable();
+        $("#problem_table").DataTable({"lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]]});
         resetfilters();
         //handle returned arrayList
     },

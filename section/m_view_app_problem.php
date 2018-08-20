@@ -53,7 +53,7 @@
         </thead>
         <tbody>
           <?php
-          $resultteam=mysqli_query($conn,"SELECT student.app_id,student.team_name,student.award_cat FROM student INNER JOIN manager ON student.app_id=manager.app_id WHERE student.problem='$i'");
+          $resultteam=mysqli_query($conn,"SELECT student.app_id,student.team_name,student.award_cat FROM student INNER JOIN manager ON student.app_id=manager.app_id WHERE student.problem='$i' and manager.manager_id='$username'");
 					$count=1;
 					while($rowteam = $resultteam->fetch_assoc()){
             $app_id=$rowteam['app_id'];
