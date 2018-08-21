@@ -1,6 +1,11 @@
 <?php
 session_start();
+extract($_REQUEST);
 extract($_SESSION);
+if($usertype=='a'||$usertype=='m')
+{
+    $username=$app_id;
+}
 $file = '../attachment/NOC/'.trim($username).'_NOC.pdf';
 
 if (file_exists($file)) {
