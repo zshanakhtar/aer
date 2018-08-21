@@ -4,21 +4,21 @@ include "../request/"."connection.php";
 $resultsum=mysqli_query($conn,"SELECT * FROM student WHERE app_id='$app_id'");
 $row = $resultsum->fetch_assoc();
 
-$resulteval1=mysqli_query($conn,"SELECT count(*) FROM evaluator WHERE app_id='$app_id'");
-$roweval1 = $resulteval1->fetch_assoc();
-$resulteval1N=mysqli_query($conn,"SELECT count(*) FROM evaluator WHERE app_id='$app_id' AND flageval1='N'");
-$roweval1N = $resulteval1N->fetch_assoc();
-if($roweval1N['count(*)']==0)
+$resulteval0=mysqli_query($conn,"SELECT count(*) FROM manager WHERE app_id='$app_id'");
+$roweval0 = $resulteval0->fetch_assoc();
+$resulteval0N=mysqli_query($conn,"SELECT count(*) FROM manager WHERE app_id='$app_id' AND flageval0='N'");
+$roweval0N = $resulteval0N->fetch_assoc();
+if($roweval0N['count(*)']==0)
 {
-    $flageval1='Y';
+    $flageval0='Y';
 }
-else if($roweval1['count(*)']==$roweval1N['count(*)'])
+else if($roweval0['count(*)']==$roweval0N['count(*)'])
 {
-    $flageval1='N';
+    $flageval0='N';
 }
 else
 {
-    $flageval1='P';
+    $flageval0='P';
 }
 
 $resulteval2=mysqli_query($conn,"SELECT count(*) FROM judge WHERE app_id='$app_id'");
@@ -136,11 +136,11 @@ else
         </div>
 		<div class="row">
 		    <div class="col-sm-6 form-group">
-		    	<label for="flageval1" class="col-sm-4 control-label" style="color:#337ab7; font-size:14px">Evaluated</label>
+		    	<label for="flageval0" class="col-sm-4 control-label" style="color:#337ab7; font-size:14px">Verified</label>
                 <div class="">
-                    <input id="flageval1" type="text" class="form-control hidden" />
+                    <input id="flageval0" type="text" class="form-control hidden" />
 		    	</div>
-                <div class="scorer-disabled col-sm-8" data-qname="flageval1">
+                <div class="scorer-disabled col-sm-8" data-qname="flageval0">
                     <i class="btn btn-default" data-eval="N"><span class="glyphicon glyphicon-remove"></span></i>
                     <i class="btn btn-default" data-eval="P"><span class="glyphicon glyphicon-time"></span></i>
                     <i class="btn btn-default" data-eval="Y"><span class="glyphicon glyphicon-ok"></span></i>
@@ -161,7 +161,7 @@ else
 </form>
 
 <script>
-    $('#flagsec1,#flagsec2,#flagsec3,#flagsec4,#flagsec5,#flagsec6,#app_status,#flageval1,#flageval2').on('keyup',function(e){
+    $('#flagsec1,#flagsec2,#flagsec3,#flagsec4,#flagsec5,#flagsec6,#app_status,#flageval0,#flageval2').on('keyup',function(e){
         var score=$(this).val().toUpperCase();
         $(this).closest('div.form-group').find('.scorer i').each(function(){
             if($(this).data('eval').toUpperCase()==score)
@@ -206,8 +206,8 @@ else
     $('#flagsec6').trigger('keyup');
     $("#app_status").val("<?php echo addslashes($row['app_status']);?>");
     $('#app_status').trigger('keyup');
-    $("#flageval1").val("<?php echo addslashes($flageval1);?>");
-    $('#flageval1').trigger('keyup');
+    $("#flageval0").val("<?php echo addslashes($flageval0);?>");
+    $('#flageval0').trigger('keyup');
     $("#flageval2").val("<?php echo addslashes($flageval2);?>");
     $('#flageval2').trigger('keyup');
     
