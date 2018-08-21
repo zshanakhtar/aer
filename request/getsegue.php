@@ -12,7 +12,7 @@ extract($_POST);
 // echo $usertype;
 // echo $username;
 
-if($_SESSION['usertype']=='a')
+if($_SESSION['usertype']=='a'||$_SESSION['usertype']=='m')
 {
     include "../section/".$module.'.php';
     $_SESSION["app_id"]=$app_id;
