@@ -6,6 +6,13 @@
     margin:2px;
     border-radius:4px;
 }
+.red-box{
+    background-color:#d9534f;
+    color:#ffffff;
+    padding:4px;
+    margin:2px;
+    border-radius:4px;
+}
 </style>
 
 <div id="problem_view" class="tab-pane fade in active">
@@ -44,6 +51,9 @@
               Streams
             </td>
             <td>
+              Managers
+            </td>
+            <td>
               Judges
             </td>
             <td>
@@ -77,6 +87,30 @@
                   <?php echo htmlspecialchars($rowstream['stream']);?>
                 </span>
               <?php } ?>
+            </td>
+            <td>
+            <?php
+                $resultmalloted=mysqli_query($conn,"SELECT manager_id,flageval0 FROM manager WHERE app_id='$app_id'");
+                while($rowmalloted = $resultmalloted->fetch_assoc())
+                {
+                  if($rowmalloted['flageval0']=='N')
+                  {
+                ?>
+                    <span class="blue-box" title="Not forwarded to evaluator">
+                        <?php echo htmlspecialchars($rowmalloted['manager_id']);?>
+                    </span>
+                <?php
+                  }
+                  else
+                  {
+                ?>
+                    <span class="red-box" title="Forwarded to evaluator">
+                        <?php echo htmlspecialchars($rowmalloted['manager_id']);?>
+                    </span>
+                <?php
+                  }
+				        }
+			          ?>
             </td>
             <td>
             <?php
