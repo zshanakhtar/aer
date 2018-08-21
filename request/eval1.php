@@ -12,7 +12,7 @@ extract($_SESSION);
 $resultsum=mysqli_query($conn,"SELECT * FROM evaluator WHERE evaluator_id='$username' AND app_id='$app_id'");
 if($row = $resultsum->fetch_assoc() && $usertype=='j')
 	{
-	$query ="UPDATE evaluator set Q1_eval='$Q1_eval', Q2_eval ='$Q2_eval', Q3_eval ='$Q3_eval', Q4_eval ='$Q4_eval', Q5_eval ='$Q5_eval', flageval1='Y' WHERE app_id='$app_id'";
+	$query ="UPDATE evaluator set Q1_eval='$Q1_eval', Q2_eval ='$Q2_eval', Q3_eval ='$Q3_eval', Q4_eval ='$Q4_eval', Q5_eval ='$Q5_eval', flageval1='Y' WHERE app_id='$app_id'and evaluator_id='$username'";
 	mysqli_query($conn, $query);
     echo "Scores Saved, switching to next application";
     $resultapp=mysqli_query($conn,"SELECT * FROM judge WHERE judge_id='$username' AND flageval2='N'");
