@@ -58,7 +58,7 @@
         </thead>
         <tbody>
           <?php
-          $resultteam=mysqli_query($conn,"SELECT student.app_id,student.team_name,student.award_cat FROM student INNER JOIN manager ON student.app_id=manager.app_id WHERE student.problem='$i' AND student.app_status='Submitted' and manager.manager_id='$username'");
+          $resultteam=mysqli_query($conn,"SELECT student.app_id,student.team_name,student.award_cat FROM student INNER JOIN manager ON student.app_id=manager.app_id WHERE student.problem='$i' AND student.app_status='Submitted' and manager.manager_id='$username' and manager.zero_score='1'");
 					$count=1;
 					while($rowteam = $resultteam->fetch_assoc()){
             $app_id=$rowteam['app_id'];
