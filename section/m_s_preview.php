@@ -1,10 +1,13 @@
 <?php
 include "../request/"."connection.php";
-
+extract($_SESSION);
+// echo $username;
 $resultsum=mysqli_query($conn,"SELECT * FROM student WHERE app_id='$app_id'");
 $row = $resultsum->fetch_assoc();
 $resultsum1=mysqli_query($conn,"SELECT * FROM regist WHERE username='$app_id'");
 $row1 = $resultsum1->fetch_assoc();
+$resultsum3=mysqli_query($conn,"SELECT * FROM manager WHERE app_id='$app_id' and manager_id='$username'");
+$row3 = $resultsum3->fetch_assoc();
 ?>
 <div style="overflow-x:auto;">
 <table  class ="table table-bordered table-striped table-responsive" >
@@ -388,6 +391,15 @@ About Your Project
 
 <tr>
 
+<tr>
+<td colspan="5">
+Reason(if rejected)
+</td>
+<td colspan="4"><input id="zero_det" type="text" class="form-control" /></td>
+</tr>
+
+<tr>
+
 <td colspan="2">
 	<a class="btn btn-info col-xs-12" href="request/getNOC.php?app_id=<?php echo $app_id;?>" target="_blank" >
 		<span class="glyphicon glyphicon-floppy-save"></span>
@@ -459,13 +471,19 @@ $("#Q8").html("<?php echo mysqli_real_escape_string($conn,$row['Q8']);?>");
 $("#Q9").html("<?php echo mysqli_real_escape_string($conn,$row['Q9']);?>");
 $("#Q10").html("<?php echo mysqli_real_escape_string($conn,$row['Q10']);?>");
 
+$("#zero_det").val("<?php echo addslashes($row3['zero_det']);?>");
 
+var flageval0="<?php echo mysqli_real_escape_string($conn,$row3['flageval0']);?>";
+var zero_Score="<?php echo mysqli_real_escape_string($conn,$row3['zero_score']);?>";
 
 function submitform(zero_score){
-	$.ajax({
+	if(flageval0=='Y')
+		alert("Application already verified");
+	else{
+		$.ajax({
            type: "POST",
            url: "request/eval0.php",
-           data:"zero_score="+zero_score,
+           data:"zero_score="+zero_score+"&zero_det="+$("#zero_det").val(),
            success: function(response)
            {
 			   alert(response.toString()); //show response from the php script
@@ -476,5 +494,6 @@ function submitform(zero_score){
 			//handle error
 			}
          });
+	}
 }
 </script>
